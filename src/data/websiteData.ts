@@ -13,12 +13,16 @@ import type {
   ProcessStep,
   CulturePerk,
   ValueItem,
-  NavItem
+  NavItem,
+  AboutData,
+  MilestoneItem
 } from '../types';
 
 export const websiteData: WebsiteDataSchema = rawData as WebsiteDataSchema;
 
 export const companyInfo: CompanyInfo = websiteData.company;
+export const aboutData: AboutData = websiteData.about;
+export const milestonesData: MilestoneItem[] = websiteData.about.milestones;
 export const navItems: NavItem[] = websiteData.navItems;
 export const servicesData: Service[] = websiteData.services;
 export const productsData: Product[] = websiteData.products;

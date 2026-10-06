@@ -84,7 +84,7 @@ export const Navbar: React.FC = () => {
             {/* Dark Green Pill CTA */}
             <button
               onClick={() => openModal({ type: 'quote-modal' })}
-              className="px-6 py-2.5 rounded-full bg-[#ded725] hover:bg-[#d3cc11] text-white font-bold text-sm shadow-sm hover:shadow-md transition-all duration-200 flex items-center gap-2 group"
+              className="px-6 py-2.5 rounded-full bg-[#ded725] text-[#32679a] hover:bg-[#d3cc11]  font-bold text-sm shadow-sm hover:shadow-md transition-all duration-200 flex items-center gap-2 group"
             >
               <span>Get A Quote</span>
               <ArrowRight className="w-4 h-4 text-[#32679a] group-hover:translate-x-0.5 transition-transform" />
@@ -137,16 +137,18 @@ export const Navbar: React.FC = () => {
             })}
           </div>
 
-          <div className="pt-4 mt-4 border-t border-slate-200">
+          <div className="pt-4 mt-4 border-t text-[#32679a] border-slate-200">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 openModal({ type: 'quote-modal' });
               }}
-              className="w-full py-3 rounded-full bg-[#133A27] text-white font-bold text-sm shadow-md flex items-center justify-center gap-2"
+              className="w-full py-3 rounded-full bg-[#133A27] !text-[#32679a] text-white font-bold text-sm shadow-md flex items-center justify-center gap-2"
             >
-              <span>Get A Quote</span>
-              <ArrowRight className="w-4 h-4 text-[#C6F135]" />
+              <span
+              className="!text-[#32679a]"
+              >Get A Quote</span>
+              <ArrowRight className="w-4 h-4 text-[#32679a]" />
             </button>
           </div>
         </div>

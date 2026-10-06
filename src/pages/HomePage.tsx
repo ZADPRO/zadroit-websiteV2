@@ -9,6 +9,7 @@ import {
   blogPostsData,
 } from "../data/websiteData";
 import { CollageImageHero } from "../components/CollageImageHero";
+import { WhyChooseUs } from "../components/WhyChooseUs";
 import { ImagePlaceholder } from "../components/ImagePlaceholder";
 import {
   ArrowRight,
@@ -177,6 +178,25 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
+      {/* ================= WHY CHOOSE US (REFERENCE IMAGE LAYOUT) ================= */}
+      <WhyChooseUs />
+
+      {/* ================= SECOND MARQUEE RIBBON (LEFT-TO-RIGHT / REVERSE) ================= */}
+      <section className="bg-[#ded725] text-[#32679a] py-4 overflow-hidden shadow-inner">
+        <div className="flex overflow-hidden relative">
+          <div className="animate-marquee-reverse flex items-center gap-8 text-sm sm:text-base font-bold whitespace-nowrap">
+            {[...marqueeKeywords, ...marqueeKeywords].map((keyword, idx) => (
+              <div key={idx} className="flex items-center gap-8">
+                <span className="tracking-wide">{keyword}</span>
+                {/* Vibrant Lime Starburst Asterisk */}
+                <span className="text-[#32679a] text-xl font-black select-none">
+                  ✳
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* ================= FEATURED SERVICES (LIGHT BENTO GRID) ================= */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
         <div className="text-center max-w-3xl mx-auto mb-14">

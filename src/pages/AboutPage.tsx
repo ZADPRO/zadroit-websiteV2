@@ -1,6 +1,8 @@
 import React from "react";
 import {
   companyInfo,
+  aboutData,
+  milestonesData,
   teamMembersData,
   coreValuesData,
 } from "../data/websiteData";
@@ -19,33 +21,6 @@ import {
 } from "lucide-react";
 
 export const AboutPage: React.FC = () => {
-  const milestones = [
-    {
-      year: "2023",
-      title: "Company Inception in Salem",
-      description:
-        "Zadroit IT Solutions Private Limited officially incorporated on May 8, 2023, with a core mission to engineer enterprise-grade software and cloud architectures for Indian and global enterprises.",
-    },
-    {
-      year: "2024",
-      title: "Proprietary IP: Medpredit & ZadSports Launch",
-      description:
-        'Developed copyrighted AI diagnostic platform "Medpredit" and pioneered automated sports venue booking platform "ZadSports" integrated with proprietary IoT floodlight relays.',
-    },
-    {
-      year: "2025",
-      title: "Bangalore Innovation Hub & ZadERP",
-      description:
-        "Expanded operations to Bangalore R&D center, deployed ZadERP to over 40+ supply chain and manufacturing organizations with 99.99% uptime SLA.",
-    },
-    {
-      year: "2026",
-      title: "Global Expansion & Multi-Cloud Solutions",
-      description:
-        "Delivering high-throughput distributed systems, custom RAG AI agents, and cybersecurity audits for clients across North America, Europe, Singapore, and India.",
-    },
-  ];
-
   return (
     <div className="relative overflow-hidden pt-24 pb-16 bg-white">
       {/* Background dot matrix */}
@@ -56,7 +31,6 @@ export const AboutPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16">
         <div className="text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold mb-4">
-            {/* <Building className="w-3.5 h-3.5 text-emerald-600" /> */}
             <div className="flex items-center gap-0">
               {/* Green circle */}
               <div className="w-7 h-7 rounded-full bg-lime-400" />
@@ -77,83 +51,134 @@ export const AboutPage: React.FC = () => {
                 }}
               />
             </div>
-            About Us
+            {aboutData.badge}
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#090D16] tracking-tight font-heading leading-tight">
-            Architecting the Future of Enterprise Software & Intelligent
-            Automation
+            {aboutData.heading}
           </h1>
 
           <p className="mt-6 text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
-            Headquartered in Salem, Tamil Nadu, with research operations in
-            Bangalore, Zadroit IT Solutions Private Limited is a specialized
-            technology engineering company building high-throughput distributed
-            applications, AI diagnostic engines, and scalable multi-cloud
-            infrastructure.
+            {aboutData.subheading}
           </p>
         </div>
 
-        {/* Story & Legacy Bento */}
-        <div className="mt-14 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          <div className="lg:col-span-5">
-            <ImagePlaceholder
-              alt="Zadroit Salem Headquarters and Tech Campus"
-              category="Corporate Innovation"
-              label="Zadroit Salem Campus & Engineering Lab"
-              aspectRatio="video"
-              dimensionsHint="800 × 600"
-              iconType="service"
-            />
+        {/* ================= ABOUT STORY & METRICS BENTO (MATCHING REFERENCE TEMPLATE) ================= */}
+        <div className="mt-14 px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Left Side: 2-Row Media Collage & Geometric Accents */}
+            <div className="lg:col-span-6 space-y-4">
+              {/* Row 1: Top Image + Stack of 3 Geometric Arches/Circle */}
+              <div className="flex items-end gap-5 sm:gap-6">
+                {/* Top Image Card */}
+                <div className="flex-1 relative overflow-hidden rounded-[26px] shadow-sm bg-slate-100 aspect-[16/11]">
+                  <img
+                    src={aboutData.topImage}
+                    alt="Zadroit collaborative team"
+                    className="w-full h-full object-cover grayscale contrast-[1.12] brightness-[0.98] hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+
+                {/* Stack of 3 Geometric Shapes (2 Outline Semicircles + 1 Solid Lime-Yellow Circle) - ENLARGED */}
+                <div className="flex flex-col items-center justify-end gap-3.5 sm:gap-4 md:gap-5 pb-0.5 shrink-0">
+                  {/* Outline Arch 1 */}
+                  <div className="w-20 h-12 sm:w-26 sm:h-14 md:w-30 md:h-14 border-2 sm:border-[2.5px] border-slate-300 rounded-t-full bg-transparent" />
+                  {/* Outline Arch 2 */}
+                  <div className="w-20 h-12 sm:w-26 sm:h-14 md:w-30 md:h-14 border-2 sm:border-[2.5px] border-slate-300 rounded-t-full bg-transparent" />
+                  {/* Solid Lime-Yellow Circle */}
+                  <div className="w-20 h-20 sm:w-26 sm:h-26 md:w-30 md:h-30 rounded-full bg-[#ded725] shadow-sm" />
+                </div>
+              </div>
+
+              {/* Row 2: Bottom Wide Landscape Image */}
+              <div className="w-full">
+                {/* Bottom Wide Image Card */}
+                <div className="w-full relative overflow-hidden rounded-[26px] shadow-sm bg-slate-100 aspect-[21/10]">
+                  <img
+                    src={aboutData.bottomImage}
+                    alt="Zadroit enterprise software discussion"
+                    className="w-full h-full object-cover grayscale contrast-[1.12] brightness-[0.98] hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side: Description, Skill Sliders, and Action Button */}
+            <div className="lg:col-span-6 space-y-6 text-left">
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                {aboutData.storyDescription}
+              </p>
+
+              {/* Range Sliders / Skill Metric Bars (Dynamic from JSON) */}
+              <div className="space-y-5 pt-2">
+                {aboutData.skills.map((skill, idx) => (
+                  <div key={idx}>
+                    <div className="flex justify-between items-center text-xs sm:text-sm font-bold text-slate-900 mb-2">
+                      <span>{skill.label}</span>
+                      <span className="font-mono">{skill.percentage}%</span>
+                    </div>
+                    <div className="relative w-full h-2 rounded-full bg-[#133A27] overflow-visible">
+                      <div
+                        className="absolute top-0 left-0 h-full rounded-full bg-[#133A27]"
+                        style={{ width: `${skill.percentage}%` }}
+                      />
+                      <div
+                        className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-4.5 h-4.5 rounded-full bg-[#ded725] border-2 border-white shadow-md flex items-center justify-center cursor-pointer transition-transform hover:scale-125"
+                        style={{ left: `${skill.percentage}%` }}
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#133A27]" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Decorative Lime Pill Button */}
+              <div className="pt-3">
+                <button
+                  type="button"
+                  className="px-8 py-3 rounded-full bg-[#ded725] hover:bg-[#d3cc11] text-[#133A27] font-bold text-sm sm:text-base shadow-sm transition-all cursor-pointer"
+                >
+                  {aboutData.buttonText}
+                </button>
+              </div>
+            </div>
           </div>
-          <div className="lg:col-span-7 light-card rounded-3xl p-8 sm:p-10 space-y-6 bg-white">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-xs font-bold">
-              <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-              Our Origin & Purpose
-            </div>
 
-            <h2 className="text-2xl sm:text-3xl font-black text-[#090D16] font-heading">
-              Rooted in Engineering Rigor, Driven by Global Impact
-            </h2>
+          {/* Bottom 4-Column Key Stats Counter with Dual Capsule Separators (Dynamic from JSON) */}
+          <div className="mt-16 pt-10 border-t border-slate-200/80 grid grid-cols-2 md:grid-cols-4 gap-8 items-start">
+            {aboutData.stats.map((stat, idx) => (
+              <div key={idx} className="flex items-start gap-3">
+                <div className="relative flex items-center">
+                  {/* Vertical line */}
 
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              Founded with the belief that modern software should be impeccably
-              designed, fault-tolerant, and laser-focused on real business ROI,
-              Zadroit has grown from a specialized engineering team in Salem
-              into a full-cycle digital transformation partner.
-            </p>
+                  {/* Complete circle */}
+                  <div className="relative z-10 w-7 h-7 rounded-full bg-lime-400" />
+                  <div className="absolute left-[28px] top-1/2 -translate-y-1/2 h-[70px] w-[1.5px] bg-green-950" />
 
-            <p className="text-sm text-slate-600 leading-relaxed">
-              We bridge the gap between complex deep-tech systems (AI inference,
-              distributed Kafka pipelines, Kubernetes microservices) and
-              intuitive, high-conversion human experiences.
-            </p>
+                  {/* First half circle */}
+                  <div
+                    className="relative z-10 w-4 h-7 bg-green-950 rounded-r-full"
+                   
+                  />
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-100">
-              <div>
-                <div className="text-xs text-slate-500 font-mono">
-                  Incorporated
+                  {/* Second half circle */}
+                   <div
+                    className="relative z-10 w-4 h-7 bg-green-950 rounded-r-full"
+                   
+                  />
+
                 </div>
-                <div className="text-lg font-black text-[#133A27] font-heading">
-                  May 8, 2023
+                <div>
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#090D16] font-heading tracking-tight">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs sm:text-sm text-slate-500 font-medium mt-1">
+                    {stat.label}
+                  </div>
                 </div>
               </div>
-              <div>
-                <div className="text-xs text-slate-500 font-mono">CIN</div>
-                <div className="text-xs font-bold text-amber-700 font-mono truncate">
-                  {companyInfo.cin}
-                </div>
-              </div>
-              <div>
-                <div className="text-xs text-slate-500 font-mono">
-                  Delivery Model
-                </div>
-                <div className="text-lg font-black text-emerald-700 font-heading">
-                  Global Agile
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -166,13 +191,10 @@ export const AboutPage: React.FC = () => {
               <Eye className="w-6 h-6 text-[#133A27]" />
             </div>
             <h3 className="text-2xl font-black text-[#090D16] font-heading mb-3">
-              Our Vision
+              {aboutData.vision.title}
             </h3>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              To be recognized as the premier global engineering powerhouse that
-              turns complex computational challenges into elegant,
-              hyper-scalable software, shaping how enterprises automate
-              intelligence in the AI era.
+              {aboutData.vision.description}
             </p>
           </div>
 
@@ -181,13 +203,10 @@ export const AboutPage: React.FC = () => {
               <Target className="w-6 h-6 text-amber-600" />
             </div>
             <h3 className="text-2xl font-black text-[#090D16] font-heading mb-3">
-              Our Mission
+              {aboutData.mission.title}
             </h3>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              To empower startups and established enterprises with resilient
-              software architectures, state-of-the-art AI tooling, and
-              transparent agile delivery that drives exponential operational
-              efficiency and sustainable revenue growth.
+              {aboutData.mission.description}
             </p>
           </div>
         </div>
@@ -240,7 +259,7 @@ export const AboutPage: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          {milestones.map((m, idx) => (
+          {milestonesData.map((m, idx) => (
             <div
               key={idx}
               className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm relative"

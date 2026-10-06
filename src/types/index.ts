@@ -204,8 +204,46 @@ export interface ValueItem {
   highlight: string;
 }
 
+export interface AboutSkill {
+  label: string;
+  percentage: number;
+}
+
+export interface AboutStat {
+  value: string;
+  label: string;
+}
+
+export interface MilestoneItem {
+  year: string;
+  title: string;
+  description: string;
+}
+
+export interface AboutData {
+  badge: string;
+  heading: string;
+  subheading: string;
+  storyDescription: string;
+  topImage: string;
+  bottomImage: string;
+  skills: AboutSkill[];
+  buttonText: string;
+  stats: AboutStat[];
+  vision: {
+    title: string;
+    description: string;
+  };
+  mission: {
+    title: string;
+    description: string;
+  };
+  milestones: MilestoneItem[];
+}
+
 export interface WebsiteDataSchema {
   company: CompanyInfo;
+  about: AboutData;
   navItems: NavItem[];
   services: Service[];
   products: Product[];
@@ -224,3 +262,4 @@ export interface WebsiteDataSchema {
     level: string;
   }[];
 }
+

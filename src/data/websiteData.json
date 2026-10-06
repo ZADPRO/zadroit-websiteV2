@@ -1114,5 +1114,76 @@
     { "name": "PyTorch / AI", "category": "Data Science", "level": "Advanced" },
     { "name": "Kafka", "category": "Streaming", "level": "Advanced" },
     { "name": "Figma", "category": "UI/UX", "level": "Expert" }
-  ]
+  ],
+  "about": {
+    "badge": "About Us",
+    "heading": "Architecting the Future of Enterprise Software & Intelligent Automation",
+    "subheading": "Headquartered in Salem, Tamil Nadu, with research operations in Bangalore, Zadroit IT Solutions Private Limited is a specialized technology engineering company building high-throughput distributed applications, AI diagnostic engines, and scalable multi-cloud infrastructure.",
+    "storyDescription": "Founded with the belief that modern software should be impeccably designed, fault-tolerant, and laser-focused on real business ROI, Zadroit has grown from a specialized engineering team in Salem into a full-cycle digital transformation partner delivering high-throughput enterprise systems, cloud infrastructures, and AI automation.",
+    "topImage": "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop",
+    "bottomImage": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200&auto=format&fit=crop",
+    "skills": [
+      {
+        "label": "Marketing & Business Growth",
+        "percentage": 85
+      },
+      {
+        "label": "Creativity & Innovation",
+        "percentage": 80
+      },
+      {
+        "label": "Business & Financial Management",
+        "percentage": 95
+      }
+    ],
+    "buttonText": "Explore More",
+    "stats": [
+      {
+        "value": "3k+",
+        "label": "Successful Projects"
+      },
+      {
+        "value": "200+",
+        "label": "Expert Team"
+      },
+      {
+        "value": "350+",
+        "label": "Happy Customers"
+      },
+      {
+        "value": "16+",
+        "label": "Years of Experience"
+      }
+    ],
+    "vision": {
+      "title": "Our Vision",
+      "description": "To be recognized as the premier global engineering powerhouse that turns complex computational challenges into elegant, hyper-scalable software, shaping how enterprises automate intelligence in the AI era."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "To empower startups and established enterprises with resilient software architectures, state-of-the-art AI tooling, and transparent agile delivery that drives exponential operational efficiency and sustainable revenue growth."
+    },
+    "milestones": [
+      {
+        "year": "2023",
+        "title": "Company Inception in Salem",
+        "description": "Zadroit IT Solutions Private Limited officially incorporated on May 8, 2023, with a core mission to engineer enterprise-grade software and cloud architectures for Indian and global enterprises."
+      },
+      {
+        "year": "2024",
+        "title": "Proprietary IP: Medpredit & ZadSports Launch",
+        "description": "Developed copyrighted AI diagnostic platform \"Medpredit\" and pioneered automated sports venue booking platform \"ZadSports\" integrated with proprietary IoT floodlight relays."
+      },
+      {
+        "year": "2025",
+        "title": "Bangalore Innovation Hub & ZadERP",
+        "description": "Expanded operations to Bangalore R&D center, deployed ZadERP to over 40+ supply chain and manufacturing organizations with 99.99% uptime SLA."
+      },
+      {
+        "year": "2026",
+        "title": "Global Expansion & Multi-Cloud Solutions",
+        "description": "Delivering high-throughput distributed systems, custom RAG AI agents, and cybersecurity audits for clients across North America, Europe, Singapore, and India."
+      }
+    ]
+  }
 }
