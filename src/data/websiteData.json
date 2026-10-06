@@ -1,0 +1,1118 @@
+{
+  "company": {
+    "name": "Zadroit IT Solutions",
+    "tagline": "Architecting Next-Gen Enterprise Software & Intelligent Cloud Systems",
+    "subTagline": "We partner with visionary startups and global enterprises to engineer scalable software, AI-driven automation, and hyper-responsive digital experiences.",
+    "foundedYear": 2023,
+    "cin": "U62091TZ2023PTC028324",
+    "headquarters": {
+      "city": "Salem",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "address": "4/128, Tech Park Avenue, Meyyanur",
+      "landmark": "Near IT Highway Corridor",
+      "pincode": "636004",
+      "mapEmbedUrl": "https://maps.google.com"
+    },
+    "branches": [
+      {
+        "name": "Bangalore Innovation Hub",
+        "city": "Bengaluru",
+        "address": "HSR Layout, Sector 4, Silicon Oasis",
+        "type": "Engineering & R&D"
+      },
+      {
+        "name": "Chennai Client Operations",
+        "city": "Chennai",
+        "address": "OMR IT Express Way, Navalur",
+        "type": "Client Success & Delivery"
+      }
+    ],
+    "contact": {
+      "primaryEmail": "contact@zadroit.com",
+      "supportEmail": "support@zadroit.com",
+      "careersEmail": "careers@zadroit.com",
+      "salesEmail": "sales@zadroit.com",
+      "primaryPhone": "+91 98427 89100",
+      "supportPhone": "+91 80 4120 7800",
+      "workingHours": "Mon - Fri: 9:00 AM - 7:00 PM IST (24/7 On-Call Support)"
+    },
+    "socialLinks": [
+      {
+        "platform": "LinkedIn",
+        "url": "https://linkedin.com/company/zadroit-it-solutions",
+        "icon": "Linkedin"
+      },
+      {
+        "platform": "Twitter / X",
+        "url": "https://x.com/zadroit_tech",
+        "icon": "Twitter"
+      },
+      {
+        "platform": "GitHub",
+        "url": "https://github.com/zadroit-tech",
+        "icon": "Github"
+      },
+      {
+        "platform": "Instagram",
+        "url": "https://instagram.com/zadroit_official",
+        "icon": "Instagram"
+      }
+    ],
+    "stats": {
+      "projectsCompleted": "85+",
+      "clientSatisfaction": "99.4%",
+      "enterpriseClients": "40+",
+      "uptimeSLA": "99.99%",
+      "yearsOfExcellence": "3+",
+      "expertEngineers": "50+"
+    }
+  },
+  "navItems": [
+    { "id": "home", "label": "Home", "path": "#home" },
+    { "id": "about", "label": "About", "path": "#about" },
+    { "id": "services", "label": "Services", "path": "#services", "badge": "Hot" },
+    { "id": "products", "label": "Products", "path": "#products", "badge": "New" },
+    { "id": "blog", "label": "Blog", "path": "#blog" },
+    { "id": "careers", "label": "Careers", "path": "#careers", "badge": "We're Hiring" },
+    { "id": "contact", "label": "Contact", "path": "#contact" }
+  ],
+  "services": [
+    {
+      "id": "enterprise-software",
+      "title": "Enterprise Software Engineering",
+      "slug": "enterprise-software-engineering",
+      "shortDesc": "High-throughput, distributed ERP, CRM, and workflow automation systems built for mission-critical scale.",
+      "fullDesc": "We engineer robust custom enterprise software designed to streamline operations, eliminate silos, and unify multi-department workflows. From complex ERP architectures and real-time inventory systems to custom financial hubs, our solutions ensure bulletproof fault tolerance, high concurrency, and zero downtime.",
+      "category": "Enterprise Software",
+      "icon": "Building2",
+      "deliverables": [
+        "Modular Multi-tenant Architecture",
+        "Legacy Codebase Modernization",
+        "Microservices & Event-Driven Pipelines",
+        "Enterprise Data Warehouse Integration",
+        "Role-Based Access Control (RBAC) & Audit Logs"
+      ],
+      "techStack": ["React", "Node.js", "Java Spring Boot", "PostgreSQL", "Kafka", "Docker", "Kubernetes"],
+      "highlights": [
+        "Scales to 1M+ daily transactions",
+        "Sub-100ms API response benchmark",
+        "SOC2 & ISO 27001 compliant architecture"
+      ],
+      "roiMetric": "45% Reduction in Operational Overhead",
+      "startingPrice": "$4,500",
+      "deliveryTimeline": "4 - 12 Weeks",
+      "isPopular": true,
+      "imagePlaceholder": "/assets/placeholders/service-enterprise.svg"
+    },
+    {
+      "id": "cloud-devops",
+      "title": "Cloud Architecture & DevOps Automation",
+      "slug": "cloud-devops-automation",
+      "shortDesc": "Automated CI/CD pipelines, Kubernetes container orchestration, and multi-cloud infrastructure as code.",
+      "fullDesc": "Accelerate release frequency and minimize cloud infrastructure spend with Zadroit's cloud-native DevOps engineering. We architect zero-downtime blue/green deployment pipelines, auto-scaling serverless workflows, and comprehensive observability dashboards on AWS, Azure, and Google Cloud.",
+      "category": "Cloud & DevOps",
+      "icon": "CloudLightning",
+      "deliverables": [
+        "Infrastructure as Code (Terraform / Pulumi)",
+        "Automated CI/CD Pipeline (GitHub Actions / GitLab)",
+        "Kubernetes & Service Mesh (Istio / Helm)",
+        "Cloud Cost Optimization (FinOps Audit)",
+        "24/7 Monitoring with Prometheus & Grafana"
+      ],
+      "techStack": ["AWS", "Google Cloud", "Terraform", "Docker", "Kubernetes", "Helm", "Prometheus"],
+      "highlights": [
+        "Zero-downtime continuous deployment",
+        "Up to 35% reduction in cloud monthly burn",
+        "Automated disaster recovery in < 5 minutes"
+      ],
+      "roiMetric": "3.5x Faster Deployment Cycles",
+      "startingPrice": "$3,200",
+      "deliveryTimeline": "3 - 8 Weeks",
+      "isPopular": false,
+      "imagePlaceholder": "/assets/placeholders/service-cloud.svg"
+    },
+    {
+      "id": "ai-data-intelligence",
+      "title": "AI & Machine Learning Solutions",
+      "slug": "ai-ml-data-intelligence",
+      "shortDesc": "Predictive analytics engines, custom LLM agents, NLP pipelines, and computer vision models.",
+      "fullDesc": "Harness the power of AI to automate intelligence across your enterprise. We build custom machine learning predictive models, intelligent Retrieval-Augmented Generation (RAG) agents, automated medical/financial diagnostic tools, and automated OCR processing engines tailored to your proprietary datasets.",
+      "category": "AI & Data Intelligence",
+      "icon": "BrainCircuit",
+      "deliverables": [
+        "Custom LLM Fine-Tuning & RAG Pipelines",
+        "Predictive Modeling & Forecasting Engines",
+        "Computer Vision & OCR Data Extraction",
+        "Automated Business Workflow Agents",
+        "MLOps Model Lifecycle & Drift Monitoring"
+      ],
+      "techStack": ["Python", "PyTorch", "LangChain", "OpenAI / Claude API", "FastAPI", "Pinecone", "MLflow"],
+      "highlights": [
+        "Custom trained on your confidential data",
+        "Real-time inference with sub-second latency",
+        "Air-gapped on-premise AI deployment available"
+      ],
+      "roiMetric": "60% Faster Decision-Making Speed",
+      "startingPrice": "$5,000",
+      "deliveryTimeline": "4 - 10 Weeks",
+      "isPopular": true,
+      "imagePlaceholder": "/assets/placeholders/service-ai.svg"
+    },
+    {
+      "id": "web-mobile-apps",
+      "title": "Full-Stack Web & Cross-Platform Mobile Apps",
+      "slug": "web-mobile-application-development",
+      "shortDesc": "Ultra-fast Next.js/React web platforms and native-feel Flutter/React Native iOS and Android apps.",
+      "fullDesc": "Delight your users across web, tablets, and smartphones with pixel-perfect, hyper-responsive digital apps. We engineer frontends with blazing performance, offline capabilities, secure biometrics, real-time WebSockets, and seamless payment gateway integrations.",
+      "category": "Web & Mobile Apps",
+      "icon": "Smartphone",
+      "deliverables": [
+        "Universal Cross-Platform Mobile Apps (iOS & Android)",
+        "SEO-Optimized Next.js & React Web Apps",
+        "Real-Time Chat & Push Notification Engines",
+        "Stripe, Razorpay & Multi-currency Gateways",
+        "Progressive Web App (PWA) Offline Caching"
+      ],
+      "techStack": ["React 19", "Next.js", "TypeScript", "React Native", "Flutter", "Tailwind CSS", "GraphQL"],
+      "highlights": [
+        "Lighthouse performance score 95+",
+        "Single shared codebase for iOS & Android",
+        "Sub-second page navigation with SSR/SSG"
+      ],
+      "roiMetric": "80% Reduction in Mobile Development Time",
+      "startingPrice": "$3,800",
+      "deliveryTimeline": "4 - 8 Weeks",
+      "isPopular": false,
+      "imagePlaceholder": "/assets/placeholders/service-mobile.svg"
+    },
+    {
+      "id": "uiux-design",
+      "title": "UI/UX & Product Experience Design",
+      "slug": "uiux-product-experience-design",
+      "shortDesc": "Human-centric digital design systems, user journey wireframes, dynamic prototypes, and conversion funnels.",
+      "fullDesc": "We transform complex digital products into intuitive, elegant, and addictively simple user experiences. Following an iterative design methodology from user research and interactive wireframing to design tokens in Figma and micro-interactions, we ensure high conversion and user retention.",
+      "category": "UI/UX & Product Design",
+      "icon": "Palette",
+      "deliverables": [
+        "Figma Design Systems & Scalable UI Kits",
+        "Interactive Clickable Prototypes",
+        "User Journey Mapping & Information Architecture",
+        "Usability Testing & Conversion Rate Optimization",
+        "Developer Hand-off Specs & Component Tokens"
+      ],
+      "techStack": ["Figma", "Design Tokens", "Framer", "Adobe CC", "Tailwind Design", "Lottie Animations"],
+      "highlights": [
+        "Pixel-perfect auto-layout components",
+        "Full WCAG 2.1 AA accessibility compliance",
+        "Production-ready design-to-code tokens"
+      ],
+      "roiMetric": "2.8x Increase in Conversion Rate",
+      "startingPrice": "$2,500",
+      "deliveryTimeline": "2 - 5 Weeks",
+      "isPopular": false,
+      "imagePlaceholder": "/assets/placeholders/service-uiux.svg"
+    },
+    {
+      "id": "cybersecurity-audit",
+      "title": "Cybersecurity, Penetration Testing & Audits",
+      "slug": "cybersecurity-vapt-auditing",
+      "shortDesc": "End-to-end vulnerability assessment (VAPT), Zero-Trust security postures, and compliance certifications.",
+      "fullDesc": "Shield your digital infrastructure from advanced persistent threats, data breaches, and zero-day vulnerabilities. Our certified security specialists conduct deep black-box & white-box penetration testing, API vulnerability audits, OWASP Top 10 remediation, and security compliance roadmaps.",
+      "category": "Cybersecurity & Auditing",
+      "icon": "ShieldCheck",
+      "deliverables": [
+        "Web Application & API Penetration Testing (VAPT)",
+        "Cloud Security Posture Assessment (AWS / GCP / Azure)",
+        "Zero-Trust Network & IAM Architecture",
+        "OWASP Top 10 Vulnerability Remediation Guide",
+        "GDPR, HIPAA & ISO 27001 Readiness Audit"
+      ],
+      "techStack": ["OWASP ZAP", "Burp Suite", "SonarQube", "Wazuh", "Snyk", "HashiCorp Vault"],
+      "highlights": [
+        "Comprehensive executive and technical reports",
+        "Zero false-positive verification",
+        "Post-fix re-testing included"
+      ],
+      "roiMetric": "100% Audit Compliance Readiness",
+      "startingPrice": "$2,900",
+      "deliveryTimeline": "2 - 4 Weeks",
+      "isPopular": false,
+      "imagePlaceholder": "/assets/placeholders/service-security.svg"
+    }
+  ],
+  "products": [
+    {
+      "id": "zaderp",
+      "name": "ZadERP",
+      "tagline": "Next-Gen Intelligent Enterprise Resource Planning Suite",
+      "badge": "Flagship Platform",
+      "category": "Enterprise",
+      "shortDesc": "All-in-one cloud ERP unifies finance, inventory, multi-warehouse logistics, HRMS, and automated invoicing with real-time analytics.",
+      "fullDesc": "ZadERP is a modular enterprise resource planning platform tailored for agile mid-sized and large enterprises. It features end-to-end supply chain visibility, automated GST/tax compliance, smart reorder triggers, custom dashboard widgets, and seamless third-party ERP migration.",
+      "features": [
+        {
+          "title": "Smart Inventory & Multi-Warehouse Sync",
+          "description": "Real-time stock tracking across 50+ locations with barcode scanning and AI demand forecasting."
+        },
+        {
+          "title": "Automated Billing & Tax Compliance",
+          "description": "Instant e-invoicing, e-way bills generation, and automated reconciliation with bank feeds."
+        },
+        {
+          "title": "Comprehensive HRMS & Payroll",
+          "description": "Biometric attendance integration, automated salary slips, leave tracking, and employee self-service portal."
+        },
+        {
+          "title": "Role-Based Access & Audit Trails",
+          "description": "Granular permissions, multi-level approval workflows, and immutable timestamped action logs."
+        }
+      ],
+      "techBadges": ["React 19", "Node.js", "PostgreSQL", "Redis", "Docker", "REST & GraphQL"],
+      "metrics": [
+        { "label": "Time Saved in Billing", "value": "72%" },
+        { "label": "Active Daily Users", "value": "12,000+" },
+        { "label": "Uptime SLA", "value": "99.99%" }
+      ],
+      "imagePlaceholder": "/assets/placeholders/product-zaderp.svg",
+      "demoUrl": "#contact",
+      "status": "Flagship",
+      "pricingNote": "Custom enterprise licensing & modular subscription models available."
+    },
+    {
+      "id": "medpredit",
+      "name": "Medpredit",
+      "tagline": "AI-Driven Clinical Triage & Predictive Health Intelligence",
+      "badge": "Healthcare AI",
+      "category": "Healthcare AI",
+      "shortDesc": "Copyrighted clinical analytics application utilizing deep learning to predict patient health risks, streamline triage, and assist medical diagnostics.",
+      "fullDesc": "Medpredit is Zadroit's proprietary healthcare technology platform that harnesses predictive machine learning algorithms to assist hospitals and doctors. It evaluates historical vitals, lab reports, and patient symptomatology to deliver early warning scores and risk assessments.",
+      "features": [
+        {
+          "title": "Predictive Risk Scoring Engine",
+          "description": "Multi-variable analysis detecting early deterioration indicators for ICU and outpatient wards."
+        },
+        {
+          "title": "HL7 & FHIR Interoperability",
+          "description": "Direct plug-and-play integration with existing Hospital Information Systems (HIS) and EHR databases."
+        },
+        {
+          "title": "Automated Clinical Documentation",
+          "description": "Speech-to-text medical transcription and structured diagnostic summary generation."
+        },
+        {
+          "title": "HIPAA-Compliant Encrypted Vault",
+          "description": "End-to-end 256-bit encryption for all protected health information (PHI) at rest and in transit."
+        }
+      ],
+      "techBadges": ["Python AI", "PyTorch", "FastAPI", "FHIR / HL7", "PostgreSQL", "AWS HealthLake"],
+      "metrics": [
+        { "label": "Diagnostic Accuracy", "value": "96.4%" },
+        { "label": "Triage Speedup", "value": "4.2x" },
+        { "label": "Patient Records Analyzed", "value": "250K+" }
+      ],
+      "imagePlaceholder": "/assets/placeholders/product-medpredit.svg",
+      "demoUrl": "#contact",
+      "status": "Active Deployment",
+      "pricingNote": "Hospital SaaS tier or on-premise deployment with custom SLA."
+    },
+    {
+      "id": "zadsports",
+      "name": "ZadSports",
+      "tagline": "Smart Sports Ground Booking & Tournament Management Platform",
+      "badge": "Sports Tech",
+      "category": "Sports Tech",
+      "shortDesc": "High-speed turf booking, tournament scheduling, player scoreboards, and automated venue light automation platform.",
+      "fullDesc": "ZadSports modernizes the sports and recreational industry by connecting sports enthusiasts, turf owners, and tournament organizers. Features instant slot booking, dynamic surge pricing, IoT venue light controller integration, and live match score sharing.",
+      "features": [
+        {
+          "title": "Instant Turf & Court Slot Booking",
+          "description": "Interactive visual calendar with instant UPI/Card payments and QR code check-in passes."
+        },
+        {
+          "title": "Tournament Bracket & Live Scores",
+          "description": "Automated knockout & league tournament fixture generator with real-time digital score updates."
+        },
+        {
+          "title": "IoT Floodlight & Access Automation",
+          "description": "Automated switching of venue lighting synced directly to confirmed paid bookings."
+        },
+        {
+          "title": "Turf Owner Business Dashboard",
+          "description": "Daily revenue analytics, customer retention metrics, member subscriptions, and expense manager."
+        }
+      ],
+      "techBadges": ["Flutter Mobile", "React Web", "Node.js", "Firebase", "Razorpay", "MQTT IoT"],
+      "metrics": [
+        { "label": "Bookings Processed", "value": "45,000+" },
+        { "label": "Partner Sports Venues", "value": "80+" },
+        { "label": "Booking Completion Time", "value": "< 15s" }
+      ],
+      "imagePlaceholder": "/assets/placeholders/product-zadsports.svg",
+      "demoUrl": "https://zadsports.com",
+      "status": "Production Ready",
+      "pricingNote": "Pay-as-you-go commission model or Flat venue subscription."
+    },
+    {
+      "id": "zadcloud",
+      "name": "ZadCloud",
+      "tagline": "Multi-Cloud Governance, FinOps & Infrastructure Orchestrator",
+      "badge": "Cloud Platform",
+      "category": "Cloud Infrastructure",
+      "shortDesc": "Centralized pane of glass for managing AWS, Azure, and GCP clusters with automated cost anomaly detection.",
+      "fullDesc": "ZadCloud gives CTOs and DevOps teams unified control over multi-cloud deployments. It actively scans for idle compute instances, security misconfigurations, and container drift while providing automated 1-click cloud optimization recipes.",
+      "features": [
+        {
+          "title": "Automated FinOps Cost Saver",
+          "description": "Identifies orphaned EBS volumes, oversized RDS instances, and suggests reserved capacity plans."
+        },
+        {
+          "title": "Universal Kubernetes Fleet Manager",
+          "description": "Manage clusters across regions with centralized policy enforcement and GitOps synchronization."
+        },
+        {
+          "title": "Continuous Compliance Guardrails",
+          "description": "Real-time compliance checks against CIS Benchmarks, SOC2, and PCI-DSS standards."
+        }
+      ],
+      "techBadges": ["Golang", "Rust", "React", "Kubernetes Operator", "Terraform", "OpenTelemetry"],
+      "metrics": [
+        { "label": "Avg Monthly Savings", "value": "32%" },
+        { "label": "Clusters Managed", "value": "350+" },
+        { "label": "Security Checks/sec", "value": "10,000+" }
+      ],
+      "imagePlaceholder": "/assets/placeholders/product-zadcloud.svg",
+      "demoUrl": "#contact",
+      "status": "Enterprise Beta",
+      "pricingNote": "Tiered usage pricing based on connected cloud assets."
+    },
+    {
+      "id": "zadcommerce",
+      "name": "ZadCommerce",
+      "tagline": "Headless B2B & B2C Omnichannel Digital Storefront",
+      "badge": "Omnichannel Commerce",
+      "category": "E-Commerce",
+      "shortDesc": "Sub-second page load headless ecommerce engine with custom checkout, B2B wholesale portals, and omnichannel inventory.",
+      "fullDesc": "Engineered for brands that need lightning-speed performance and complete design freedom. ZadCommerce decouples the frontend from complex backend inventory and ERP systems, enabling seamless omnichannel buying journeys across web, mobile apps, and kiosks.",
+      "features": [
+        {
+          "title": "Sub-Second Edge Checkout",
+          "description": "Ultra-optimized 1-step checkout with global payment methods and instant address autofill."
+        },
+        {
+          "title": "B2B Wholesale & Credit Accounts",
+          "description": "Tiered customer pricing, custom quote generation, minimum order quantity rules, and credit terms."
+        },
+        {
+          "title": "Omnichannel Inventory Sync",
+          "description": "Instant synchronization with offline POS stores, Amazon, Shopify, and warehouse hubs."
+        }
+      ],
+      "techBadges": ["Next.js 15", "GraphQL", "Tailwind CSS", "Stripe Connect", "PostgreSQL", "Algolia"],
+      "metrics": [
+        { "label": "Lighthouse Score", "value": "99/100" },
+        { "label": "Checkout Conversion Lift", "value": "+38%" },
+        { "label": "Catalog Capacity", "value": "500K+ SKUs" }
+      ],
+      "imagePlaceholder": "/assets/placeholders/product-zadcommerce.svg",
+      "demoUrl": "#contact",
+      "status": "Production Ready",
+      "pricingNote": "Custom build or managed hosted commerce engine."
+    },
+    {
+      "id": "zadpulse",
+      "name": "ZadPulse",
+      "tagline": "Real-Time Industrial IoT & Telemetry Analytics Engine",
+      "badge": "IoT & Telemetry",
+      "category": "IoT & Analytics",
+      "shortDesc": "High-frequency telemetry ingestion engine providing real-time equipment health monitoring and predictive maintenance alerts.",
+      "fullDesc": "ZadPulse connects factory floor PLCs, smart energy meters, and fleet sensors into a live telemetry analytics platform. It ingests 50,000+ data points per second, executing anomaly detection algorithms to prevent costly machinery breakdown.",
+      "features": [
+        {
+          "title": "High-Throughput Timeseries Ingestion",
+          "description": "Built on distributed timeseries databases handling billions of sensor events without latency."
+        },
+        {
+          "title": "Predictive Maintenance Triggers",
+          "description": "Vibration, temperature, and current anomaly detection predicting failure 48 hours in advance."
+        },
+        {
+          "title": "Interactive Plant Floor Dashboards",
+          "description": "3D interactive facility digital twin with live component heatmaps and instant incident alerting."
+        }
+      ],
+      "techBadges": ["Kafka", "ClickHouse", "Go", "WebSockets", "Three.js", "Grafana API"],
+      "metrics": [
+        { "label": "Sensor Ingestion Rate", "value": "50K/sec" },
+        { "label": "Downtime Prevention", "value": "84%" },
+        { "label": "Telemetry Latency", "value": "< 80ms" }
+      ],
+      "imagePlaceholder": "/assets/placeholders/product-zadpulse.svg",
+      "demoUrl": "#contact",
+      "status": "Production Ready",
+      "pricingNote": "Industrial SaaS or On-Premise Gateway Appliance."
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": "enterprise-cloud-migration-guide",
+      "title": "The 2026 Enterprise Blueprint for Zero-Downtime Cloud Migration",
+      "slug": "enterprise-cloud-migration-blueprint",
+      "excerpt": "A deep dive into migrating legacy monolithic databases to distributed multi-cloud architectures with zero service interruptions.",
+      "content": [
+        "Migrating legacy monolithic workloads to modern cloud infrastructure is often hailed as the ultimate milestone for enterprise agility. However, traditional 'lift-and-shift' models frequently fail to deliver expected cost efficiencies or reliability improvements.",
+        "In this comprehensive blueprint, we break down Zadroit's 4-phase zero-downtime migration framework: Continuous CDC (Change Data Capture) replication, canary cutover routing, strangler pattern microservices decoupling, and automated rollback guardrails.",
+        "By utilizing distributed event meshes like Apache Kafka alongside Terraform infrastructure orchestration, enterprise teams can achieve 99.99% availability throughout the cutover lifecycle without losing a single database transaction.",
+        "Key takeaways include strategies for managing database locks during multi-terabyte table migration, optimizing VPC peering latencies, and implementing real-time data validation tests."
+      ],
+      "author": {
+        "name": "Karthik Subramanian",
+        "role": "Principal Cloud Architect",
+        "avatarPlaceholder": "/assets/placeholders/team-karthik.svg"
+      },
+      "publishedDate": "Oct 02, 2026",
+      "readTime": "6 min read",
+      "category": "Cloud Architecture",
+      "tags": ["Cloud Migration", "DevOps", "Kubernetes", "Database Architecture"],
+      "coverImagePlaceholder": "/assets/placeholders/blog-cloud.svg",
+      "featured": true
+    },
+    {
+      "id": "building-rag-agents-for-healthcare",
+      "title": "Architecting High-Precision RAG AI Agents for Clinical Decision Support",
+      "slug": "building-rag-agents-healthcare",
+      "excerpt": "How Medpredit engineers combine specialized medical LLMs, vector search, and strict HIPAA guardrails for clinical accuracy.",
+      "content": [
+        "Generative AI in healthcare requires unmatched precision; hallucinations can have critical real-world implications. In developing the Medpredit platform, our AI engineering team established a deterministic retrieval pipeline with multi-stage verification.",
+        "We discuss our approach to hybrid vector-keyword retrieval (BM25 + Dense Semantic Embeddings), custom embedding fine-tuning on specialized medical ontologies (SNOMED-CT and ICD-11), and self-correcting agentic validation loops.",
+        "Additionally, we explore how air-gapped local model deployment ensures that Protected Health Information (PHI) never leaves the hospital's private perimeter.",
+        "Learn how these innovations reduced clinical diagnosis query latency by 68% while maintaining a verified 96.4% diagnostic concordance rate."
+      ],
+      "author": {
+        "name": "Dr. Ananya Ramesh",
+        "role": "Lead AI & Data Scientist",
+        "avatarPlaceholder": "/assets/placeholders/team-ananya.svg"
+      },
+      "publishedDate": "Sep 24, 2026",
+      "readTime": "8 min read",
+      "category": "AI & Innovation",
+      "tags": ["AI & ML", "Healthcare Tech", "LLM", "Data Science"],
+      "coverImagePlaceholder": "/assets/placeholders/blog-ai.svg",
+      "featured": true
+    },
+    {
+      "id": "micro-frontends-design-systems-2026",
+      "title": "Scaling Design Systems across Multi-Brand Micro-Frontends",
+      "slug": "scaling-design-systems-micro-frontends",
+      "excerpt": "How to maintain brand harmony, design tokens, and ultra-fast UI rendering across dozens of decoupled web applications.",
+      "content": [
+        "As organizations scale beyond a single web app into multiple product ecosystems, maintaining visual coherence and design velocity becomes a major hurdle.",
+        "This article explores how Zadroit engineers combine Tailwind CSS token pipelines, Web Components, and module federation to share design primitives across React, Vue, and vanilla applications.",
+        "We discuss atomic design principles, automated Figma-to-CSS variable sync via GitHub Actions, and accessibility test automation with axe-core.",
+        "Read on to learn how this unified token architecture reduced frontend developer ramp-up time by 50% across our enterprise client projects."
+      ],
+      "author": {
+        "name": "Praveen Kumar",
+        "role": "Head of UI/UX & Design Systems",
+        "avatarPlaceholder": "/assets/placeholders/team-praveen.svg"
+      },
+      "publishedDate": "Sep 12, 2026",
+      "readTime": "5 min read",
+      "category": "UI/UX Design",
+      "tags": ["Design Systems", "Figma", "UI/UX", "Frontend Architecture"],
+      "coverImagePlaceholder": "/assets/placeholders/blog-design.svg",
+      "featured": false
+    },
+    {
+      "id": "sports-facility-iot-automation",
+      "title": "The Engineering Behind ZadSports: Real-Time IoT Turf Automation",
+      "slug": "sports-facility-iot-automation",
+      "excerpt": "Connecting web booking payments to hardware relays: How we automated floodlight switching and venue access control.",
+      "content": [
+        "Managing high-turnover sports facilities requires synchronous orchestration between online payment confirmation, customer notifications, and physical venue hardware.",
+        "In this case study, we reveal the IoT gateway architecture powering ZadSports venues. When a user books a cricket turf or badminton court on the mobile app, an encrypted MQTT payload is dispatched to the onsite edge controller.",
+        "The edge gateway authenticates the session, verifies power grid safety, and automatically activates the venue's floodlights precisely at the scheduled start time—shutting them down cleanly at the expiration bell.",
+        "Discover how this automated architecture reduced turf electricity wastage by 28% and eliminated 100% of unauthorized slot overlaps."
+      ],
+      "author": {
+        "name": "Dinesh Raj",
+        "role": "IoT & Embedded Systems Lead",
+        "avatarPlaceholder": "/assets/placeholders/team-dinesh.svg"
+      },
+      "publishedDate": "Aug 29, 2026",
+      "readTime": "7 min read",
+      "category": "Product Strategy",
+      "tags": ["IoT", "Embedded Tech", "Sports Tech", "Mobile App"],
+      "coverImagePlaceholder": "/assets/placeholders/blog-iot.svg",
+      "featured": false
+    },
+    {
+      "id": "zero-trust-cybersecurity-handbook",
+      "title": "Implementing Zero-Trust Architecture in Modern SaaS Platforms",
+      "slug": "zero-trust-architecture-saas",
+      "excerpt": "Why traditional perimeter security is obsolete, and how to implement continuous mutual TLS and granular role policies.",
+      "content": [
+        "In a distributed workforce and cloud-native era, trusting any device or network simply because it is behind an office firewall is a recipe for catastrophic breach.",
+        "Zero-Trust enforces a simple tenet: 'Never trust, always verify.' Every single API request, microservice call, and user session must be strictly authenticated, authorized, and encrypted.",
+        "We outline how Zadroit implements mTLS with HashiCorp Vault, dynamic short-lived JWT tokens, and automated anomaly detection to prevent privilege escalation attacks.",
+        "A must-read for CTOs, CISOs, and engineering managers preparing for SOC2 Type II audits."
+      ],
+      "author": {
+        "name": "Vigneshwaran S",
+        "role": "Chief Information Security Officer",
+        "avatarPlaceholder": "/assets/placeholders/team-vignesh.svg"
+      },
+      "publishedDate": "Aug 15, 2026",
+      "readTime": "6 min read",
+      "category": "Cybersecurity",
+      "tags": ["Cybersecurity", "Zero Trust", "DevSecOps", "Cloud Security"],
+      "coverImagePlaceholder": "/assets/placeholders/blog-security.svg",
+      "featured": false
+    }
+  ],
+  "jobOpenings": [
+    {
+      "id": "senior-fullstack-engineer",
+      "title": "Senior Full-Stack Engineer (React / Node / Go)",
+      "department": "Engineering",
+      "location": "Salem / Bangalore / Hybrid",
+      "type": "Full-Time",
+      "experience": "4 - 7 Years",
+      "salaryRange": "₹12,00,000 - ₹22,00,000 P.A. + Stock Options",
+      "shortDesc": "Join our core product engineering team to build scalable microservices, distributed queues, and sleek web interfaces for ZadERP and enterprise clients.",
+      "responsibilities": [
+        "Architect and maintain high-throughput backend APIs using Node.js, Go, and PostgreSQL.",
+        "Craft pixel-perfect, accessible, and hyper-responsive frontends with React 19 and Next.js.",
+        "Design distributed message processing pipelines with Redis, Kafka, and BullMQ.",
+        "Collaborate with UI/UX designers and product managers to rapidly turn Figma prototypes into production code.",
+        "Mentor junior developers and participate in rigorous code reviews and architecture design documents."
+      ],
+      "requirements": [
+        "Proven experience building and shipping production web applications at scale.",
+        "Deep mastery of TypeScript, modern React, asynchronous Node.js, and SQL databases.",
+        "Strong understanding of RESTful API design, GraphQL, and microservices concepts.",
+        "Experience with Docker, CI/CD pipelines, and cloud platforms (AWS or GCP).",
+        "Excellent problem-solving skills and passion for clean, self-documenting code."
+      ],
+      "skills": ["React 19", "Node.js", "TypeScript", "PostgreSQL", "Go", "Docker", "Redis"],
+      "perks": [
+        "Top-of-the-line Apple M-series MacBook Pro",
+        "Comprehensive health & family medical insurance",
+        "Flexible hybrid work environment",
+        "Annual learning & certification budget (₹50,000)",
+        "Quarterly company retreats & wellness allowances"
+      ],
+      "isUrgent": true,
+      "postedDate": "2 days ago"
+    },
+    {
+      "id": "ai-ml-engineer",
+      "title": "Lead AI / ML Systems Engineer",
+      "department": "AI & Data",
+      "location": "Bangalore / Remote",
+      "type": "Full-Time",
+      "experience": "3 - 6 Years",
+      "salaryRange": "₹15,00,000 - ₹28,00,000 P.A. + Equity",
+      "shortDesc": "Lead the development of custom LLM agent architectures, clinical NLP models for Medpredit, and enterprise predictive analytics pipelines.",
+      "responsibilities": [
+        "Fine-tune and deploy open-source LLMs (Llama 3, Mistral) and vector databases for enterprise RAG systems.",
+        "Develop predictive machine learning models for clinical risk stratification and demand forecasting.",
+        "Build scalable inference microservices using FastAPI, PyTorch, and TensorRT.",
+        "Implement continuous model monitoring, data drift detection, and automated evaluation frameworks.",
+        "Partner with domain experts in healthcare and fintech to identify high-impact AI opportunities."
+      ],
+      "requirements": [
+        "Strong foundation in machine learning, statistics, deep learning, and NLP.",
+        "Hands-on experience with PyTorch, LangChain/LlamaIndex, Hugging Face, and Vector DBs.",
+        "Proficiency in Python, asynchronous APIs, and containerized GPU deployment.",
+        "Solid grasp of data privacy, prompt engineering guardrails, and model governance.",
+        "Published research or tangible open-source AI projects is a strong plus."
+      ],
+      "skills": ["Python", "PyTorch", "LangChain", "Vector DBs", "FastAPI", "Docker GPU", "MLflow"],
+      "perks": [
+        "High-performance cloud GPU compute cluster access",
+        "Sponsorship for top AI research conferences",
+        "Comprehensive health coverage",
+        "Generous stock equity package",
+        "Flexible remote-first culture"
+      ],
+      "isUrgent": true,
+      "postedDate": "1 week ago"
+    },
+    {
+      "id": "senior-uiux-designer",
+      "title": "Senior UI/UX & Product Designer",
+      "department": "Design",
+      "location": "Salem / Remote",
+      "type": "Full-Time",
+      "experience": "3 - 6 Years",
+      "salaryRange": "₹8,00,000 - ₹16,00,000 P.A.",
+      "shortDesc": "Create breathtaking, user-centric interfaces and complete design systems for flagship products and global client applications.",
+      "responsibilities": [
+        "Lead the end-to-end design lifecycle from user research and wireframing to high-fidelity Figma components.",
+        "Build and evolve Zadroit's unified design system tokens, typography scales, and component libraries.",
+        "Create micro-interactions, motion graphics, and clickable prototypes for user testing.",
+        "Conduct usability interviews and translate user feedback into actionable interface refinements.",
+        "Collaborate closely with frontend engineers to ensure 100% design fidelity in final production builds."
+      ],
+      "requirements": [
+        "Stunning portfolio showcasing modern web, mobile, and dashboard UI/UX work.",
+        "Mastery of Figma (Auto-layout, Components, Variants, Variables, Prototypes).",
+        "Deep understanding of responsive grid systems, visual hierarchy, typography, and color theory.",
+        "Familiarity with HTML/CSS and frontend implementation constraints.",
+        "Empathetic mindset with relentless attention to detail."
+      ],
+      "skills": ["Figma", "Design Systems", "Prototyping", "User Research", "Wireframing", "Micro-animations"],
+      "perks": [
+        "Latest design hardware & multi-display setup",
+        "Figma Enterprise & plugin subscriptions paid",
+        "Health insurance for employee and family",
+        "Work-from-anywhere flexibility",
+        "Annual design conference passes"
+      ],
+      "isUrgent": false,
+      "postedDate": "3 days ago"
+    },
+    {
+      "id": "cloud-devops-architect",
+      "title": "Cloud & DevOps Infrastructure Architect",
+      "department": "Cloud & DevOps",
+      "location": "Bangalore / Hybrid",
+      "type": "Full-Time",
+      "experience": "5 - 9 Years",
+      "salaryRange": "₹16,00,000 - ₹30,00,000 P.A.",
+      "shortDesc": "Design and manage resilient multi-cloud infrastructures, Kubernetes clusters, and automated continuous delivery pipelines.",
+      "responsibilities": [
+        "Architect scalable cloud infrastructures on AWS and Google Cloud using Terraform and Helm.",
+        "Implement zero-downtime CI/CD workflows and automated container security scans.",
+        "Manage production Kubernetes clusters (EKS / GKE) with high-availability service meshes.",
+        "Monitor infrastructure metrics, configure alerting with Prometheus/Grafana, and lead incident response.",
+        "Conduct cloud cost audits and optimize serverless and compute resource allocations."
+      ],
+      "requirements": [
+        "Extensive experience with AWS / GCP cloud ecosystems and IaC (Terraform / Pulumi).",
+        "Deep knowledge of Linux internals, networking, DNS, SSL/TLS, and container runtimes.",
+        "Proven expertise in Kubernetes cluster administration and Helm charting.",
+        "Hands-on experience with Prometheus, Grafana, Loki, and ELK observability stacks.",
+        "AWS Solutions Architect or CKA (Certified Kubernetes Administrator) certification is a plus."
+      ],
+      "skills": ["AWS", "Kubernetes", "Terraform", "Docker", "CI/CD", "Prometheus", "Linux"],
+      "perks": [
+        "Cloud certification reimbursement program",
+        "Top-tier health and accidental insurance",
+        "Performance bonuses tied to SLA milestones",
+        "Flexible working hours and remote options",
+        "Annual company offsites"
+      ],
+      "isUrgent": false,
+      "postedDate": "1 week ago"
+    },
+    {
+      "id": "qa-automation-engineer",
+      "title": "QA Automation & Performance Engineer",
+      "department": "Engineering",
+      "location": "Salem / Remote",
+      "type": "Full-Time",
+      "experience": "2 - 5 Years",
+      "salaryRange": "₹6,00,000 - ₹12,00,000 P.A.",
+      "shortDesc": "Build robust end-to-end automated test suites, API automation, and load testing pipelines to guarantee zero software defects.",
+      "responsibilities": [
+        "Develop and maintain automated UI and API test suites using Playwright, Cypress, and Postman.",
+        "Execute performance, load, and stress testing with k6 and JMeter to identify bottlenecks.",
+        "Integrate automated test runs into GitHub Actions CI/CD pipelines.",
+        "Collaborate with developers to create comprehensive test plans and edge-case test matrices."
+      ],
+      "requirements": [
+        "Solid experience in automated testing with Playwright, Cypress, or Selenium with TypeScript.",
+        "Strong understanding of REST APIs, JSON validation, and HTTP status handling.",
+        "Familiarity with CI/CD integration and test reporting dashboards.",
+        "Keen eye for functional edge cases, UI glitches, and performance regressions."
+      ],
+      "skills": ["Playwright", "TypeScript", "Cypress", "k6", "Postman", "CI/CD", "Jira"],
+      "perks": [
+        "Health insurance coverage",
+        "Flexible work policies",
+        "Skill enhancement workshops",
+        "Paid time off and festive bonuses"
+      ],
+      "isUrgent": false,
+      "postedDate": "2 weeks ago"
+    },
+    {
+      "id": "associate-software-intern",
+      "title": "Software Engineering Intern (Web & Mobile)",
+      "department": "Engineering",
+      "location": "Salem HQ (On-site)",
+      "type": "Internship",
+      "experience": "Fresher / Final Year Students",
+      "salaryRange": "₹15,000 - ₹25,000 / Month + Full-time PPO Opportunity",
+      "shortDesc": "Kickstart your career with hands-on mentorship building live web, mobile, and cloud software applications.",
+      "responsibilities": [
+        "Work directly alongside senior engineers on production features in React, Node, and Flutter.",
+        "Write clean, tested frontend components and backend CRUD routes.",
+        "Participate in daily engineering standups, sprint reviews, and tech brown-bag sessions."
+      ],
+      "requirements": [
+        "Degree in Computer Science, IT, or related fields (or equivalent self-taught passion).",
+        "Strong foundational grasp of JavaScript/TypeScript, HTML/CSS, and SQL.",
+        "Enthusiasm to learn modern frameworks like React, Next.js, and Node.js.",
+        "Eagerness to receive feedback and collaborate within an agile team."
+      ],
+      "skills": ["JavaScript", "React", "Node.js", "Git", "HTML/CSS", "SQL"],
+      "perks": [
+        "Pre-Placement Offer (PPO) for top performers",
+        "Direct 1-on-1 mentorship from tech leads",
+        "Free lunch and snacks at the Salem Tech Campus",
+        "Certification voucher support"
+      ],
+      "isUrgent": false,
+      "postedDate": "Just now"
+    }
+  ],
+  "teamMembers": [
+    {
+      "id": "founder-ceo",
+      "name": "S. Indrajith",
+      "role": "Founder & Chief Executive Officer",
+      "department": "Executive Leadership",
+      "bio": "Visionary entrepreneur with over a decade of experience driving enterprise digital transformations, enterprise SaaS architectures, and engineering innovation across South India.",
+      "skills": ["Strategic Leadership", "Enterprise Architecture", "Product Vision", "Cloud Strategy"],
+      "avatarPlaceholder": "/assets/placeholders/team-indrajith.svg",
+      "social": {
+        "linkedin": "https://linkedin.com",
+        "twitter": "https://x.com",
+        "github": "https://github.com"
+      }
+    },
+    {
+      "id": "cto",
+      "name": "Karthik Subramanian",
+      "role": "Chief Technology Officer",
+      "department": "Engineering Leadership",
+      "bio": "Distributed systems specialist and cloud evangelist who oversees technical direction, infrastructure resilience, and the core engineering stack at Zadroit.",
+      "skills": ["Distributed Systems", "Kubernetes", "Multi-Cloud", "High-Throughput APIs"],
+      "avatarPlaceholder": "/assets/placeholders/team-karthik.svg",
+      "social": {
+        "linkedin": "https://linkedin.com",
+        "github": "https://github.com"
+      }
+    },
+    {
+      "id": "head-ai",
+      "name": "Dr. Ananya Ramesh",
+      "role": "Head of AI & Data Intelligence",
+      "department": "AI & Innovation Labs",
+      "bio": "PhD in Computational Intelligence. Leads Zadroit's proprietary AI research including the Medpredit diagnostic engine and enterprise LLM integrations.",
+      "skills": ["Machine Learning", "Deep Learning", "Clinical NLP", "Predictive Analytics"],
+      "avatarPlaceholder": "/assets/placeholders/team-ananya.svg",
+      "social": {
+        "linkedin": "https://linkedin.com",
+        "twitter": "https://x.com"
+      }
+    },
+    {
+      "id": "head-design",
+      "name": "Praveen Kumar",
+      "role": "Head of UI/UX & Design Experience",
+      "department": "Product Design",
+      "bio": "Passionate design leader crafting award-winning digital experiences, design systems, and micro-interactions that turn complex software into delightful products.",
+      "skills": ["Figma Systems", "Interaction Design", "User Research", "Brand Identity"],
+      "avatarPlaceholder": "/assets/placeholders/team-praveen.svg",
+      "social": {
+        "linkedin": "https://linkedin.com",
+        "twitter": "https://x.com"
+      }
+    },
+    {
+      "id": "lead-ciso",
+      "name": "Vigneshwaran S",
+      "role": "Principal Security & DevOps Lead",
+      "department": "Cybersecurity & Operations",
+      "bio": "Certified ethical hacker (CEH) and cloud security architect dedicated to keeping enterprise infrastructure bulletproof against sophisticated threats.",
+      "skills": ["Zero-Trust", "VAPT", "Cloud Security", "DevSecOps"],
+      "avatarPlaceholder": "/assets/placeholders/team-vignesh.svg",
+      "social": {
+        "linkedin": "https://linkedin.com",
+        "github": "https://github.com"
+      }
+    },
+    {
+      "id": "lead-iot",
+      "name": "Dinesh Raj",
+      "role": "Lead IoT & Embedded Systems Engineer",
+      "department": "Hardware & IoT",
+      "bio": "Specialist in edge computing, MQTT telemetry, and sports technology automation who pioneered the ZadSports hardware-software bridge.",
+      "skills": ["IoT Gateways", "MQTT", "Embedded C", "Real-Time Telemetry"],
+      "avatarPlaceholder": "/assets/placeholders/team-dinesh.svg",
+      "social": {
+        "linkedin": "https://linkedin.com",
+        "github": "https://github.com"
+      }
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "t1",
+      "clientName": "Rajesh Mehra",
+      "clientRole": "Chief Information Officer",
+      "company": "Apex Global Logistics",
+      "country": "India / Singapore",
+      "quote": "Zadroit completely revolutionized our supply chain technology. Their custom ERP replaced 4 disjointed legacy tools and delivered a 45% boost in order fulfillment efficiency within the first 90 days. Exceptional engineering team!",
+      "rating": 5,
+      "projectDelivered": "Enterprise ERP & Fleet Tracking System",
+      "avatarPlaceholder": "/assets/placeholders/avatar-rajesh.svg",
+      "verified": true
+    },
+    {
+      "id": "t2",
+      "clientName": "Dr. Sarah Jenkins",
+      "clientRole": "Director of Medical Informatics",
+      "company": "Beacon Health Network",
+      "country": "United States",
+      "quote": "The Medpredit AI platform engineered by Zadroit has been a game changer for our emergency triage ward. It gives our clinical team early risk alerts with astonishing accuracy, saving critical minutes when lives are on the line.",
+      "rating": 5,
+      "projectDelivered": "Medpredit AI Triage Integration",
+      "avatarPlaceholder": "/assets/placeholders/avatar-sarah.svg",
+      "verified": true
+    },
+    {
+      "id": "t3",
+      "clientName": "Arun Kumar",
+      "clientRole": "Managing Partner",
+      "company": "Arena X Sports Arenas",
+      "country": "India",
+      "quote": "Implementing ZadSports across our 12 sports facilities transformed our operations. We saw a 300% increase in automated online slot bookings and our floodlights are now completely automated. Customers love the mobile experience.",
+      "rating": 5,
+      "projectDelivered": "ZadSports Venue Engine & IoT Automation",
+      "avatarPlaceholder": "/assets/placeholders/avatar-arun.svg",
+      "verified": true
+    },
+    {
+      "id": "t4",
+      "clientName": "Marcus Vance",
+      "clientRole": "VP of Engineering",
+      "company": "FinFlow Technologies",
+      "country": "United Kingdom",
+      "quote": "Zadroit's DevOps specialists migrated our entire infrastructure to AWS Kubernetes without a single millisecond of downtime. Our monthly cloud bill dropped by 34% and our deployments are now completely automated.",
+      "rating": 5,
+      "projectDelivered": "Multi-Cloud Kubernetes & FinOps Setup",
+      "avatarPlaceholder": "/assets/placeholders/avatar-marcus.svg",
+      "verified": true
+    }
+  ],
+  "caseStudies": [
+    {
+      "id": "cs-healthcare",
+      "title": "AI-Powered Clinical Triage Acceleration",
+      "client": "Beacon Health Group",
+      "sector": "Healthcare & AI",
+      "challenge": "Emergency departments were overwhelmed with manual patient risk assessments, causing critical triage delays and high physician burnout.",
+      "solution": "Deployed Medpredit's real-time predictive ML risk scoring pipeline integrated directly with hospital EHR systems via HL7/FHIR.",
+      "impactMetrics": [
+        { "label": "Triage Time Reduction", "value": "62%" },
+        { "label": "Diagnostic Precision", "value": "96.4%" },
+        { "label": "Patients Screened", "value": "250K+" }
+      ],
+      "tags": ["AI/ML", "Healthcare", "FastAPI", "FHIR"],
+      "imagePlaceholder": "/assets/placeholders/case-healthcare.svg"
+    },
+    {
+      "id": "cs-sports",
+      "title": "Scaling Automated Venue Bookings 10x",
+      "client": "Arena X Sports",
+      "sector": "Sports & IoT Tech",
+      "challenge": "Manual telephone slot bookings led to double bookings, revenue leakages, and expensive electricity waste during idle turf hours.",
+      "solution": "Built ZadSports unified mobile booking app connected to custom IoT hardware relays for automated floodlight and gate access control.",
+      "impactMetrics": [
+        { "label": "Online Booking Growth", "value": "320%" },
+        { "label": "Power Cost Savings", "value": "28%" },
+        { "label": "Zero Booking Overlaps", "value": "100%" }
+      ],
+      "tags": ["Flutter", "IoT", "Node.js", "Payment Gateways"],
+      "imagePlaceholder": "/assets/placeholders/case-sports.svg"
+    },
+    {
+      "id": "cs-enterprise",
+      "title": "Next-Gen Multi-Warehouse ERP Modernization",
+      "client": "Apex Global Logistics",
+      "sector": "Supply Chain & Logistics",
+      "challenge": "A 15-year-old monolithic desktop ERP caused inventory discrepancies and prevented real-time multi-city tracking.",
+      "solution": "Architected a cloud-native, microservices-based ZadERP system with offline POS syncing and automated tax compliance.",
+      "impactMetrics": [
+        { "label": "Operational Cost Drop", "value": "45%" },
+        { "label": "Inventory Accuracy", "value": "99.8%" },
+        { "label": "API Response Speed", "value": "85ms" }
+      ],
+      "tags": ["React", "PostgreSQL", "Kafka", "Docker"],
+      "imagePlaceholder": "/assets/placeholders/case-enterprise.svg"
+    }
+  ],
+  "faqItems": [
+    {
+      "id": "faq1",
+      "question": "What core IT services does Zadroit IT Solutions specialize in?",
+      "answer": "Zadroit specializes in end-to-end Enterprise Software Engineering, Cloud Architecture & DevOps Automation, Custom AI & Machine Learning Solutions (such as our Medpredit diagnostic engine), Modern Web & Mobile App Development, UI/UX Product Design, and Cybersecurity / VAPT Audits.",
+      "category": "Services"
+    },
+    {
+      "id": "faq2",
+      "question": "How do you ensure data security, privacy, and regulatory compliance?",
+      "answer": "We enforce strict Zero-Trust security architectures across all codebases and cloud environments. Our solutions comply with ISO 27001, SOC2, GDPR, and HIPAA standards. We implement end-to-end 256-bit encryption, role-based access control (RBAC), and automated penetration testing before every production release.",
+      "category": "Security & SLA"
+    },
+    {
+      "id": "faq3",
+      "question": "Can we license or white-label Zadroit's proprietary products like ZadERP or ZadSports?",
+      "answer": "Yes! Products like ZadERP, ZadSports, ZadCommerce, and Medpredit are available as both turnkey SaaS deployments and fully customized enterprise white-label solutions tailored to your organization's exact branding and workflow requirements.",
+      "category": "Products"
+    },
+    {
+      "id": "faq4",
+      "question": "What engagement and pricing models do you offer?",
+      "answer": "We offer flexible engagement models to suit your project scope: (1) Fixed-Scope Milestone Pricing for well-defined projects, (2) Dedicated Engineering Team / Staff Augmentation for ongoing product development, and (3) Time & Material / Retainer for agile innovation labs.",
+      "category": "Billing & Engagement"
+    },
+    {
+      "id": "faq5",
+      "question": "How quickly can Zadroit assemble a team and kick off a new project?",
+      "answer": "For dedicated engineering sprints or product MVPs, our team typically completes discovery and onboarding within 3 to 7 business days, providing you with a transparent project roadmap, architecture design document, and milestone timelines.",
+      "category": "General"
+    },
+    {
+      "id": "faq6",
+      "question": "Where is Zadroit headquartered, and do you serve international clients?",
+      "answer": "Zadroit IT Solutions Private Limited is proudly headquartered in Salem, Tamil Nadu, with technology hubs in Bangalore and Chennai. We serve enterprise clients globally across India, North America, the UK, Europe, and the Middle East.",
+      "category": "General"
+    }
+  ],
+  "processSteps": [
+    {
+      "step": 1,
+      "phase": "Phase 01",
+      "title": "Discovery & Architecture Blueprint",
+      "description": "We conduct deep-dive technical discovery sessions, define data models, analyze user personas, and engineer a bulletproof technical architecture blueprint.",
+      "duration": "Week 1 - 2",
+      "deliverables": ["Product Requirement Doc (PRD)", "System Architecture Diagram", "Sprint Milestone Roadmap"],
+      "icon": "Compass"
+    },
+    {
+      "step": 2,
+      "phase": "Phase 02",
+      "title": "UI/UX Prototyping & Design Systems",
+      "description": "Our product designers craft wireframes, high-fidelity Figma design tokens, interactive prototypes, and conduct usability tests to validate conversion funnels.",
+      "duration": "Week 2 - 4",
+      "deliverables": ["Figma Design Tokens Kit", "Clickable High-Fidelity Prototype", "User Journey Flowcharts"],
+      "icon": "Layers"
+    },
+    {
+      "step": 3,
+      "phase": "Phase 03",
+      "title": "Agile Development & Continuous Testing",
+      "description": "Our engineers build features in 2-week agile sprints with automated CI/CD builds, comprehensive unit tests, security scans, and bi-weekly demo walkthroughs.",
+      "duration": "Week 4 - 10",
+      "deliverables": ["Production-Grade Codebase", "Automated Test Coverage > 85%", "Staging Preview Environments"],
+      "icon": "CodeXml"
+    },
+    {
+      "step": 4,
+      "phase": "Phase 04",
+      "title": "Zero-Downtime Deployment & 24/7 SLA",
+      "description": "We deploy your system onto auto-scaling cloud infrastructure, conduct load tests, verify DNS & SSL security, and provide 24/7 proactive SLA monitoring.",
+      "duration": "Ongoing",
+      "deliverables": ["Cloud Production Deployment", "Observability & Alerting Dashboards", "Comprehensive Admin Handover Docs"],
+      "icon": "Rocket"
+    }
+  ],
+  "culturePerks": [
+    {
+      "id": "p1",
+      "title": "Cutting-Edge Tech Stack",
+      "description": "Work with React 19, TypeScript, Go, PyTorch, Kubernetes, and state-of-the-art AI tooling without legacy constraints.",
+      "icon": "Cpu",
+      "badge": "Modern Tech"
+    },
+    {
+      "id": "p2",
+      "title": "Hybrid & Remote Flexibility",
+      "description": "Balance productivity and life with our flexible hybrid work culture and generous work-from-home allowances.",
+      "icon": "Home",
+      "badge": "Work-Life Balance"
+    },
+    {
+      "id": "p3",
+      "title": "Continuous Learning Budget",
+      "description": "₹50,000 annual allowance for certifications (AWS, CKA, Google Cloud), books, courses, and global tech conferences.",
+      "icon": "GraduationCap",
+      "badge": "Growth First"
+    },
+    {
+      "id": "p4",
+      "title": "Comprehensive Health & Wellness",
+      "description": "Complete medical insurance for you and your family, mental health support, and annual health checkups.",
+      "icon": "HeartPulse",
+      "badge": "Full Coverage"
+    },
+    {
+      "id": "p5",
+      "title": "Equity & Performance Incentives",
+      "description": "Generous employee stock options (ESOPs) and quarterly milestone bonuses so you truly own what you build.",
+      "icon": "TrendingUp",
+      "badge": "Wealth Creation"
+    },
+    {
+      "id": "p6",
+      "title": "Apple Hardware & Setup Grant",
+      "description": "Every engineer receives a top-spec Apple MacBook Pro and high-res external monitor setup.",
+      "icon": "Laptop",
+      "badge": "Premium Tools"
+    }
+  ],
+  "coreValues": [
+    {
+      "id": "v1",
+      "title": "Relentless Engineering Excellence",
+      "description": "We never settle for good enough. We obsess over milliseconds of latency, clean code architecture, and bulletproof reliability.",
+      "icon": "Sparkles",
+      "highlight": "Quality Over Speed"
+    },
+    {
+      "id": "v2",
+      "title": "Radical Transparency & Ownership",
+      "description": "We communicate with absolute clarity, take full ownership of outcomes, and view client partnerships as lifelong relationships.",
+      "icon": "Eye",
+      "highlight": "Zero Jargon"
+    },
+    {
+      "id": "v3",
+      "title": "Innovation with Practical ROI",
+      "description": "We don't build technology for the sake of hype. Every line of code and AI model must create tangible value and business growth.",
+      "icon": "Target",
+      "highlight": "Real Business Impact"
+    },
+    {
+      "id": "v4",
+      "title": "People-First Empathy",
+      "description": "Behind every screen is a human being. We design software that simplifies lives and cultivate an empowering, respectful workplace.",
+      "icon": "Users",
+      "highlight": "Human Centric"
+    }
+  ],
+  "techStackIcons": [
+    { "name": "React 19", "category": "Frontend", "level": "Expert" },
+    { "name": "Next.js", "category": "Frontend", "level": "Expert" },
+    { "name": "TypeScript", "category": "Language", "level": "Expert" },
+    { "name": "Node.js", "category": "Backend", "level": "Expert" },
+    { "name": "Python", "category": "AI / Backend", "level": "Expert" },
+    { "name": "Go (Golang)", "category": "Backend", "level": "Advanced" },
+    { "name": "PostgreSQL", "category": "Database", "level": "Expert" },
+    { "name": "Redis", "category": "Cache & Queue", "level": "Expert" },
+    { "name": "AWS Cloud", "category": "Cloud & Infra", "level": "Expert" },
+    { "name": "Google Cloud", "category": "Cloud & Infra", "level": "Advanced" },
+    { "name": "Docker & K8s", "category": "DevOps", "level": "Expert" },
+    { "name": "Flutter", "category": "Mobile", "level": "Expert" },
+    { "name": "Tailwind CSS", "category": "Styling", "level": "Expert" },
+    { "name": "PyTorch / AI", "category": "Data Science", "level": "Advanced" },
+    { "name": "Kafka", "category": "Streaming", "level": "Advanced" },
+    { "name": "Figma", "category": "UI/UX", "level": "Expert" }
+  ]
+}
