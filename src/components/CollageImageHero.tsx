@@ -378,7 +378,7 @@ export const CollageImageHero: React.FC<CollageImageHeroProps> = ({
           </div>
 
           {/* Option 1 Badge */}
-          <div className="absolute left-[2%] bottom-[-2%] -translate-x-1/2 z-20 pointer-events-auto">
+          {/* <div className="absolute left-[2%] bottom-[-2%] -translate-x-1/2 z-20 pointer-events-auto">
             <div className="relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center">
               <svg className="w-full h-full animate-spin-slow text-[#133A27] drop-shadow-lg " viewBox="0 0 100 100">
                 <defs>
@@ -393,6 +393,68 @@ export const CollageImageHero: React.FC<CollageImageHeroProps> = ({
               </svg>
               <div className="absolute w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#C6F135] flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform">
                 <ArrowUpRight className="w-5 h-5 sm:w-6 sm:h-6 text-[#133A27] stroke-[3]" />
+              </div>
+            </div>
+          </div> */}
+          <div className="absolute left-[2%] bottom-[-2%] -translate-x-1/2 z-20 pointer-events-auto">
+            <div className="relative w-22 h-22 sm:w-26 sm:h-26 flex items-center justify-center">
+              <svg
+                className="w-full h-full animate-spin-slow text-[#133A27] drop-shadow-xl"
+                viewBox="0 0 100 100"
+              >
+                <defs>
+                  <path
+                    id="hireUsCirclePathExact"
+                    d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"
+                  />
+                </defs>
+                {/* 24-point smooth scalloped circle path matching reference exactly */}
+                <path
+                  fill="currentColor"
+                  d="M 98.50 50.00 C 98.70 52.48, 93.71 57.69, 91.56 59.00 C 89.41 60.30, 89.87 67.70, 87.41 69.53 C 84.95 71.36, 78.47 73.38, 75.67 75.74 C 72.87 78.09, 67.33 82.34, 64.28 83.65 C 61.22 84.95, 54.60 84.95, 61.55 83.65 C 58.49 82.34, 52.95 78.09, 50.15 75.74 C 47.35 73.38, 40.87 71.36, 38.41 69.53 C 35.95 67.70, 36.41 60.30, 34.26 59.00 C 32.11 57.69, 27.12 52.48, 27.32 50.00 Z"
+                />
+                {/* Clean dense 24-point scalloped seal */}
+                <path
+                  fill="currentColor"
+                  d="M 98.50 50.00 C 98.70 52.48, 93.71 57.69, 91.56 59.00 C 89.41 60.30, 89.87 67.70, 87.41 69.53 C 84.95 71.36, 78.47 73.38, 75.67 75.74 C 72.87 78.09, 67.33 82.34, 64.28 83.65 C 61.22 84.95, 54.60 84.95, 51.55 83.65 C 48.49 82.34, 42.95 78.09, 40.15 75.74 C 37.35 73.38, 30.87 71.36, 28.41 69.53 C 25.95 67.70, 26.41 60.30, 24.26 59.00 C 22.11 57.69, 17.12 52.48, 17.32 50.00 C 17.12 47.52, 22.11 42.31, 24.26 41.00 C 26.41 39.70, 25.95 32.30, 28.41 30.47 C 30.87 28.64, 37.35 26.62, 40.15 24.26 C 42.95 21.91, 48.49 17.66, 51.55 16.35 C 54.60 15.05, 61.22 15.05, 64.28 16.35 C 67.33 17.66, 72.87 21.91, 75.67 24.26 C 78.47 26.62, 84.95 28.64, 87.41 30.47 C 89.87 32.30, 89.41 39.70, 91.56 41.00 C 93.71 42.31, 98.70 47.52, 98.50 50.00 Z"
+                />
+                <circle cx="50" cy="50" r="48" fill="#133A27" />
+                {/* 24 Scalloped Teeth around perimeter */}
+                {[...Array(24)].map((_, i) => {
+                  const angle = (i * 360) / 24;
+                  return (
+                    <circle
+                      key={i}
+                      cx={50 + 44 * Math.cos((angle * Math.PI) / 180)}
+                      cy={50 + 44 * Math.sin((angle * Math.PI) / 180)}
+                      r="6"
+                      fill="#133A27"
+                    />
+                  );
+                })}
+                {/* Text along circle */}
+                <text className="text-[9px] font-black uppercase tracking-[3.6px] fill-[#C6F135] font-mono">
+                  <textPath href="#hireUsCirclePathExact" startOffset="0%">
+                    • HIRE US • HIRE US • HIRE US
+                  </textPath>
+                </text>
+              </svg>
+
+              {/* Inner Lime Circle with Dark Green Flight Arrow (diagonal arrow with crossbar wing) */}
+              <div className="absolute w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#C6F135] flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform">
+                <svg
+                  className="w-5 h-5 sm:w-5.5 sm:h-5.5 text-[#133A27]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="6" y1="18" x2="18" y2="6" />
+                  <polyline points="9 6 18 6 18 15" />
+                  <line x1="8" y1="14" x2="14" y2="8" />
+                </svg>
               </div>
             </div>
           </div>

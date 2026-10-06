@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { servicesData } from '../../data/websiteData';
-import { X, Calculator, Send, ShieldAlert } from 'lucide-react';
+import { X, Calculator, Send, ShieldCheck, Sparkles } from 'lucide-react';
 
 interface QuickQuoteModalProps {
   defaultService?: string;
@@ -40,35 +40,44 @@ export const QuickQuoteModal: React.FC<QuickQuoteModalProps> = ({ defaultService
       triggerConfetti();
       showToast(
         'Quote Request Received! 📋',
-        `Thank you ${formData.name}. Our technical architect will review your project requirements for "${selectedService}" and send an itemized proposal within 24 hours.`,
+        `Thank you ${formData.name}. Our technical architect will review your requirements for "${selectedService}" and send an itemized proposal within 24 hours.`,
         'success'
       );
       closeModal();
     }, 1200);
   };
 
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
+  };
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md overflow-y-auto">
-      <div className="relative w-full max-w-2xl bg-slate-900 border border-slate-700/80 rounded-3xl p-6 sm:p-8 shadow-2xl animate-modal-in my-8">
+    <div
+      onClick={handleBackdropClick}
+      className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex justify-center items-start p-4 sm:p-6 pt-16 sm:pt-24 pb-12"
+    >
+      <div className="relative w-full max-w-2xl bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-slate-900/20 animate-modal-in my-auto select-text">
         {/* Close button */}
         <button
           onClick={closeModal}
-          className="absolute top-5 right-5 p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition-colors"
+          className="absolute top-5 right-5 p-2 rounded-full bg-slate-100 text-slate-500 hover:text-slate-900 hover:bg-slate-200 transition-colors cursor-pointer"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
-        <div className="mb-6 pb-4 border-b border-slate-800">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs font-semibold mb-2">
-            <Calculator className="w-3.5 h-3.5" />
+        <div className="mb-6 pb-4 border-b border-slate-100">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-xs font-bold mb-2">
+            <Calculator className="w-3.5 h-3.5 text-amber-600" />
             Instant Project Scope & Estimate
           </div>
-          <h3 className="text-2xl font-bold text-white font-heading">
+          <h3 className="text-2xl sm:text-3xl font-black text-[#090D16] font-heading">
             Request an Engineering Proposal
           </h3>
-          <p className="text-sm text-slate-400 mt-1">
+          <p className="text-xs sm:text-sm text-slate-600 mt-1">
             Configure your technical requirements to receive an accurate scope, architecture plan, and cost estimate.
           </p>
         </div>
@@ -76,13 +85,13 @@ export const QuickQuoteModal: React.FC<QuickQuoteModalProps> = ({ defaultService
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Service selection */}
           <div>
-            <label className="block text-xs font-medium text-slate-300 mb-2">
+            <label className="block text-xs font-bold text-slate-700 mb-1.5">
               Select Primary Service:
             </label>
             <select
               value={selectedService}
               onChange={(e) => setSelectedService(e.target.value)}
-              className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-blue-500 text-sm"
+              className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 font-medium focus:bg-white focus:outline-none focus:border-[#32679a] focus:ring-2 focus:ring-[#32679a]/20 text-sm transition-all"
             >
               {servicesData.map((s) => (
                 <option key={s.id} value={s.title}>
@@ -94,17 +103,19 @@ export const QuickQuoteModal: React.FC<QuickQuoteModalProps> = ({ defaultService
 
           {/* Project Type Pills */}
           <div>
-            <label className="block text-xs font-medium text-slate-300 mb-2">Project Model:</label>
+            <label className="block text-xs font-bold text-slate-700 mb-1.5">
+              Project Model:
+            </label>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
               {(['New Build', 'Modernize Existing', 'Dedicated Squad', 'Consulting'] as const).map((type) => (
                 <button
                   key={type}
                   type="button"
                   onClick={() => setProjectType(type)}
-                  className={`py-2 px-2 text-xs font-semibold rounded-xl border transition-all ${
+                  className={`py-2 px-2 text-xs font-bold rounded-xl border transition-all cursor-pointer ${
                     projectType === type
-                      ? 'bg-blue-600 text-white border-blue-500 shadow-md shadow-blue-500/25'
-                      : 'bg-slate-950 border-slate-800 text-slate-400 hover:text-white'
+                      ? 'bg-[#133A27] text-white border-[#133A27] shadow-sm'
+                      : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 hover:text-slate-900'
                   }`}
                 >
                   {type}
@@ -116,13 +127,13 @@ export const QuickQuoteModal: React.FC<QuickQuoteModalProps> = ({ defaultService
           {/* Budget & Timeline */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-medium text-slate-300 mb-1.5">
+              <label className="block text-xs font-bold text-slate-700 mb-1.5">
                 Target Budget Range
               </label>
               <select
                 value={budgetRange}
                 onChange={(e) => setBudgetRange(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-blue-500 text-sm"
+                className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 font-medium focus:bg-white focus:outline-none focus:border-[#32679a] focus:ring-2 focus:ring-[#32679a]/20 text-sm transition-all"
               >
                 <option value="< $5,000">Less than $5,000 / ₹3.5L (MVP / Audit)</option>
                 <option value="$5,000 - $15,000">$5,000 - $15,000 / ₹4L - ₹12L (Standard Project)</option>
@@ -131,13 +142,13 @@ export const QuickQuoteModal: React.FC<QuickQuoteModalProps> = ({ defaultService
               </select>
             </div>
             <div>
-              <label className="block text-xs font-medium text-slate-300 mb-1.5">
+              <label className="block text-xs font-bold text-slate-700 mb-1.5">
                 Expected Timeline
               </label>
               <select
                 value={timeline}
                 onChange={(e) => setTimeline(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-blue-500 text-sm"
+                className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 font-medium focus:bg-white focus:outline-none focus:border-[#32679a] focus:ring-2 focus:ring-[#32679a]/20 text-sm transition-all"
               >
                 <option value="Urgent (2 - 4 Weeks)">Urgent Sprint (2 - 4 Weeks)</option>
                 <option value="4 - 8 Weeks">Standard MVP (4 - 8 Weeks)</option>
@@ -150,8 +161,8 @@ export const QuickQuoteModal: React.FC<QuickQuoteModalProps> = ({ defaultService
           {/* Contact Details */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-medium text-slate-300 mb-1.5">
-                Your Name <span className="text-amber-400">*</span>
+              <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                Your Name <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -159,12 +170,12 @@ export const QuickQuoteModal: React.FC<QuickQuoteModalProps> = ({ defaultService
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 placeholder="e.g. Indrajith"
-                className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm"
+                className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 font-medium focus:bg-white focus:outline-none focus:border-[#32679a] focus:ring-2 focus:ring-[#32679a]/20 text-sm transition-all"
               />
             </div>
             <div>
-              <label className="block text-xs font-medium text-slate-300 mb-1.5">
-                Email Address <span className="text-amber-400">*</span>
+              <label className="block text-xs font-bold text-slate-700 mb-1.5">
+                Email Address <span className="text-red-500">*</span>
               </label>
               <input
                 type="email"
@@ -172,14 +183,14 @@ export const QuickQuoteModal: React.FC<QuickQuoteModalProps> = ({ defaultService
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder="indrajith@company.com"
-                className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm"
+                className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 font-medium focus:bg-white focus:outline-none focus:border-[#32679a] focus:ring-2 focus:ring-[#32679a]/20 text-sm transition-all"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-medium text-slate-300 mb-1.5">
+              <label className="block text-xs font-bold text-slate-700 mb-1.5">
                 Company / Organization
               </label>
               <input
@@ -187,11 +198,11 @@ export const QuickQuoteModal: React.FC<QuickQuoteModalProps> = ({ defaultService
                 value={formData.company}
                 onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                 placeholder="Company Name"
-                className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm"
+                className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 font-medium focus:bg-white focus:outline-none focus:border-[#32679a] focus:ring-2 focus:ring-[#32679a]/20 text-sm transition-all"
               />
             </div>
             <div>
-              <label className="block text-xs font-medium text-slate-300 mb-1.5">
+              <label className="block text-xs font-bold text-slate-700 mb-1.5">
                 Phone Number
               </label>
               <input
@@ -199,13 +210,13 @@ export const QuickQuoteModal: React.FC<QuickQuoteModalProps> = ({ defaultService
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 placeholder="+91 98427 00000"
-                className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm"
+                className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 font-medium focus:bg-white focus:outline-none focus:border-[#32679a] focus:ring-2 focus:ring-[#32679a]/20 text-sm transition-all"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-medium text-slate-300 mb-1.5">
+            <label className="block text-xs font-bold text-slate-700 mb-1.5">
               Project Description / Key Requirements:
             </label>
             <textarea
@@ -213,27 +224,28 @@ export const QuickQuoteModal: React.FC<QuickQuoteModalProps> = ({ defaultService
               value={formData.projectScope}
               onChange={(e) => setFormData({ ...formData, projectScope: e.target.value })}
               placeholder="Tell us what you're building, target users, or key integrations..."
-              className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm resize-none"
+              className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 font-medium focus:bg-white focus:outline-none focus:border-[#32679a] focus:ring-2 focus:ring-[#32679a]/20 text-sm transition-all resize-none"
             />
           </div>
 
           {/* Submission button */}
-          <div className="pt-2 flex items-center justify-between">
-            <div className="flex items-center gap-1.5 text-xs text-slate-400">
-              <ShieldAlert className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Strict NDA & confidentiality guaranteed</span>
+          <div className="pt-3 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
+              <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+              <span>Strict NDA & 100% confidentiality guaranteed</span>
             </div>
             <button
               type="submit"
               disabled={isSubmitting}
-              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 transition-all flex items-center gap-2"
+              className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-[#133A27] hover:bg-[#0c2619] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
             >
               {isSubmitting ? (
                 <span>Generating Proposal...</span>
               ) : (
                 <>
-                  <Send className="w-4 h-4" />
-                  Request Itemized Quote
+                  <Sparkles className="w-4 h-4 text-[#ded725]" />
+                  <span>Request Itemized Quote</span>
+                  <Send className="w-3.5 h-3.5" />
                 </>
               )}
             </button>
