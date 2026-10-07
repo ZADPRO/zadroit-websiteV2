@@ -3,9 +3,7 @@ import { useApp } from "../context/AppContext";
 import { servicesData } from "../data/websiteData";
 import {
   ArrowRight,
-  Sparkles,
-  Calculator,
-  Users,
+ 
   ChevronDown,
 } from "lucide-react";
 import type { Service } from "../types";
@@ -13,17 +11,17 @@ import type { Service } from "../types";
 export const ServicesPage: React.FC = () => {
   const { openModal } = useApp();
   const [visibleCount, setVisibleCount] = useState<number>(9);
-  const [showEstimator, setShowEstimator] = useState<boolean>(false);
+  const [_showEstimator, setShowEstimator] = useState<boolean>(false);
 
   // Estimator State
-  const [estimatorService, setEstimatorService] = useState(
-    "enterprise-software",
-  );
-  const [estimatorScope, setEstimatorScope] = useState<
-    "mvp" | "standard" | "enterprise"
-  >("standard");
-  const [needAiAddon, setNeedAiAddon] = useState(false);
-  const [needDevOpsAddon, setNeedDevOpsAddon] = useState(true);
+  // const [estimatorService, _setEstimatorService] = useState(
+  //   "enterprise-software",
+  // );
+  // const [_estimatorScope, _setEstimatorScope] = useState<
+  //   "mvp" | "standard" | "enterprise"
+  // >("standard");
+  // const [needAiAddon, setNeedAiAddon] = useState(false);
+  // const [needDevOpsAddon, setNeedDevOpsAddon] = useState(true);
 
   // Take the primary 9 services matching the screenshot or all available
   const displayServices = servicesData.slice(0, visibleCount);
@@ -42,41 +40,41 @@ export const ServicesPage: React.FC = () => {
   };
 
   // Dynamic cost & timeline calculation
-  const calculateEstimate = () => {
-    let base = 3500;
-    let weeks = "4 - 6 Weeks";
+  // const calculateEstimate = () => {
+  //   let base = 3500;
+  //   let weeks = "4 - 6 Weeks";
 
-    if (estimatorService === "enterprise-software") base = 4800;
-    if (estimatorService === "ai-data-intelligence") base = 5200;
-    if (estimatorService === "cloud-devops") base = 3400;
-    if (estimatorService === "web-mobile-apps") base = 4000;
-    if (estimatorService === "cybersecurity-audit") base = 2800;
+  //   if (estimatorService === "enterprise-software") base = 4800;
+  //   if (estimatorService === "ai-data-intelligence") base = 5200;
+  //   if (estimatorService === "cloud-devops") base = 3400;
+  //   if (estimatorService === "web-mobile-apps") base = 4000;
+  //   if (estimatorService === "cybersecurity-audit") base = 2800;
 
-    let multiplier = 1;
-    if (estimatorScope === "mvp") {
-      multiplier = 0.8;
-      weeks = "3 - 5 Weeks";
-    } else if (estimatorScope === "standard") {
-      multiplier = 1.2;
-      weeks = "6 - 10 Weeks";
-    } else if (estimatorScope === "enterprise") {
-      multiplier = 2.4;
-      weeks = "12 - 20 Weeks";
-    }
+  //   let multiplier = 1;
+  //   if (estimatorScope === "mvp") {
+  //     multiplier = 0.8;
+  //     weeks = "3 - 5 Weeks";
+  //   } else if (estimatorScope === "standard") {
+  //     multiplier = 1.2;
+  //     weeks = "6 - 10 Weeks";
+  //   } else if (estimatorScope === "enterprise") {
+  //     multiplier = 2.4;
+  //     weeks = "12 - 20 Weeks";
+  //   }
 
-    let addonCost = 0;
-    if (needAiAddon) addonCost += 1800;
-    if (needDevOpsAddon) addonCost += 1200;
+  //   let addonCost = 0;
+  //   if (needAiAddon) addonCost += 1800;
+  //   if (needDevOpsAddon) addonCost += 1200;
 
-    const totalEstimate = Math.round(base * multiplier + addonCost);
-    return {
-      priceFormatted: `$${totalEstimate.toLocaleString()} - $${Math.round(totalEstimate * 1.35).toLocaleString()}`,
-      inrFormatted: `₹${(Math.round(totalEstimate * 85) / 100000).toFixed(1)}L - ₹${(Math.round(totalEstimate * 1.35 * 85) / 100000).toFixed(1)}L`,
-      timeline: weeks,
-    };
-  };
+  //   const totalEstimate = Math.round(base * multiplier + addonCost);
+  //   return {
+  //     priceFormatted: `$${totalEstimate.toLocaleString()} - $${Math.round(totalEstimate * 1.35).toLocaleString()}`,
+  //     inrFormatted: `₹${(Math.round(totalEstimate * 85) / 100000).toFixed(1)}L - ₹${(Math.round(totalEstimate * 1.35 * 85) / 100000).toFixed(1)}L`,
+  //     timeline: weeks,
+  //   };
+  // };
 
-  const estimateResult = calculateEstimate();
+  // const estimateResult = calculateEstimate();
 
   // Helper to render an individual Service Card matching the layout
   const renderServiceCard = (service: Service, index: number) => {
