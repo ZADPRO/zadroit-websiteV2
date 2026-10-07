@@ -207,13 +207,13 @@ export const WhyChooseUs: React.FC = () => {
 
           {/* ================= RIGHT COLUMN: 2x2 CHARTREUSE FEATURE CARD ================= */}
           <div className="lg:col-span-7 flex">
-            <div className="w-full bg-[#ded725] rounded-[32px] sm:rounded-[44px] shadow-xl border border-[#c8c01c]/60 p-2 flex flex-col justify-between relative overflow-hidden">
+            <div className="w-full h-full min-h-[480px] sm:min-h-[520px] bg-[#ded725] rounded-[32px] sm:rounded-[44px] shadow-xl border border-[#c8c01c]/60 p-6 sm:p-8 lg:p-9 flex flex-col justify-between relative overflow-hidden">
               {/* Subtle background glow highlight */}
               <div className="absolute top-0 right-0 w-72 h-72 bg-white/10 rounded-full blur-2xl pointer-events-none" />
 
               {/* 2x2 Feature Quadrants */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-[#133A27]/15 rounded-2xl sm:rounded-3xl overflow-hidden  shadow-inner">
-                {reasons.map((item, _index) => {
+              <div className="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 gap-6 sm:gap-8 lg:gap-8 h-full relative z-10">
+                {reasons.map((item) => {
                   const IconComponent = item.icon;
                   return (
                     <div
@@ -227,11 +227,11 @@ export const WhyChooseUs: React.FC = () => {
                           openModal({ type: "quote-modal" });
                         }
                       }}
-                      className="bg-[#ded725] p-3 flex flex-col justify-between cursor-pointer group hover:bg-[#d6cf1e] transition-all duration-300 relative"
+                      className="flex flex-col justify-start cursor-pointer group rounded-2xl p-2 sm:p-2.5 -m-2 sm:-m-2.5 hover:bg-black/5 transition-all duration-300"
                     >
                       <div>
                         {/* Blue Circular Icon Badge matching template */}
-                        <div className="w-13 h-13 sm:w-15 sm:h-15 rounded-full bg-[#32679a] text-white flex items-center justify-center shadow-md mb-4 sm:mb-5 group-hover:scale-110 group-hover:bg-[#255280] group-hover:shadow-lg transition-all duration-300">
+                        <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#32679a] text-white flex items-center justify-center shadow-md mb-3.5 sm:mb-4 group-hover:scale-110 group-hover:bg-[#255280] group-hover:shadow-lg transition-all duration-300">
                           <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                         </div>
 
@@ -246,38 +246,10 @@ export const WhyChooseUs: React.FC = () => {
                           {item.description}
                         </p>
                       </div>
-
-                      {/* Bottom Micro-Badge */}
-                      {/* <div className="mt-4 pt-3 border-t border-[#133A27]/15 flex items-center justify-between">
-                        <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#133A27] bg-[#133A27]/10 px-2.5 py-1 rounded-full">
-                          <CheckCircle2 className="w-3 h-3 text-[#133A27]" />
-                          {item.highlight}
-                        </span>
-
-                        <span className="text-[11px] font-extrabold text-[#133A27] uppercase tracking-wider font-mono">
-                          0{index + 1}
-                        </span>
-                      </div> */}
                     </div>
                   );
                 })}
               </div>
-
-              {/* Bottom Quick Call to Action Bar inside Card */}
-              {/* <div className="mt-2 pt-3 px-6 border-t border-[#133A27]/15 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div className="flex items-center gap-2.5 text-xs sm:text-sm font-bold text-[#133A27]">
-                  <span className="w-2 h-2 rounded-full bg-[#133A27] animate-ping" />
-                  <span>Ready to accelerate your engineering roadmap?</span>
-                </div>
-
-                <button
-                  onClick={() => openModal({ type: "quote-modal" })}
-                  className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-[#133A27] hover:bg-[#0c2619] text-white text-xs sm:text-sm font-bold shadow-sm inline-flex items-center justify-center gap-2 transition-all hover:shadow-md cursor-pointer"
-                >
-                  <span>Schedule Consultation</span>
-                  <ArrowUpRight className="w-4 h-4 text-[#ded725]" />
-                </button>
-              </div> */}
             </div>
           </div>
         </div>

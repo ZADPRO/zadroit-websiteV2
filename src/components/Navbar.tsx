@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useApp, type PageId } from '../context/AppContext';
 import { navItems } from '../data/websiteData';
-import { Search, Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import logo from '../../public/logo.png';
 
 export const Navbar: React.FC = () => {

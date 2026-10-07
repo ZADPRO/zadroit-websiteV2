@@ -95,41 +95,41 @@ export const HomePage: React.FC = () => {
   ];
 
   return (
-    <div className="relative overflow-hidden pt-16 sm:pt-20 bg-white">
+    <div className="relative overflow-hidden pt-24 sm:pt-28 lg:pt-28 bg-white">
       {/* Subtle background dot matrix patterns */}
       <div className="absolute top-14 left-10 w-48 h-48 bg-dots opacity-40 pointer-events-none" />
       <div className="absolute top-96 right-20 w-48 h-48 bg-dots opacity-40 pointer-events-none" />
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-64 h-32 bg-dots opacity-30 pointer-events-none" />
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 pt-1 sm:pt-4 pb-10 lg:pb-13">
+      <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 pb-10 lg:pb-13">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left Column: Content */}
           <div className="lg:col-span-6 space-y-5 text-left">
             {/* Main Display Headline */}
             <div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#090D16] tracking-tight leading-[1.12] font-stencil">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#090D16] tracking-tight leading-[1.15] font-stencil">
                 Innovate & Scale With
               </h1>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#244A6F] tracking-tight leading-[1.12] font-stencil">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#244A6F] tracking-tight leading-[1.15] font-stencil mt-1">
                 ZAdroit IT Solutions
               </h1>
             </div>
 
             {/* Subtitle description */}
-            <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-xl">
+            <p className="text-sm sm:text-base lg:text-lg text-slate-600 font-normal leading-relaxed max-w-xl">
               We provide outsourced enterprise IT services, custom mobile/web
               application development, SAP & Oracle ERP integration, cloud
               computing, and AI-driven automation for businesses worldwide.
             </p>
 
             {/* Action Buttons */}
-            <div className="pt-2 flex flex-wrap items-center gap-5">
-              {/* Dark Green Explore More Pill Button */}
+            <div className="pt-2 flex flex-wrap items-center gap-4 sm:gap-5">
+              {/* Explore More Pill Button */}
               <button
                 onClick={() => openModal({ type: "quote-modal" })}
-                className="px-8 py-3.5 rounded-full bg-[#ded725] hover:bg-[#d3cc11] text-[#32679a] font-bold text-sm sm:text-base shadow-md hover:shadow-lg transition-all flex items-center gap-2.5 group"
+                className="px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bg-[#ded725] hover:bg-[#d3cc11] text-[#32679a] font-bold text-sm sm:text-base shadow-md hover:shadow-lg transition-all flex items-center gap-2.5 group cursor-pointer"
               >
                 <span>Explore More</span>
                 <ArrowRight className="w-4 h-4 !text-[#32679a] group-hover:translate-x-1 transition-transform" />
@@ -138,35 +138,66 @@ export const HomePage: React.FC = () => {
               {/* View All Services Link */}
               <button
                 onClick={() => navigate("services")}
-                className="text-sm sm:text-base font-bold text-[#0F172A] hover:text-[#133A27] underline underline-offset-8 decoration-slate-300 hover:decoration-[#133A27] transition-all"
+                className="text-sm sm:text-base font-bold text-[#0F172A] hover:text-[#133A27] underline underline-offset-8 decoration-slate-300 hover:decoration-[#133A27] transition-all cursor-pointer"
               >
                 View All Services
               </button>
             </div>
 
             {/* Trust Stats Counter */}
-            <div className="pt-6 grid grid-cols-3 gap-4 border-t border-slate-200/80 max-w-lg">
-              <div>
-                <div className="text-2xl sm:text-3xl font-black text-[#133A27] font-heading">
-                  {companyInfo.stats.projectsCompleted}
+            <div className="pt-6 grid grid-cols-3 gap-2 sm:gap-4 border-t border-slate-200/80 max-w-xl">
+              {/* Stat 1 */}
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="relative flex items-center shrink-0">
+                  <div className="relative z-10 w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-[#2B5984]" />
+                  <div className="absolute left-[16px] sm:left-[24px] top-1/2 -translate-y-1/2 h-[34px] sm:h-[48px] w-[1px] bg-[#13273B]/50" />
+                  <div className="relative z-10 w-2 h-4 sm:w-3.5 sm:h-6 bg-[#5F88B0] rounded-r-full" />
+                  <div className="relative z-10 w-2 h-4 sm:w-3.5 sm:h-6 bg-[#5F88B0] rounded-r-full" />
                 </div>
-                <div className="text-xs text-slate-500 mt-0.5">
-                  Projects Delivered
+                <div className="min-w-0">
+                  <div className="text-lg sm:text-2xl lg:text-3xl font-black text-[#133A27] font-heading leading-tight truncate">
+                    {companyInfo.stats.projectsCompleted}
+                  </div>
+                  <div className="text-[10px] sm:text-xs text-slate-500 font-medium leading-tight line-clamp-2">
+                    Projects Delivered
+                  </div>
                 </div>
               </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-black text-amber-500 font-heading">
-                  {companyInfo.stats.clientSatisfaction}
+
+              {/* Stat 2 */}
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="relative flex items-center shrink-0">
+                  <div className="relative z-10 w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-[#2B5984]" />
+                  <div className="absolute left-[16px] sm:left-[24px] top-1/2 -translate-y-1/2 h-[34px] sm:h-[48px] w-[1px] bg-[#13273B]/50" />
+                  <div className="relative z-10 w-2 h-4 sm:w-3.5 sm:h-6 bg-[#5F88B0] rounded-r-full" />
+                  <div className="relative z-10 w-2 h-4 sm:w-3.5 sm:h-6 bg-[#5F88B0] rounded-r-full" />
                 </div>
-                <div className="text-xs text-slate-500 mt-0.5">
-                  Client Satisfaction
+                <div className="min-w-0">
+                  <div className="text-lg sm:text-2xl lg:text-3xl font-black text-[#133A27] font-heading leading-tight truncate">
+                    {companyInfo.stats.clientSatisfaction}
+                  </div>
+                  <div className="text-[10px] sm:text-xs text-slate-500 font-medium leading-tight line-clamp-2">
+                    Client Satisfaction
+                  </div>
                 </div>
               </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-black text-blue-600 font-heading">
-                  {companyInfo.stats.uptimeSLA}
+
+              {/* Stat 3 */}
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="relative flex items-center shrink-0">
+                  <div className="relative z-10 w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-[#2B5984]" />
+                  <div className="absolute left-[16px] sm:left-[24px] top-1/2 -translate-y-1/2 h-[34px] sm:h-[48px] w-[1px] bg-[#13273B]/50" />
+                  <div className="relative z-10 w-2 h-4 sm:w-3.5 sm:h-6 bg-[#5F88B0] rounded-r-full" />
+                  <div className="relative z-10 w-2 h-4 sm:w-3.5 sm:h-6 bg-[#5F88B0] rounded-r-full" />
                 </div>
-                <div className="text-xs text-slate-500 mt-0.5">Uptime SLA</div>
+                <div className="min-w-0">
+                  <div className="text-lg sm:text-2xl lg:text-3xl font-black text-[#133A27] font-heading leading-tight truncate">
+                    {companyInfo.stats.uptimeSLA}
+                  </div>
+                  <div className="text-[10px] sm:text-xs text-slate-500 font-medium leading-tight line-clamp-2">
+                    Uptime SLA
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -392,7 +423,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ================= PROPRIETARY PRODUCTS MARQUEE SECTION ================= */}
-      <section className="py-16 sm:py-20 bg-slate-900 text-white relative overflow-hidden border-b border-slate-800">
+      <section className="py-16 sm:py-20 bg-white text-white relative overflow-hidden border-b border-slate-800">
         {/* Glow ambient background elements */}
         <div className="absolute -top-24 left-1/4 w-96 h-96 bg-[#ded725]/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-24 right-1/4 w-96 h-96 bg-[#32679a]/20 rounded-full blur-3xl pointer-events-none" />
@@ -411,21 +442,21 @@ export const HomePage: React.FC = () => {
                   {/* Second half circle */}
                   <div className="w-2.5 h-5 bg-[#5F88B0] rounded-r-full" />
                 </div>
-                <span className="text-xs sm:text-sm font-bold text-[#ded725] tracking-wide uppercase">
+                <span className="text-xs sm:text-sm font-bold text-[#13273B] tracking-wide uppercase">
                   Flagship Products
                 </span>
               </div>
 
               {/* Main Display Headline */}
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#ded725] font-heading tracking-tight leading-[1.12]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#13273B]  font-heading tracking-tight leading-[1.12]">
                 Scalable enterprise software <br/>
-                 engineered by Zadroit.
+                 engineered by Zadroit
               </h2>
             </div>
             <div>
               <button
                 onClick={() => navigate("products")}
-                className="px-4 py-3 rounded-full bg-[#ded725] hover:bg-[#d3cc11] text-[#090D16] font-extrabold text-12px sm:text-sm shadow-lg transition-all duration-300 flex items-center gap-2.5 group cursor-pointer"
+                className="px-4 py-3 rounded-full bg-[#ded725] hover:bg-[#d3cc11] text-[#090D16] font-extrabold text-xs sm:text-sm shadow-lg transition-all duration-300 flex items-center gap-2.5 group cursor-pointer"
               >
                 <span>View All Products</span>
                 <ArrowRight className="w-4 h-4 text-[#090D16] group-hover:translate-x-1.5 transition-transform duration-300" />
@@ -435,10 +466,10 @@ export const HomePage: React.FC = () => {
         </div>
 
         {/* ================= MARQUEE CONTAINER ================= */}
-        <div className="relative w-full overflow-hidden group/marquee select-none py-2 [--gap:1.5rem] sm:[--gap:2rem] [--duration:35s]">
+        <div className="relative w-full overflow-hidden bg-white/95 group/marquee select-none py-2 [--gap:1.5rem] sm:[--gap:2rem] [--duration:35s]">
           {/* Left & Right gradient fade masks for seamless edges */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent z-20" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-slate-900 via-slate-900/80 to-transparent z-20" />
+          {/* <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent z-20" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-slate-900 via-slate-900/80 to-transparent z-20" /> */}
 
           <div className="flex w-fit gap-[var(--gap)]">
             {/* Track 1 */}
@@ -447,7 +478,7 @@ export const HomePage: React.FC = () => {
                 <div
                   key={product.id}
                   onClick={() => openModal({ type: "product-demo", product })}
-                  className="w-[300px] sm:w-[360px] bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 hover:border-[#ded725]/60 rounded-2xl p-5 sm:p-6 flex flex-col justify-between backdrop-blur-md shadow-xl hover:shadow-2xl hover:shadow-[#ded725]/10 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer group/card shrink-0"
+                  className="w-[300px] sm:w-[360px] bg-[#32679a] hover:bg-slate-800 border border-slate-700/80 hover:border-[#ded725]/60 rounded-2xl p-5 sm:p-6 flex flex-col justify-between backdrop-blur-md shadow-xl hover:shadow-2xl hover:shadow-[#ded725]/10 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer group/card shrink-0"
                 >
                   <div>
                     {/* Top Row: Logo & Category Badge */}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useApp } from "../context/AppContext";
 import { productsData } from "../data/websiteData";
-import { ImagePlaceholder } from "../components/ImagePlaceholder";
+import { ProductCollage } from "../components/ProductCollage";
 import { Sparkles, CheckCircle2, ArrowRight, Cpu, Server } from "lucide-react";
 
 export const ProductsPage: React.FC = () => {
@@ -97,95 +97,97 @@ export const ProductsPage: React.FC = () => {
               <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#32679a]/8 via-[#ded725]/8 to-transparent rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
               <div
-                className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10 ${
+                className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch relative z-10 ${
                   isEven ? "lg:flex-row-reverse" : ""
                 }`}
               >
                 {/* Product Info */}
                 <div
-                  className={`lg:col-span-6 space-y-5 ${
+                  className={`lg:col-span-6 flex flex-col justify-between space-y-5 ${
                     isEven ? "lg:order-2" : "lg:order-1"
                   }`}
                 >
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-xs font-bold px-3 py-1 rounded-full bg-amber-50 text-amber-900 border border-amber-200/80 shadow-xs">
-                      {product.badge}
-                    </span>
-                    <span className="text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 text-blue-800 border border-blue-200/80 shadow-xs">
-                      {product.category}
-                    </span>
-                    <span className="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200/80 shadow-xs">
-                      {product.status}
-                    </span>
-                  </div>
-
-                  <h2 className="text-3xl sm:text-4xl font-black text-[#090D16] font-heading group-hover:text-[#13273B] transition-colors">
-                    {product.name}
-                  </h2>
-
-                  <p className="text-base text-amber-700 font-semibold">
-                    {product.tagline}
-                  </p>
-
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    {product.fullDesc}
-                  </p>
-
-                  {/* Core Features Grid */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                    {product.features.map((feat, i) => (
-                      <div
-                        key={i}
-                        className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-slate-100 hover:border-slate-300 hover:scale-[1.01] transition-all duration-300"
-                      >
-                        <div className="text-xs font-bold text-slate-900 mb-1 flex items-center gap-1.5">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                          <span>{feat.title}</span>
-                        </div>
-                        <p className="text-[11px] text-slate-600 leading-relaxed">
-                          {feat.description}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Tech Badges */}
-                  <div>
-                    <div className="text-xs text-slate-500 font-semibold mb-2 flex items-center gap-1.5">
-                      <Cpu className="w-3.5 h-3.5 text-[#32679a]" />
-                      Architecture & Stack:
+                  <div className="space-y-4">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="text-xs font-bold px-3 py-1 rounded-full bg-amber-50 text-amber-900 border border-amber-200/80 shadow-xs">
+                        {product.badge}
+                      </span>
+                      <span className="text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 text-blue-800 border border-blue-200/80 shadow-xs">
+                        {product.category}
+                      </span>
+                      <span className="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200/80 shadow-xs">
+                        {product.status}
+                      </span>
                     </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {product.techBadges.map((t) => (
-                        <span
-                          key={t}
-                          className="text-[10px] font-mono px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 border border-slate-200 hover:bg-[#13273B] hover:text-white hover:border-[#13273B] transition-all duration-300 cursor-default"
+
+                    <h2 className="text-3xl sm:text-4xl font-black text-[#090D16] font-heading group-hover:text-[#13273B] transition-colors">
+                      {product.name}
+                    </h2>
+
+                    <p className="text-base text-amber-700 font-semibold">
+                      {product.tagline}
+                    </p>
+
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      {product.fullDesc}
+                    </p>
+
+                    {/* Core Features Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                      {product.features.map((feat, i) => (
+                        <div
+                          key={i}
+                          className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-slate-100 hover:border-slate-300 hover:scale-[1.01] transition-all duration-300"
                         >
-                          {t}
-                        </span>
+                          <div className="text-xs font-bold text-slate-900 mb-1 flex items-center gap-1.5">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                            <span>{feat.title}</span>
+                          </div>
+                          <p className="text-[11px] text-slate-600 leading-relaxed">
+                            {feat.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Tech Badges */}
+                    <div>
+                      <div className="text-xs text-slate-500 font-semibold mb-2 flex items-center gap-1.5">
+                        <Cpu className="w-3.5 h-3.5 text-[#32679a]" />
+                        Architecture & Stack:
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {product.techBadges.map((t) => (
+                          <span
+                            key={t}
+                            className="text-[10px] font-mono px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 border border-slate-200 hover:bg-[#13273B] hover:text-white hover:border-[#13273B] transition-all duration-300 cursor-default"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Metrics Bar */}
+                    <div className="grid grid-cols-3 gap-3 pt-3 border-t border-slate-100">
+                      {product.metrics.map((m, i) => (
+                        <div
+                          key={i}
+                          className="p-3 rounded-2xl bg-slate-50 border border-slate-200/80 text-center hover:bg-[#F9F8D8] hover:border-[#E5E055] hover:-translate-y-0.5 transition-all duration-300"
+                        >
+                          <div className="text-[10px] text-slate-500 font-medium">
+                            {m.label}
+                          </div>
+                          <div className="text-base font-black text-[#13273B] font-heading mt-0.5">
+                            {m.value}
+                          </div>
+                        </div>
                       ))}
                     </div>
                   </div>
 
-                  {/* Metrics Bar */}
-                  <div className="grid grid-cols-3 gap-3 pt-3 border-t border-slate-100">
-                    {product.metrics.map((m, i) => (
-                      <div
-                        key={i}
-                        className="p-3 rounded-2xl bg-slate-50 border border-slate-200/80 text-center hover:bg-[#F9F8D8] hover:border-[#E5E055] hover:-translate-y-0.5 transition-all duration-300"
-                      >
-                        <div className="text-[10px] text-slate-500 font-medium">
-                          {m.label}
-                        </div>
-                        <div className="text-base font-black text-[#13273B] font-heading mt-0.5">
-                          {m.value}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
                   {/* CTAs */}
-                  <div className="pt-2 flex flex-wrap items-center gap-3">
+                  <div className="pt-3 flex flex-wrap items-center gap-3">
                     <button
                       onClick={() =>
                         openModal({ type: "product-demo", product })
@@ -212,25 +214,19 @@ export const ProductsPage: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Right Visual Image / Showcase */}
+                {/* Right Visual Image Showcase / 2-3 Image Collage */}
                 <div
-                  className={`lg:col-span-6 ${
+                  className={`lg:col-span-6 flex flex-col h-full min-h-[460px] lg:min-h-full ${
                     isEven ? "lg:order-1" : "lg:order-2"
                   }`}
                 >
-                  <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-md group-hover:shadow-2xl transition-all duration-500 group/img bg-slate-900/5">
-                    <div className="transition-transform duration-700 ease-out group-hover:scale-105">
-                      <ImagePlaceholder
-                        src={product.imagePlaceholder}
-                        alt={`${product.name} Interface`}
-                        category={product.category}
-                        label={`${product.name} Enterprise Architecture`}
-                        aspectRatio="video"
-                        dimensionsHint="1200 × 750"
-                        iconType="product"
-                      />
-                    </div>
-                  </div>
+                  <ProductCollage
+                    images={product.images}
+                    captions={product.imageCaptions}
+                    productName={product.name}
+                    category={product.category}
+                    fallbackPlaceholder={product.imagePlaceholder}
+                  />
                 </div>
               </div>
             </div>

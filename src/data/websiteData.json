@@ -516,6 +516,16 @@
         { "label": "Uptime SLA", "value": "99.99%" }
       ],
       "imagePlaceholder": "/assets/placeholders/product-zaderp.svg",
+      "images": [
+        "/images/products/zaderp-1.jpg",
+        "/images/products/zaderp-2.jpg",
+        "/images/products/zaderp-3.jpg"
+      ],
+      "imageCaptions": [
+        "Executive ERP Insights",
+        "Inventory & Warehouse Matrix",
+        "Financial Operations Suite"
+      ],
       "logo": "/assets/product logo/ZADPRO-05.png",
       "demoUrl": "#contact",
       "status": "Flagship",
@@ -554,6 +564,16 @@
         { "label": "Patient Records Analyzed", "value": "250K+" }
       ],
       "imagePlaceholder": "/assets/placeholders/product-medpredit.svg",
+      "images": [
+        "/images/products/medpredit-1.jpg",
+        "/images/products/medpredit-2.jpg",
+        "/images/products/medpredit-3.jpg"
+      ],
+      "imageCaptions": [
+        "Clinical AI Diagnostics",
+        "Real-Time Patient Risk Monitor",
+        "EHR Intelligence & Summaries"
+      ],
       "logo": "/assets/product logo/ZADPRO_YOKE-07.png",
       "demoUrl": "#contact",
       "status": "Active Deployment",
@@ -592,6 +612,16 @@
         { "label": "Booking Completion Time", "value": "< 15s" }
       ],
       "imagePlaceholder": "/assets/placeholders/product-zadsports.svg",
+      "images": [
+        "/images/products/zadsports-1.jpg",
+        "/images/products/zadsports-2.jpg",
+        "/images/products/zadsports-3.jpg"
+      ],
+      "imageCaptions": [
+        "Turf & Court Booking Hub",
+        "Tournament Brackets & Scores",
+        "Venue Automation & Analytics"
+      ],
       "logo": "/assets/product logo/ZADPRO_MicroFin-05.png",
       "demoUrl": "https://zadsports.com",
       "status": "Production Ready",
@@ -626,6 +656,16 @@
         { "label": "Security Checks/sec", "value": "10,000+" }
       ],
       "imagePlaceholder": "/assets/placeholders/product-zadcloud.svg",
+      "images": [
+        "/images/products/zadcloud-1.jpg",
+        "/images/products/zadcloud-2.jpg",
+        "/images/products/zadcloud-3.jpg"
+      ],
+      "imageCaptions": [
+        "Multi-Cloud Kubernetes Fleet",
+        "FinOps Anomaly Cost Saver",
+        "Continuous Security Policies"
+      ],
       "logo": "/assets/product logo/ZADPRO_LOGISTICS-09.png",
       "demoUrl": "#contact",
       "status": "Enterprise Beta",
@@ -660,6 +700,16 @@
         { "label": "Catalog Capacity", "value": "500K+ SKUs" }
       ],
       "imagePlaceholder": "/assets/placeholders/product-zadcommerce.svg",
+      "images": [
+        "/images/products/zadcommerce-1.jpg",
+        "/images/products/zadcommerce-2.jpg",
+        "/images/products/zadcommerce-3.jpg"
+      ],
+      "imageCaptions": [
+        "Headless Omnichannel Store",
+        "Sub-Second Edge Checkout",
+        "B2B Wholesale & Stock Sync"
+      ],
       "logo": "/assets/product logo/ZADPRO-05.png",
       "demoUrl": "#contact",
       "status": "Production Ready",
@@ -694,6 +744,16 @@
         { "label": "Telemetry Latency", "value": "< 80ms" }
       ],
       "imagePlaceholder": "/assets/placeholders/product-zadpulse.svg",
+      "images": [
+        "/images/products/zadpulse-1.jpg",
+        "/images/products/zadpulse-2.jpg",
+        "/images/products/zadpulse-3.jpg"
+      ],
+      "imageCaptions": [
+        "Industrial 3D Plant Twin",
+        "High-Throughput Timeseries Flow",
+        "Predictive Anomaly Triggers"
+      ],
       "logo": "/assets/product logo/ZADPRO_YOKE-07.png",
       "demoUrl": "#contact",
       "status": "Production Ready",

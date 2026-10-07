@@ -97,7 +97,7 @@ export const Footer: React.FC = () => {
               Your trusted partner for custom enterprise software development, cloud infrastructure, AI solutions, SAP integration, and proprietary SaaS platforms.
             </p>
 
-            <div className="pt-2 text-sm text-[#32679a] space-y-2.5 font-normal">
+            <div className="pt-2 text-sm text-[#32679a] space-y-2.5 font-semibold">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#32679a] mt-0.5 shrink-0" />
                 <span>
