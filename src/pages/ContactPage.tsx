@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useApp } from "../context/AppContext";
 import { companyInfo, faqItemsData } from "../data/websiteData";
+import { sendEmailToAdmin } from "../services/emailService";
 import {
   Mail,
   Phone,
@@ -14,7 +15,7 @@ import {
 } from "lucide-react";
 
 export const ContactPage: React.FC = () => {
-  const { showToast, triggerConfetti } = useApp();
+  const { showToast } = useApp();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [openFaqId, setOpenFaqId] = useState<string | null>(faqItemsData[0].id);
@@ -75,36 +76,26 @@ export const ContactPage: React.FC = () => {
       return;
     }
 
-    setIsSubmitting(true);
-
-    const recipient = "indumathi.r@zadroit.com";
-    const subject = encodeURIComponent("Contact Form - Project Inquiry");
-    const emailBody = `Full Name: ${formData.fullName}
-Email Address: ${formData.email}
-Phone Number: ${formData.phone || "Not provided"}
-Interested Service / Product: ${formData.interestedService} (${formData.serviceCategory})
-
-Project Details & Requirements:
-${formData.projectDetails}
-
----
-Dispatched from Zadroit Contact Us Page`;
-
-    const mailtoUrl = `mailto:${recipient}?subject=${subject}&body=${encodeURIComponent(
-      emailBody,
-    )}`;
+    sendEmailToAdmin({
+      subject: `New Project Inquiry from ${formData.fullName}`,
+      senderName: formData.fullName,
+      senderEmail: formData.email,
+      phone: formData.phone,
+      formType: "Contact Form / Project Inquiry",
+      data: {
+        interested_service: formData.interestedService,
+        service_category: formData.serviceCategory,
+        project_requirements: formData.projectDetails,
+      },
+    });
 
     setTimeout(() => {
       setIsSubmitting(false);
-      triggerConfetti();
       showToast(
-        "Message Dispatched! 🚀",
-        `Your details have been recorded and sent to indumathi.r@zadroit.com with subject "Contact Form".`,
+        "Message Sent Successfully! 🚀",
+        `Thank you ${formData.fullName}. Your project inquiry has been dispatched to Zadroit admin. We'll be in touch soon!`,
         "success",
       );
-
-      // Trigger user's mail client
-      window.location.href = mailtoUrl;
 
       // Reset form fields
       setFormData({
@@ -115,7 +106,7 @@ Dispatched from Zadroit Contact Us Page`;
         serviceCategory: "IT Service",
         projectDetails: "",
       });
-    }, 600);
+    }, 400);
   };
 
   return (
@@ -308,7 +299,7 @@ Dispatched from Zadroit Contact Us Page`;
                   onChange={(e) =>
                     setFormData({ ...formData, projectDetails: e.target.value })
                   }
-                  className="w-full px-4 py-3.5 rounded-xl sm:rounded-2xl border border-sky-100 bg-[#f8fbfe] text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#ea580c] focus:border-transparent transition-all placeholder:text-slate-400 font-medium resize-none"
+                  className="w-full px-4 py-3.5 rounded-xl sm:rounded-2xl border border-sky-100 bg-[#f8fbfe] text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#E6E27A] focus:border-transparent transition-all placeholder:text-slate-400 font-medium resize-none"
                 />
               </div>
 
@@ -317,7 +308,7 @@ Dispatched from Zadroit Contact Us Page`;
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 px-6 rounded-2xl bg-[#ded725] hover:bg-[#d3cc11] text-[#32679a] font-extrabold text-sm sm:text-base shadow-lg shadow-[#F0B429]/25 hover:shadow-xl hover:shadow-[#ea580c]/40 transition-all flex items-center justify-center gap-2.5 cursor-pointer disabled:opacity-60"
+                  className="w-full py-4 px-6 rounded-2xl bg-[#ded725] hover:bg-[#d3cc11] text-[#32679a] font-extrabold text-sm sm:text-base shadow-lg shadow-[#E6E27A]/25 hover:shadow-xl hover:shadow-[#E6E27A]/40 transition-all flex items-center justify-center gap-2.5 cursor-pointer disabled:opacity-60"
                 >
                   {isSubmitting ? (
                     <span>Sending message...</span>

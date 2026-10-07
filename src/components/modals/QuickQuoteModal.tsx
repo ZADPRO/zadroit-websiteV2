@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { servicesData } from '../../data/websiteData';
+import { sendEmailToAdmin } from '../../services/emailService';
 import { X, Calculator, Send, ShieldCheck, Sparkles } from 'lucide-react';
 
 interface QuickQuoteModalProps {
@@ -8,7 +9,7 @@ interface QuickQuoteModalProps {
 }
 
 export const QuickQuoteModal: React.FC<QuickQuoteModalProps> = ({ defaultService }) => {
-  const { closeModal, showToast, triggerConfetti } = useApp();
+  const { closeModal, showToast } = useApp();
   const [selectedService, setSelectedService] = useState<string>(
     defaultService || servicesData[0].title
   );
@@ -36,38 +37,31 @@ export const QuickQuoteModal: React.FC<QuickQuoteModalProps> = ({ defaultService
 
     setIsSubmitting(true);
 
-    const recipient = "indumathi.r@zadroit.com";
-    const subject = encodeURIComponent(`Quick Quote Request - ${selectedService}`);
-    const emailBody = `Full Name: ${formData.name}
-Email Address: ${formData.email}
-Phone Number: ${formData.phone || "Not provided"}
-Company: ${formData.company || "Not provided"}
-Selected Service: ${selectedService}
-Project Type: ${projectType}
-Budget Range: ${budgetRange}
-Timeline: ${timeline}
-
-Project Scope & Requirements:
-${formData.projectScope || "Not provided"}
-
----
-Dispatched from Zadroit Quick Quote Portal`;
-
-    const mailtoUrl = `mailto:${recipient}?subject=${subject}&body=${encodeURIComponent(
-      emailBody
-    )}`;
+    sendEmailToAdmin({
+      subject: `Quick Quote Request - ${selectedService} (${formData.name})`,
+      senderName: formData.name,
+      senderEmail: formData.email,
+      phone: formData.phone,
+      formType: 'Quick Quote Proposal Request',
+      data: {
+        service: selectedService,
+        project_type: projectType,
+        budget_range: budgetRange,
+        timeline: timeline,
+        company: formData.company || 'Not provided',
+        project_scope: formData.projectScope || 'Not provided',
+      },
+    });
 
     setTimeout(() => {
       setIsSubmitting(false);
-      triggerConfetti();
       showToast(
-        'Quote Request Dispatched! 📋',
-        `Thank you ${formData.name}. Details sent to indumathi.r@zadroit.com. Our technical architect will review and send a proposal within 24 hours.`,
+        'Quote Request Sent! 📋',
+        `Thank you ${formData.name}. Details have been dispatched to our engineering team. We will review and contact you within 24 hours.`,
         'success'
       );
-      window.location.href = mailtoUrl;
       closeModal();
-    }, 600);
+    }, 400);
   };
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {

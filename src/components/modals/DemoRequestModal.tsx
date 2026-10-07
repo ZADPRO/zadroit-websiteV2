@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import type { Product } from '../../types';
 import { productsData } from '../../data/websiteData';
+import { sendEmailToAdmin } from '../../services/emailService';
 import { X, Sparkles, Building, Mail, User, Phone, Send } from 'lucide-react';
 
 interface DemoRequestModalProps {
@@ -9,7 +10,7 @@ interface DemoRequestModalProps {
 }
 
 export const DemoRequestModal: React.FC<DemoRequestModalProps> = ({ product: initialProduct }) => {
-  const { closeModal, showToast, triggerConfetti } = useApp();
+  const { closeModal, showToast } = useApp();
   const [selectedProductId, setSelectedProductId] = useState<string>(
     initialProduct?.id || productsData[0].id
   );
@@ -37,38 +38,32 @@ export const DemoRequestModal: React.FC<DemoRequestModalProps> = ({ product: ini
 
     setIsSubmitting(true);
 
-    const recipient = "indumathi.r@zadroit.com";
-    const subject = encodeURIComponent(`Product Demo Request - ${selectedProduct.name}`);
-    const emailBody = `Full Name: ${formData.fullName}
-Work Email: ${formData.workEmail}
-Company: ${formData.companyName}
-Phone Number: ${formData.phone || "Not provided"}
-Requested Product: ${selectedProduct.name} (${selectedProduct.category})
-Preferred Date: ${formData.preferredDate || "Earliest available slot"}
-Preferred Time: ${formData.preferredTime}
-Team Size: ${formData.teamSize}
-
-Primary Use Case & Objectives:
-${formData.useCase || "Not specified"}
-
----
-Dispatched from Zadroit Product Demo Request Portal`;
-
-    const mailtoUrl = `mailto:${recipient}?subject=${subject}&body=${encodeURIComponent(
-      emailBody
-    )}`;
+    sendEmailToAdmin({
+      subject: `Product Demo Request: ${selectedProduct.name} - ${formData.fullName}`,
+      senderName: formData.fullName,
+      senderEmail: formData.workEmail,
+      phone: formData.phone,
+      formType: 'Product Architecture Demo Request',
+      data: {
+        product_name: selectedProduct.name,
+        product_category: selectedProduct.category,
+        company: formData.companyName,
+        preferred_date: formData.preferredDate || 'Earliest available slot',
+        preferred_time: formData.preferredTime,
+        team_size: formData.teamSize,
+        use_case: formData.useCase || 'Not specified',
+      },
+    });
 
     setTimeout(() => {
       setIsSubmitting(false);
-      triggerConfetti();
       showToast(
-        'Demo Request Dispatched! 🚀',
-        `We have received your demo request for ${selectedProduct.name}. Details sent to indumathi.r@zadroit.com.`,
+        'Demo Request Confirmed! 🚀',
+        `Thank you ${formData.fullName}. Your 1-on-1 demo for ${selectedProduct.name} has been booked. We will send a calendar invite shortly.`,
         'success'
       );
-      window.location.href = mailtoUrl;
       closeModal();
-    }, 600);
+    }, 400);
   };
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {

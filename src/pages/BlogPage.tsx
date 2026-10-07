@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useApp } from "../context/AppContext";
 import { blogPostsData } from "../data/websiteData";
 import { ImagePlaceholder } from "../components/ImagePlaceholder";
+import { sendEmailToAdmin } from "../services/emailService";
 import { Search, Clock, ArrowRight, ChevronRight, Send } from "lucide-react";
 
 export const BlogPage: React.FC = () => {
@@ -45,22 +46,21 @@ export const BlogPage: React.FC = () => {
       );
       return;
     }
-    const recipient = "indumathi.r@zadroit.com";
-    const subject = encodeURIComponent("Newsletter Subscription - Zadroit Tech Radar");
-    const emailBody = `Subscriber Email: ${subEmail}
 
----
-Dispatched from Zadroit Blog & Tech Radar Subscription Form`;
-    const mailtoUrl = `mailto:${recipient}?subject=${subject}&body=${encodeURIComponent(
-      emailBody
-    )}`;
+    sendEmailToAdmin({
+      subject: `New Newsletter Subscription: ${subEmail}`,
+      senderEmail: subEmail,
+      formType: "Tech Radar Newsletter Subscription",
+      data: {
+        subscriber_email: subEmail,
+      },
+    });
 
     showToast(
       "Subscribed to Tech Radar! 🚀",
-      "Subscription details sent to indumathi.r@zadroit.com.",
+      "Thank you for subscribing. You will receive our latest engineering whitepapers directly.",
       "success",
     );
-    window.location.href = mailtoUrl;
     setSubEmail("");
   };
 
@@ -311,9 +311,9 @@ Dispatched from Zadroit Blog & Tech Radar Subscription Form`;
               />
               <button
                 type="submit"
-                className="px-6 py-3 rounded-full bg-[#133A27] hover:bg-[#0c2619] text-white font-bold text-sm shadow-sm transition-all flex items-center justify-center gap-2"
+                className="px-6 py-3 rounded-full bg-[#133A27] hover:bg-[#0c2619] text-white font-bold text-sm shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
-                <Send className="w-4 h-4 text-[#C6F135]" />
+                <Send className="w-4 h-4 text-[#ded725]" />
                 Subscribe
               </button>
             </form>

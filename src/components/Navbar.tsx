@@ -93,13 +93,13 @@ export const Navbar: React.FC = () => {
 
           {/* Mobile Menu Toggle */}
           <div className="flex sm:hidden items-center gap-2">
-            <button
+            {/* <button
               onClick={() => openModal({ type: 'search-modal' })}
               className="p-2 rounded-full text-slate-700 hover:bg-slate-100"
               aria-label="Search"
             >
               <Search className="w-5 h-5" />
-            </button>
+            </button> */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-xl text-slate-900 hover:bg-slate-100"
@@ -122,16 +122,16 @@ export const Navbar: React.FC = () => {
                   key={item.id}
                   onClick={() => handleNavClick(item.id as PageId)}
                   className={`w-full px-4 py-3 rounded-xl text-left text-sm font-semibold flex items-center justify-between ${isActive
-                    ? 'bg-slate-100 text-[#133A27] font-bold border-l-4 border-[#1B3853]'
+                    ? 'bg-slate-100 text-[#32679a] font-bold border-l-4 border-[#1B3853]'
                     : 'text-slate-700 hover:bg-slate-50'
                     }`}
                 >
                   <span>{item.label}</span>
-                  {item.badge && (
+                  {/* {item.badge && (
                     <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
                       {item.badge}
                     </span>
-                  )}
+                  )} */}
                 </button>
               );
             })}
@@ -143,7 +143,7 @@ export const Navbar: React.FC = () => {
                 setMobileMenuOpen(false);
                 openModal({ type: 'quote-modal' });
               }}
-              className="w-full py-3 rounded-full bg-[#133A27] !text-[#32679a] text-white font-bold text-sm shadow-md flex items-center justify-center gap-2"
+              className="w-full py-3 rounded-full bg-[#ded725] !text-[#32679a] text-white font-bold text-sm shadow-md flex items-center justify-center gap-2"
             >
               <span
               className="!text-[#32679a]"

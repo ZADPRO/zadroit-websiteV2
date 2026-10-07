@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import type { JobOpening } from '../../types';
+import { sendEmailToAdmin } from '../../services/emailService';
 import { X, Briefcase, MapPin, Upload, CheckCircle2, Send, Sparkles, AlertCircle } from 'lucide-react';
 
 interface JobApplyModalProps {
@@ -8,7 +9,7 @@ interface JobApplyModalProps {
 }
 
 export const JobApplyModal: React.FC<JobApplyModalProps> = ({ job }) => {
-  const { closeModal, showToast, triggerConfetti } = useApp();
+  const { closeModal, showToast } = useApp();
   const [step, setStep] = useState<1 | 2>(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [fileName, setFileName] = useState<string>('');
@@ -40,41 +41,36 @@ export const JobApplyModal: React.FC<JobApplyModalProps> = ({ job }) => {
 
     setIsSubmitting(true);
 
-    const recipient = "indumathi.r@zadroit.com";
-    const subject = encodeURIComponent(`Job Application - ${job.title} (${job.id})`);
-    const emailBody = `Candidate Name: ${formData.fullName}
-Email Address: ${formData.email}
-Phone Number: ${formData.phone}
-Position Applied: ${job.title} (${job.department})
-Job Location: ${job.location}
-Experience: ${formData.experienceYears || "Not specified"}
-Notice Period: ${formData.noticePeriod}
-Current Company: ${formData.currentCompany || "Not specified"}
-LinkedIn Profile: ${formData.linkedin || "Not provided"}
-Portfolio / GitHub: ${formData.portfolio || "Not provided"}
-Attached Resume: ${fileName || "Attached in email"}
-
-Cover Note:
-${formData.coverNote || "No cover note provided"}
-
----
-Dispatched from Zadroit Careers Portal`;
-
-    const mailtoUrl = `mailto:${recipient}?subject=${subject}&body=${encodeURIComponent(
-      emailBody
-    )}`;
+    sendEmailToAdmin({
+      subject: `Job Application: ${job.title} - ${formData.fullName}`,
+      senderName: formData.fullName,
+      senderEmail: formData.email,
+      phone: formData.phone,
+      formType: 'Job Application',
+      data: {
+        position_applied: job.title,
+        job_id: job.id,
+        department: job.department,
+        job_location: job.location,
+        experience_years: formData.experienceYears || 'Not specified',
+        notice_period: formData.noticePeriod,
+        current_company: formData.currentCompany || 'Not specified',
+        linkedin: formData.linkedin || 'Not provided',
+        portfolio: formData.portfolio || 'Not provided',
+        resume_filename: fileName || 'Not uploaded',
+        cover_note: formData.coverNote || 'No cover note provided',
+      },
+    });
 
     setTimeout(() => {
       setIsSubmitting(false);
-      triggerConfetti();
       showToast(
-        'Application Dispatched! 🎉',
-        `Thank you ${formData.fullName}. Application details sent to indumathi.r@zadroit.com. Our talent team will contact you within 48 hours.`,
+        'Application Submitted! 🎉',
+        `Thank you ${formData.fullName}. Your application for "${job.title}" has been received. Our talent team will review and contact you within 48 hours.`,
         'success'
       );
-      window.location.href = mailtoUrl;
       closeModal();
-    }, 600);
+    }, 400);
   };
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
