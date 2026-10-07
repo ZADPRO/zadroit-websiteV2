@@ -411,22 +411,21 @@ export const HomePage: React.FC = () => {
                   {/* Second half circle */}
                   <div className="w-2.5 h-5 bg-[#5F88B0] rounded-r-full" />
                 </div>
-                <span className="text-xs sm:text-sm font-bold text-[#13273B] tracking-wide uppercase">
+                <span className="text-xs sm:text-sm font-bold text-[#ded725] tracking-wide uppercase">
                   Flagship Products
                 </span>
               </div>
 
               {/* Main Display Headline */}
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#13273B] font-heading tracking-tight leading-[1.12]">
-                Scalable enterprise software engineered by Zadroit to accelerate
-                workflow automation, predictive intelligence, and operational
-                efficiency.
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#ded725] font-heading tracking-tight leading-[1.12]">
+                Scalable enterprise software <br/>
+                 engineered by Zadroit.
               </h2>
             </div>
             <div>
               <button
                 onClick={() => navigate("products")}
-                className="px-6 py-3 rounded-full bg-[#ded725] hover:bg-[#d3cc11] text-[#090D16] font-extrabold text-sm sm:text-base shadow-lg transition-all duration-300 flex items-center gap-2.5 group cursor-pointer"
+                className="px-4 py-3 rounded-full bg-[#ded725] hover:bg-[#d3cc11] text-[#090D16] font-extrabold text-12px sm:text-sm shadow-lg transition-all duration-300 flex items-center gap-2.5 group cursor-pointer"
               >
                 <span>View All Products</span>
                 <ArrowRight className="w-4 h-4 text-[#090D16] group-hover:translate-x-1.5 transition-transform duration-300" />

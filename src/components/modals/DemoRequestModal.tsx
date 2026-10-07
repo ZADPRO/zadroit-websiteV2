@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import type { Product } from '../../types';
 import { productsData } from '../../data/websiteData';
-import { X, Sparkles, Building, Mail, User, Phone, Send, ShieldCheck } from 'lucide-react';
+import { X, Sparkles, Building, Mail, User, Phone, Send } from 'lucide-react';
 
 interface DemoRequestModalProps {
   product?: Product;
@@ -99,7 +99,7 @@ Dispatched from Zadroit Product Demo Request Portal`;
             Live Guided Walkthrough
           </div>
           <h3 className="text-2xl sm:text-3xl font-black text-[#090D16] font-heading">
-            Schedule a Demo for <span className="text-[#133A27]">{selectedProduct.name}</span>
+            Schedule a Demo for <span className="text-[#ded725]">{selectedProduct.name}</span>
           </h3>
           <p className="text-xs sm:text-sm text-slate-600 mt-1">
             Experience real-time workflows, test feature modules, and ask direct technical questions to our engineering architects.
@@ -117,14 +117,14 @@ Dispatched from Zadroit Product Demo Request Portal`;
                 onClick={() => setSelectedProductId(p.id)}
                 className={`px-3 py-2.5 rounded-xl text-xs font-semibold text-left transition-all border cursor-pointer ${
                   selectedProductId === p.id
-                    ? 'bg-[#133A27] text-white border-[#133A27] shadow-sm'
+                    ? 'bg-[#ded725] text-[#1B3853] border-[#ded725] shadow-sm'
                     : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 hover:text-slate-900'
                 }`}
               >
                 <div className="font-bold">{p.name}</div>
                 <div
                   className={`text-[10px] truncate ${
-                    selectedProductId === p.id ? 'text-slate-200' : 'text-slate-500'
+                    selectedProductId === p.id ? 'text-[#32679a]' : 'text-slate-500'
                   }`}
                 >
                   {p.category}
@@ -250,21 +250,21 @@ Dispatched from Zadroit Product Demo Request Portal`;
 
           <div className="pt-3 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
-              <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
-              <span>Includes 30-day sandbox trial credentials</span>
+              {/* <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+              <span>Includes 30-day sandbox trial credentials</span> */}
             </div>
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-[#133A27] hover:bg-[#0c2619] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
+              className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-[#ded725] hover:bg-[#d3cc11] text-[#1B3853] font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
             >
               {isSubmitting ? (
                 <span>Scheduling Walkthrough...</span>
               ) : (
                 <>
-                  <Sparkles className="w-4 h-4 text-[#ded725]" />
-                  <span>Confirm Live Demo</span>
-                  <Send className="w-3.5 h-3.5" />
+                  <Sparkles className="w-4 h-4 text-[#1B3853]" />
+                  <span className="text-[#1B3853]">Confirm Live Demo</span>
+                  <Send className="w-3.5 h-3.5 text-[#1B3853]"  />
                 </>
               )}
             </button>
