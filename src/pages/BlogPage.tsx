@@ -3,7 +3,6 @@ import { useApp } from '../context/AppContext';
 import { blogPostsData } from '../data/websiteData';
 import { ImagePlaceholder } from '../components/ImagePlaceholder';
 import {
-  BookOpen,
   Search,
   Clock,
   ArrowRight,

@@ -3,7 +3,6 @@ import { AppProvider, useApp } from './context/AppContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ToastNotification } from './components/ToastNotification';
-import { AIAssistantWidget } from './components/AIAssistantWidget';
 
 // Pages
 import { HomePage } from './pages/HomePage';

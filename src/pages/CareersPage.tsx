@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { jobOpeningsData, culturePerksData, companyInfo } from '../data/websiteData';
 import {
-  Briefcase,
   Sparkles,
   MapPin,
   Cpu,

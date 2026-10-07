@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  companyInfo,
   aboutData,
   milestonesData,
   teamMembersData,
@@ -8,7 +7,6 @@ import {
 } from "../data/websiteData";
 import { ImagePlaceholder } from "../components/ImagePlaceholder";
 import {
-  Sparkles,
   Building,
   Target,
   Eye,
@@ -80,13 +78,13 @@ export const AboutPage: React.FC = () => {
                 </div>
 
                 {/* Stack of 3 Geometric Shapes (2 Outline Semicircles + 1 Solid Lime-Yellow Circle) - ENLARGED */}
-                <div className="flex flex-col items-center justify-end gap-3.5 sm:gap-4 md:gap-5 pb-0.5 shrink-0">
+                <div className="flex flex-col items-center justify-end   shrink-0">
                   {/* Outline Arch 1 */}
-                  <div className="w-20 h-12 sm:w-26 sm:h-14 md:w-30 md:h-14 border-2 sm:border-[2.5px] border-slate-300 rounded-t-full bg-transparent" />
+                  <div className="w-20 h-12 sm:w-26 sm:h-12 md:w-34 md:h-16 border-2 sm:border-[2.5px] border-slate-300 rounded-t-full bg-transparent" />
                   {/* Outline Arch 2 */}
-                  <div className="w-20 h-12 sm:w-26 sm:h-14 md:w-30 md:h-14 border-2 sm:border-[2.5px] border-slate-300 rounded-t-full bg-transparent" />
+                  <div className="w-20 h-12 sm:w-26 sm:h-12 md:w-34 md:h-16 border-2 sm:border-[2.5px] border-slate-300 rounded-t-full bg-transparent" />
                   {/* Solid Lime-Yellow Circle */}
-                  <div className="w-20 h-20 sm:w-26 sm:h-26 md:w-30 md:h-30 rounded-full bg-[#ded725] shadow-sm" />
+                  <div className="w-24 h-24 sm:w-26 sm:h-26 md:w-34 md:h-34 rounded-full bg-[#ded725] shadow-sm" />
                 </div>
               </div>
 

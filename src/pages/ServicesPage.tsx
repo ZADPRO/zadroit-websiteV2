@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { servicesData } from '../data/websiteData';
-import { ImagePlaceholder } from '../components/ImagePlaceholder';
 import {
-  Layers,
-  Sparkles,
-  CheckCircle2,
   ArrowRight,
+  Sparkles,
   Calculator,
-  Users
+  Users,
+  ChevronDown
 } from 'lucide-react';
+import type { Service } from '../types';
 
 export const ServicesPage: React.FC = () => {
   const { openModal } = useApp();
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [visibleCount, setVisibleCount] = useState<number>(9);
+  const [showEstimator, setShowEstimator] = useState<boolean>(false);
 
   // Estimator State
   const [estimatorService, setEstimatorService] = useState('enterprise-software');
@@ -21,20 +21,21 @@ export const ServicesPage: React.FC = () => {
   const [needAiAddon, setNeedAiAddon] = useState(false);
   const [needDevOpsAddon, setNeedDevOpsAddon] = useState(true);
 
-  const categories = [
-    'All',
-    'Enterprise Software',
-    'Cloud & DevOps',
-    'AI & Data Intelligence',
-    'Web & Mobile Apps',
-    'UI/UX & Product Design',
-    'Cybersecurity & Auditing'
-  ];
+  // Take the primary 9 services matching the screenshot or all available
+  const displayServices = servicesData.slice(0, visibleCount);
+  const hasMore = visibleCount < servicesData.length;
 
-  const filteredServices =
-    selectedCategory === 'All'
-      ? servicesData
-      : servicesData.filter((s) => s.category === selectedCategory);
+  const handleLoadMore = () => {
+    if (hasMore) {
+      setVisibleCount((prev) => Math.min(prev + 6, servicesData.length));
+    } else {
+      setShowEstimator(true);
+      const estimatorEl = document.getElementById('cost-estimator');
+      if (estimatorEl) {
+        estimatorEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   // Dynamic cost & timeline calculation
   const calculateEstimate = () => {
@@ -73,285 +74,311 @@ export const ServicesPage: React.FC = () => {
 
   const estimateResult = calculateEstimate();
 
-  return (
-    <div className="relative overflow-hidden pt-24 pb-16 bg-white">
-      {/* Background dot matrix */}
-      <div className="absolute top-20 left-10 w-48 h-48 bg-dots opacity-40 pointer-events-none" />
-      <div className="absolute top-96 right-10 w-48 h-48 bg-dots opacity-40 pointer-events-none" />
+  // Helper to render an individual Service Card matching the exact screenshot layout
+  const renderServiceCard = (service: Service, index: number) => {
+    // Column 2 items in screenshot (index 1, 4, 7...) have text on top and image on bottom
+    const isTextOnTop = service.imagePosition === 'bottom' || (index % 3 === 1);
+    const isLimeHighlighted = service.isHighlighted || (index === 1); // Card 2 "Content Marketing" highlighted
 
-      {/* Hero / Header */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
-        <div className="text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold mb-4">
-            {/* <Layers className="w-3.5 h-3.5 text-emerald-600" /> */}
-              <div className="flex items-center gap-0">
-              {/* Green circle */}
-              <div className="w-7 h-7 rounded-full bg-lime-400" />
+    const imageSrc = service.image || service.imagePlaceholder || '/images/services/social-media.jpg';
 
-              {/* First dark semicircle */}
-              <div
-                className="w-3.5 h-7 bg-green-950"
-                style={{
-                  borderRadius: "0 32px 32px 0",
-                }}
-              />
+    // Sub-component for Image block
+    const imageBlock = (
+      <div
+        key="image"
+        className="w-full h-48 sm:h-52 rounded-2xl overflow-hidden relative group/img bg-slate-200"
+      >
+        <img
+          src={imageSrc}
+          alt={service.title}
+          className="w-full h-full object-cover filter grayscale contrast-105 brightness-95 group-hover/img:scale-105 transition-transform duration-500 ease-out"
+          loading="lazy"
+          onError={(e) => {
+            // Fallback gracefully if image fails
+            (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80';
+          }}
+        />
+      </div>
+    );
 
-              {/* Second dark semicircle */}
-              <div
-                className="w-3.5 h-7 bg-green-950"
-                style={{
-                  borderRadius: "0 32px 32px 0",
-                }}
-              />
-            </div>
-            Our Services
-          </div>
+    // Sub-component for Text block
+    const textBlock = (
+      <div
+        key="text"
+        className={`w-full rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 ${
+          isLimeHighlighted
+            ? 'bg-[#bef264] text-slate-950 shadow-sm'
+            : 'bg-white text-slate-900 border border-slate-100 shadow-xs'
+        }`}
+      >
+        <div>
+          <h3
+            className={`text-lg sm:text-[19px] font-extrabold font-heading tracking-tight leading-snug ${
+              isLimeHighlighted ? 'text-slate-950' : 'text-[#090D16]'
+            }`}
+          >
+            {service.title}
+          </h3>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#090D16] tracking-tight font-heading leading-tight">
-            Specialized Software Engineering & Cloud Architecture
-          </h1>
-
-          <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            From distributed ERP backends and Kubernetes orchestration to custom LLM agents and cross-platform mobile apps, we engineer high-performance systems with guaranteed SLAs.
+          <p
+            className={`text-xs sm:text-[13px] mt-2.5 leading-relaxed line-clamp-3 ${
+              isLimeHighlighted ? 'text-slate-800 font-medium' : 'text-slate-500 font-normal'
+            }`}
+          >
+            {service.shortDesc}
           </p>
         </div>
 
-        {/* Category Tabs */}
-        <div className="mt-10 flex items-center justify-center gap-2 flex-wrap">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all ${
-                selectedCategory === cat
-                  ? 'bg-[#133A27] text-white shadow-sm'
-                  : 'bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+        <div className="mt-4 pt-2">
+          <button
+            onClick={() => openModal({ type: 'service-details', service })}
+            className={`inline-flex items-center gap-1.5 text-xs font-bold transition-all group/link cursor-pointer ${
+              isLimeHighlighted
+                ? 'text-slate-950 hover:text-black'
+                : 'text-slate-800 hover:text-[#133A27]'
+            }`}
+          >
+            <span>Learn more</span>
+            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" />
+          </button>
         </div>
-      </section>
+      </div>
+    );
 
-      {/* Services Catalog Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredServices.map((service) => (
-            <div
-              key={service.id}
-              className="light-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between bg-white group"
-            >
-              <div>
-                <ImagePlaceholder
-                  src={service.imagePlaceholder}
-                  alt={service.title}
-                  category={service.category}
-                  label={service.title}
-                  aspectRatio="video"
-                  dimensionsHint="800 × 450"
-                  iconType="service"
-                  className="mb-5"
-                />
+    return (
+      <div
+        key={service.id || index}
+        className="bg-[#f2f4f7] border border-slate-200/80 rounded-[28px] p-3.5 sm:p-4 flex flex-col gap-3.5 shadow-xs hover:shadow-lg hover:border-slate-300 transition-all duration-300 group"
+      >
+        {isTextOnTop ? (
+          <>
+            {textBlock}
+            {imageBlock}
+          </>
+        ) : (
+          <>
+            {imageBlock}
+            {textBlock}
+          </>
+        )}
+      </div>
+    );
+  };
 
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
-                    {service.category}
-                  </span>
-                  {service.isPopular && (
-                    <span className="text-[10px] font-bold uppercase px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
-                      Top Rated
-                    </span>
-                  )}
-                </div>
+  return (
+    <div className="relative overflow-hidden pt-24 pb-20 bg-white min-h-screen">
+      {/* Background dot matrix */}
+      <div className="absolute top-20 left-10 w-48 h-48 bg-dots opacity-30 pointer-events-none" />
+      <div className="absolute top-96 right-10 w-48 h-48 bg-dots opacity-30 pointer-events-none" />
 
-                <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#133A27] transition-colors font-heading">
-                  {service.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
-                  {service.shortDesc}
-                </p>
-
-                <div className="mt-4 pt-4 border-t border-slate-100 space-y-1.5">
-                  <div className="text-xs font-semibold text-slate-800">Included Deliverables:</div>
-                  {service.deliverables.slice(0, 3).map((d, i) => (
-                    <div key={i} className="flex items-start gap-2 text-xs text-slate-700">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                      <span className="line-clamp-1">{d}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {service.techStack.slice(0, 4).map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {service.techStack.length > 4 && (
-                    <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">
-                      +{service.techStack.length - 4}
-                    </span>
-                  )}
-                </div>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-                <div>
-                  <div className="text-[10px] text-slate-500">Estimated Timeline</div>
-                  <div className="text-xs font-bold text-[#133A27]">{service.deliveryTimeline}</div>
-                </div>
-
-                <button
-                  onClick={() => openModal({ type: 'service-details', service })}
-                  className="px-4 py-2 rounded-full bg-slate-100 hover:bg-[#133A27] text-slate-800 hover:text-white text-xs font-semibold transition-all flex items-center gap-1.5"
-                >
-                  <span>Details & Scope</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
+      {/* ================= HERO HEADER (MATCHING SCREENSHOT) ================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10">
+        <div className="text-center max-w-3xl mx-auto">
+          {/* Dual Pill Capsule Icon + Our Services Label */}
+          <div className="inline-flex items-center gap-2 mb-3">
+            <div className="flex items-center">
+              {/* Vibrant Lime Circle */}
+              <div className="w-3.5 h-3.5 rounded-full bg-[#bef264]" />
+              {/* Dark Forest Green Semicircle / Pill */}
+              <div
+                className="w-2 h-3.5 bg-[#133A27]"
+                style={{
+                  borderRadius: '0 8px 8px 0',
+                }}
+              />
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Interactive Project Cost & Timeline Estimator */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="light-card rounded-3xl p-8 sm:p-12 border border-slate-200 bg-white shadow-lg relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Left Controls */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-xs font-bold">
-                <Calculator className="w-3.5 h-3.5 text-amber-600" />
-                Interactive Estimator
-              </div>
-
-              <h3 className="text-2xl sm:text-3xl font-black text-[#090D16] font-heading">
-                Calculate Your Project Timeline & Cost
-              </h3>
-
-              <p className="text-sm text-slate-600">
-                Select your parameters below to get an instant realistic estimate for budgeting and sprint planning.
-              </p>
-
-              <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-2">
-                  Primary Domain:
-                </label>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                  {servicesData.map((s) => (
-                    <button
-                      key={s.id}
-                      type="button"
-                      onClick={() => setEstimatorService(s.id)}
-                      className={`p-2.5 rounded-xl text-xs font-semibold text-left border transition-all ${
-                        estimatorService === s.id
-                          ? 'bg-[#133A27] text-white border-[#133A27] shadow-sm'
-                          : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
-                      }`}
-                    >
-                      <div className="font-bold truncate">{s.title.split(' ')[0]} {s.title.split(' ')[1]}</div>
-                      <div className="text-[10px] opacity-80">{s.startingPrice}</div>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-2">
-                  Project Complexity & Scope:
-                </label>
-                <div className="grid grid-cols-3 gap-2">
-                  {[
-                    { id: 'mvp', title: 'Lean MVP', desc: 'Core validation' },
-                    { id: 'standard', title: 'Production App', desc: 'Custom workflows' },
-                    { id: 'enterprise', title: 'Enterprise Suite', desc: 'High scale' }
-                  ].map((tier) => (
-                    <button
-                      key={tier.id}
-                      type="button"
-                      onClick={() => setEstimatorScope(tier.id as any)}
-                      className={`p-3 rounded-xl text-left border transition-all ${
-                        estimatorScope === tier.id
-                          ? 'bg-emerald-50 text-emerald-900 border-emerald-400 font-bold'
-                          : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
-                      }`}
-                    >
-                      <div className="text-xs font-bold text-slate-900">{tier.title}</div>
-                      <div className="text-[10px] text-slate-500">{tier.desc}</div>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-4 pt-1">
-                <label className="flex items-center gap-2 text-xs text-slate-700 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={needAiAddon}
-                    onChange={(e) => setNeedAiAddon(e.target.checked)}
-                    className="w-4 h-4 rounded text-[#133A27]"
-                  />
-                  <span>Include Custom AI / LLM Workflow (+ $1,800)</span>
-                </label>
-
-                <label className="flex items-center gap-2 text-xs text-slate-700 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={needDevOpsAddon}
-                    onChange={(e) => setNeedDevOpsAddon(e.target.checked)}
-                    className="w-4 h-4 rounded text-[#133A27]"
-                  />
-                  <span>Zero-Downtime CI/CD & Kubernetes (+ $1,200)</span>
-                </label>
-              </div>
-            </div>
-
-            {/* Right Result Card */}
-            <div className="lg:col-span-5 p-8 rounded-3xl bg-[#133A27] text-white shadow-xl flex flex-col justify-between text-center space-y-6">
-              <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#C6F135] font-mono">
-                  Estimated Investment
-                </span>
-                <div className="text-3xl sm:text-4xl font-black text-white font-heading mt-2">
-                  {estimateResult.priceFormatted}
-                </div>
-                <div className="text-xs text-[#C6F135] font-semibold mt-1">
-                  Approx. {estimateResult.inrFormatted}
-                </div>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-white/10 border border-white/10 text-left space-y-2 text-xs">
-                <div className="flex justify-between text-slate-200">
-                  <span>Sprint Timeline:</span>
-                  <strong className="text-white">{estimateResult.timeline}</strong>
-                </div>
-                <div className="flex justify-between text-slate-200">
-                  <span>SLA Guarantee:</span>
-                  <strong className="text-[#C6F135]">99.99% Uptime</strong>
-                </div>
-                <div className="flex justify-between text-slate-200">
-                  <span>Source Code Ownership:</span>
-                  <strong className="text-white">100% Client Owned</strong>
-                </div>
-              </div>
-
-              <button
-                onClick={() => openModal({ type: 'quote-modal' })}
-                className="w-full py-3.5 rounded-full bg-[#C6F135] hover:bg-[#b4df27] text-slate-950 font-extrabold text-sm shadow-md transition-all flex items-center justify-center gap-2"
-              >
-                <Sparkles className="w-4 h-4" />
-                <span>Get Official SOW & Roadmap</span>
-              </button>
-            </div>
+            <span className="text-xs sm:text-sm font-bold text-slate-800 tracking-tight">
+              Our Services
+            </span>
           </div>
+
+          {/* Main Display Headline */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#090D16] tracking-tight font-heading leading-[1.18] mt-1">
+            Boost Your Brand <br className="hidden sm:inline" />
+            with Our Expertise
+          </h1>
         </div>
       </section>
 
-      {/* Engagement Models Breakdown */}
+      {/* ================= 9-CARD SERVICES GRID (MATCHING SCREENSHOT) ================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          {displayServices.map((service, idx) => renderServiceCard(service, idx))}
+        </div>
+
+        {/* Load More Button */}
+        <div className="mt-12 text-center">
+          <button
+            onClick={handleLoadMore}
+            className="px-8 py-3 rounded-full bg-[#133A27] hover:bg-[#0c2619] text-white hover:text-[#bef264] text-xs sm:text-sm font-extrabold shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer inline-flex items-center gap-2 group"
+          >
+            <span>Load More</span>
+            {hasMore ? (
+              <ChevronDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
+            ) : (
+              <Sparkles className="w-3.5 h-3.5 text-[#bef264]" />
+            )}
+          </button>
+        </div>
+      </section>
+
+      {/* ================= COLLAPSIBLE PROJECT COST ESTIMATOR & ENGAGEMENT MODELS ================= */}
+      <section id="cost-estimator" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <div className="border-t border-slate-200/80 pt-12">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold mb-2">
+                <Calculator className="w-3.5 h-3.5 text-emerald-600" />
+                Planning Tools
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-black text-[#090D16] font-heading">
+                Interactive Project Cost & Timeline Estimator
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-500 mt-1">
+                Customize your technical parameters to calculate approximate sprint timeline and investment.
+              </p>
+            </div>
+
+            <button
+              onClick={() => setShowEstimator(!showEstimator)}
+              className="self-start sm:self-auto px-4 py-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer"
+            >
+              <span>{showEstimator ? 'Hide Estimator' : 'Open Estimator'}</span>
+              <ChevronDown
+                className={`w-3.5 h-3.5 transition-transform ${showEstimator ? 'rotate-180' : ''}`}
+              />
+            </button>
+          </div>
+
+          {showEstimator && (
+            <div className="light-card rounded-3xl p-6 sm:p-10 border border-slate-200 bg-white shadow-xl relative overflow-hidden mb-16 animate-modal-in">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                {/* Left Controls */}
+                <div className="lg:col-span-7 space-y-6">
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-700 mb-2">
+                      Primary Service Domain:
+                    </label>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                      {[
+                        { id: 'enterprise-software', title: 'Enterprise Software', price: '$4,800' },
+                        { id: 'ai-data-intelligence', title: 'AI & Machine Learning', price: '$5,200' },
+                        { id: 'cloud-devops', title: 'Cloud & DevOps', price: '$3,400' },
+                        { id: 'web-mobile-apps', title: 'Web & Mobile Apps', price: '$4,000' },
+                        { id: 'cybersecurity-audit', title: 'Security & VAPT', price: '$2,800' },
+                        { id: 'social-media-marketing', title: 'Digital Growth', price: '$2,200' },
+                      ].map((s) => (
+                        <button
+                          key={s.id}
+                          type="button"
+                          onClick={() => setEstimatorService(s.id)}
+                          className={`p-2.5 rounded-xl text-xs font-semibold text-left border transition-all cursor-pointer ${
+                            estimatorService === s.id
+                              ? 'bg-[#133A27] text-white border-[#133A27] shadow-sm'
+                              : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
+                          }`}
+                        >
+                          <div className="font-bold truncate">{s.title}</div>
+                          <div className="text-[10px] opacity-80">{s.price}</div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-700 mb-2">
+                      Project Complexity & Scope:
+                    </label>
+                    <div className="grid grid-cols-3 gap-2">
+                      {[
+                        { id: 'mvp', title: 'Lean MVP', desc: 'Core validation' },
+                        { id: 'standard', title: 'Production App', desc: 'Custom workflows' },
+                        { id: 'enterprise', title: 'Enterprise Suite', desc: 'High scale' }
+                      ].map((tier) => (
+                        <button
+                          key={tier.id}
+                          type="button"
+                          onClick={() => setEstimatorScope(tier.id as any)}
+                          className={`p-3 rounded-xl text-left border transition-all cursor-pointer ${
+                            estimatorScope === tier.id
+                              ? 'bg-emerald-50 text-emerald-900 border-emerald-400 font-bold shadow-xs'
+                              : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
+                          }`}
+                        >
+                          <div className="text-xs font-bold text-slate-900">{tier.title}</div>
+                          <div className="text-[10px] text-slate-500">{tier.desc}</div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-4 pt-1">
+                    <label className="flex items-center gap-2 text-xs text-slate-700 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={needAiAddon}
+                        onChange={(e) => setNeedAiAddon(e.target.checked)}
+                        className="w-4 h-4 rounded text-[#133A27] accent-[#133A27]"
+                      />
+                      <span>Include Custom AI / LLM Workflow (+ $1,800)</span>
+                    </label>
+
+                    <label className="flex items-center gap-2 text-xs text-slate-700 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={needDevOpsAddon}
+                        onChange={(e) => setNeedDevOpsAddon(e.target.checked)}
+                        className="w-4 h-4 rounded text-[#133A27] accent-[#133A27]"
+                      />
+                      <span>Zero-Downtime CI/CD & Kubernetes (+ $1,200)</span>
+                    </label>
+                  </div>
+                </div>
+
+                {/* Right Result Card */}
+                <div className="lg:col-span-5 p-8 rounded-3xl bg-[#133A27] text-white shadow-xl flex flex-col justify-between text-center space-y-6">
+                  <div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#bef264] font-mono">
+                      Estimated Investment
+                    </span>
+                    <div className="text-3xl sm:text-4xl font-black text-white font-heading mt-2">
+                      {estimateResult.priceFormatted}
+                    </div>
+                    <div className="text-xs text-[#bef264] font-semibold mt-1">
+                      Approx. {estimateResult.inrFormatted}
+                    </div>
+                  </div>
+
+                  <div className="p-4 rounded-2xl bg-white/10 border border-white/10 text-left space-y-2 text-xs">
+                    <div className="flex justify-between text-slate-200">
+                      <span>Sprint Timeline:</span>
+                      <strong className="text-white">{estimateResult.timeline}</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-200">
+                      <span>SLA Guarantee:</span>
+                      <strong className="text-[#bef264]">99.99% Uptime</strong>
+                    </div>
+                    <div className="flex justify-between text-slate-200">
+                      <span>Source Code Ownership:</span>
+                      <strong className="text-white">100% Client Owned</strong>
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={() => openModal({ type: 'quote-modal', defaultService: estimatorService })}
+                    className="w-full py-3.5 rounded-full bg-[#bef264] hover:bg-[#aee64a] text-slate-950 font-extrabold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  >
+                    <Sparkles className="w-4 h-4 text-slate-950" />
+                    <span>Get Official SOW & Roadmap</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* ================= ENGAGEMENT MODELS ================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 text-blue-800 border border-blue-200 text-xs font-bold mb-2">
@@ -364,37 +391,49 @@ export const ServicesPage: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="light-card rounded-3xl p-6 bg-white">
-            <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center mb-4 text-blue-700 font-bold">
-              01
+          <div className="light-card rounded-3xl p-6 bg-white flex flex-col justify-between">
+            <div>
+              <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center mb-4 text-blue-700 font-bold text-sm">
+                01
+              </div>
+              <h4 className="text-lg font-bold text-slate-900 font-heading mb-2">Dedicated Growth Squad</h4>
+              <p className="text-xs text-slate-600 leading-relaxed mb-4">
+                A dedicated team (Growth Strategist, Content Creator, Performance Marketer, Tech Specialist) working as an embedded extension of your company.
+              </p>
             </div>
-            <h4 className="text-lg font-bold text-slate-900 font-heading mb-2">Dedicated Engineering Squad</h4>
-            <p className="text-xs text-slate-600 leading-relaxed mb-4">
-              A full-time, dedicated pod (Tech Lead, Senior Developers, QA, UI Designer) working as an embedded extension of your core team.
-            </p>
-            <div className="text-xs text-[#133A27] font-semibold">Best for: Scaling startups & fast product roadmaps</div>
+            <div className="text-xs text-[#133A27] font-semibold pt-2 border-t border-slate-100">
+              Best for: Scaling companies & fast-moving campaigns
+            </div>
           </div>
 
-          <div className="light-card rounded-3xl p-6 bg-white">
-            <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center mb-4 text-amber-700 font-bold">
-              02
+          <div className="light-card rounded-3xl p-6 bg-white flex flex-col justify-between">
+            <div>
+              <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center mb-4 text-amber-700 font-bold text-sm">
+                02
+              </div>
+              <h4 className="text-lg font-bold text-slate-900 font-heading mb-2">Fixed-Price Milestone Delivery</h4>
+              <p className="text-xs text-slate-600 leading-relaxed mb-4">
+                Clearly defined project scope with agreed milestone deliverables, guaranteed delivery timeline, and structured billing tranches.
+              </p>
             </div>
-            <h4 className="text-lg font-bold text-slate-900 font-heading mb-2">Fixed-Price Milestone Delivery</h4>
-            <p className="text-xs text-slate-600 leading-relaxed mb-4">
-              Clearly defined PRD with agreed milestone deliverables, guaranteed delivery timeline, and fixed billing tranches.
-            </p>
-            <div className="text-xs text-[#133A27] font-semibold">Best for: MVPs, ERP rollouts & VAPT audits</div>
+            <div className="text-xs text-[#133A27] font-semibold pt-2 border-t border-slate-100">
+              Best for: Website launches, video production & audit reviews
+            </div>
           </div>
 
-          <div className="light-card rounded-3xl p-6 bg-white">
-            <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center mb-4 text-emerald-700 font-bold">
-              03
+          <div className="light-card rounded-3xl p-6 bg-white flex flex-col justify-between">
+            <div>
+              <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center mb-4 text-emerald-700 font-bold text-sm">
+                03
+              </div>
+              <h4 className="text-lg font-bold text-slate-900 font-heading mb-2">Agile Performance Retainer</h4>
+              <p className="text-xs text-slate-600 leading-relaxed mb-4">
+                Flexible monthly retainer for continuous A/B testing, ongoing SEO optimization, paid ad management, and conversion rate optimization.
+              </p>
             </div>
-            <h4 className="text-lg font-bold text-slate-900 font-heading mb-2">Agile Time & Material Retainer</h4>
-            <p className="text-xs text-slate-600 leading-relaxed mb-4">
-              Flexible hours with monthly billing for dynamic R&D, ongoing AI tuning, cloud cost optimization, and infrastructure maintenance.
-            </p>
-            <div className="text-xs text-[#133A27] font-semibold">Best for: Continuous R&D & FinOps governance</div>
+            <div className="text-xs text-[#133A27] font-semibold pt-2 border-t border-slate-100">
+              Best for: Continuous brand scaling & ROI optimization
+            </div>
           </div>
         </div>
       </section>

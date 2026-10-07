@@ -3,7 +3,6 @@ import { useApp } from '../context/AppContext';
 import { productsData } from '../data/websiteData';
 import { ImagePlaceholder } from '../components/ImagePlaceholder';
 import {
-  Box,
   Sparkles,
   CheckCircle2,
   ArrowRight,

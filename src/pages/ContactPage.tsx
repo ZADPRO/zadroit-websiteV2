@@ -11,8 +11,7 @@ import {
   ChevronDown,
   ShieldCheck,
   Building,
-  Calendar,
-  MessageSquare
+  Calendar
 } from 'lucide-react';
 
 export const ContactPage: React.FC = () => {

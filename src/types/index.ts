@@ -57,7 +57,7 @@ export interface Service {
   slug: string;
   shortDesc: string;
   fullDesc: string;
-  category: 'Enterprise Software' | 'Cloud & DevOps' | 'AI & Data Intelligence' | 'Web & Mobile Apps' | 'UI/UX & Product Design' | 'Cybersecurity & Auditing';
+  category: string;
   icon: string;
   deliverables: string[];
   techStack: string[];
@@ -67,6 +67,9 @@ export interface Service {
   deliveryTimeline: string;
   isPopular?: boolean;
   imagePlaceholder?: string;
+  image?: string;
+  imagePosition?: 'top' | 'bottom';
+  isHighlighted?: boolean;
 }
 
 export interface Product {

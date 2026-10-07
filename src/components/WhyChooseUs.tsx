@@ -7,7 +7,6 @@ import {
   ArrowUpRight,
   Sparkles,
   Zap,
-  CheckCircle2,
 } from "lucide-react";
 import { useApp } from "../context/AppContext";
 

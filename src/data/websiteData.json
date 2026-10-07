@@ -79,25 +79,266 @@
   ],
   "services": [
     {
+      "id": "social-media-marketing",
+      "title": "Social Media Marketing",
+      "slug": "social-media-marketing",
+      "shortDesc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "fullDesc": "Strategic social media campaigns, audience targeting, creative content production, and cross-platform growth across Meta, LinkedIn, Instagram, TikTok, and X to amplify brand authority.",
+      "category": "Social Media",
+      "icon": "Share2",
+      "image": "/images/services/social-media.jpg",
+      "imagePosition": "top",
+      "deliverables": [
+        "Cross-Platform Content Strategy & Calendar",
+        "Audience Retargeting & Custom Audiences",
+        "Community Engagement & Response Protocols",
+        "Comprehensive Monthly ROI Analytics"
+      ],
+      "techStack": ["Meta Ads", "LinkedIn Ads", "TikTok Ads", "Hootsuite", "Canva", "Buffer"],
+      "highlights": [
+        "3.8x Average Social Engagement Lift",
+        "Data-driven audience segmentation",
+        "High-converting video & carousel ad creatives"
+      ],
+      "roiMetric": "3.8x Social Engagement ROI",
+      "startingPrice": "$1,800",
+      "deliveryTimeline": "Ongoing Monthly Retainer",
+      "isPopular": true
+    },
+    {
+      "id": "content-marketing",
+      "title": "Content Marketing",
+      "slug": "content-marketing",
+      "shortDesc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "fullDesc": "High-impact storytelling, SEO-driven articles, whitepapers, thought leadership, and lead magnets designed to rank #1 on Google and turn readers into loyal paying clients.",
+      "category": "Content & SEO",
+      "icon": "FileText",
+      "image": "/images/services/content-marketing.jpg",
+      "imagePosition": "bottom",
+      "isHighlighted": true,
+      "deliverables": [
+        "High-Intent SEO Keyword Research & Topic Clusters",
+        "Long-Form Authority Articles & Whitepapers",
+        "Conversion Copywriting & Landing Pages",
+        "Content Distribution & Repurposing Engine"
+      ],
+      "techStack": ["Semrush", "Ahrefs", "SurferSEO", "Notion", "WordPress", "HubSpot"],
+      "highlights": [
+        "240% Inbound Organic Traffic Growth",
+        "Top 3 Google SERP Rankings",
+        "Authoritative industry thought leadership"
+      ],
+      "roiMetric": "240% Inbound Lead Growth",
+      "startingPrice": "$2,200",
+      "deliveryTimeline": "Monthly Sprints",
+      "isPopular": true
+    },
+    {
+      "id": "email-marketing",
+      "title": "Email Marketing",
+      "slug": "email-marketing",
+      "shortDesc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "fullDesc": "Automated drip sequences, lifecycle segmentation, conversion-focused newsletters, and customer retention campaigns that generate predictable revenue on autopilot.",
+      "category": "Lifecycle Marketing",
+      "icon": "Mail",
+      "image": "/images/services/email-marketing.jpg",
+      "imagePosition": "top",
+      "deliverables": [
+        "Automated Onboarding & Nurture Sequences",
+        "Behavioral Segmentation & Tagging",
+        "A/B Subject Line & Creative Testing",
+        "Dedicated IP Warm-Up & High Deliverability"
+      ],
+      "techStack": ["Klaviyo", "Mailchimp", "Customer.io", "ActiveCampaign", "SendGrid"],
+      "highlights": [
+        "42% Average Open Rate Benchmark",
+        "Automated Cart Recovery Funnels",
+        "99.8% Inbox Deliverability Rate"
+      ],
+      "roiMetric": "44x Email Marketing ROI",
+      "startingPrice": "$1,500",
+      "deliveryTimeline": "2 - 4 Weeks Setup",
+      "isPopular": false
+    },
+    {
+      "id": "ppc-advertising",
+      "title": "PPC Advertising",
+      "slug": "ppc-advertising",
+      "shortDesc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "fullDesc": "Precision Google Ads, Search, Display, YouTube, and Retargeting campaigns engineered to maximize ROI, capture high-intent buyers, and lower customer acquisition costs.",
+      "category": "Paid Acquisition",
+      "icon": "Target",
+      "image": "/images/services/ppc-advertising.jpg",
+      "imagePosition": "top",
+      "deliverables": [
+        "High-Intent Search Keyword Architecture",
+        "Conversion-Optimized Landing Page Strategy",
+        "Negative Keyword Exclusion Management",
+        "Server-Side Conversion Tracking & Pixel Setup"
+      ],
+      "techStack": ["Google Ads", "Microsoft Ads", "Google Tag Manager", "Looker Studio", "Meta Pixel"],
+      "highlights": [
+        "4.2x Average Return on Ad Spend (ROAS)",
+        "Sub-dollar Customer Acquisition Cost",
+        "Real-time Automated Bidding Optimization"
+      ],
+      "roiMetric": "4.2x Return on Ad Spend (ROAS)",
+      "startingPrice": "$2,500",
+      "deliveryTimeline": "Fast 1-Week Launch",
+      "isPopular": true
+    },
+    {
+      "id": "video-marketing",
+      "title": "Video Marketing",
+      "slug": "video-marketing",
+      "shortDesc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "fullDesc": "High-converting promotional videos, product demo reels, motion graphics, and short-form viral social reels that capture attention and drive conversions.",
+      "category": "Video & Motion",
+      "icon": "Video",
+      "image": "/images/services/video-marketing.jpg",
+      "imagePosition": "bottom",
+      "deliverables": [
+        "Scriptwriting, Concepts & Storyboards",
+        "4K Video Editing & Dynamic Color Grading",
+        "Short-Form Reels & TikTok Repurposing",
+        "Custom Motion Graphics & 3D Visuals"
+      ],
+      "techStack": ["Adobe Premiere", "After Effects", "DaVinci Resolve", "CapCut Pro", "Framer"],
+      "highlights": [
+        "82% Viewer Retention Benchmark",
+        "Cinematic Production Quality",
+        "Optimized for High-CTR Social Feeds"
+      ],
+      "roiMetric": "3.2x Video Conversion Rate",
+      "startingPrice": "$2,800",
+      "deliveryTimeline": "1 - 3 Weeks Per Asset",
+      "isPopular": false
+    },
+    {
+      "id": "influencer-marketing",
+      "title": "Influencer Marketing",
+      "slug": "influencer-marketing",
+      "shortDesc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "fullDesc": "Vetted creator partnerships, micro-influencer outreach, sponsored campaigns, and authentic brand advocacy that build trust and drive high-intent sales.",
+      "category": "Creator Partnerships",
+      "icon": "UserCheck",
+      "image": "/images/services/influencer-marketing.jpg",
+      "imagePosition": "top",
+      "deliverables": [
+        "Vetted Creator Discovery & Outreach",
+        "Contract Negotiation & FTC Compliance",
+        "Creative Briefs & Campaign Direction",
+        "Whitelisted Paid Ad Amplification"
+      ],
+      "techStack": ["AspireIQ", "Upfluence", "GRIN", "CreatorIQ", "Modash"],
+      "highlights": [
+        "Zero-Fraud Vetted Creator Network",
+        "Authentic User-Generated Content (UGC)",
+        "Full Commercial Usage Rights"
+      ],
+      "roiMetric": "5.5x Earned Media Value",
+      "startingPrice": "$3,000",
+      "deliveryTimeline": "3 - 6 Weeks Campaign",
+      "isPopular": false
+    },
+    {
+      "id": "web-development",
+      "title": "Web Development",
+      "slug": "web-development",
+      "shortDesc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "fullDesc": "Custom high-performance web applications, responsive corporate portals, e-commerce platforms, and API integrations engineered with modern tech stacks.",
+      "category": "Engineering & Web",
+      "icon": "Code2",
+      "image": "/images/services/web-development.jpg",
+      "imagePosition": "top",
+      "deliverables": [
+        "Responsive Next.js / React 19 Frontend",
+        "Custom Headless CMS Architecture",
+        "Blazing Fast Core Web Vitals 95+",
+        "Database Architecture & REST/GraphQL APIs"
+      ],
+      "techStack": ["React 19", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL"],
+      "highlights": [
+        "Sub-second page navigation with SSR/SSG",
+        "100% Mobile Responsive & WCAG Compliant",
+        "Scalable Modular Architecture"
+      ],
+      "roiMetric": "65% Faster Page Speeds",
+      "startingPrice": "$3,800",
+      "deliveryTimeline": "3 - 8 Weeks",
+      "isPopular": true
+    },
+    {
+      "id": "affiliate-marketing",
+      "title": "Affiliate Marketing",
+      "slug": "affiliate-marketing",
+      "shortDesc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "fullDesc": "Scalable affiliate network setup, high-value partner recruitment, commission structuring, and automated attribution tracking to scale revenue with zero upfront risk.",
+      "category": "Performance Growth",
+      "icon": "TrendingUp",
+      "image": "/images/services/affiliate-marketing.jpg",
+      "imagePosition": "bottom",
+      "deliverables": [
+        "Affiliate Program Architecture & Tier Design",
+        "Partner Recruitment & Outreach",
+        "Fraud Prevention & Click Attribution",
+        "Automated Payout & Commission Engine"
+      ],
+      "techStack": ["Impact.com", "CJ Affiliate", "ShareASale", "Post Affiliate Pro", "Everflow"],
+      "highlights": [
+        "Performance-Only Marketing Spend",
+        "High-Volume Network Distribution",
+        "Automated Tracking & Compliance"
+      ],
+      "roiMetric": "35% Incremental Revenue Growth",
+      "startingPrice": "$2,400",
+      "deliveryTimeline": "2 - 4 Weeks Setup",
+      "isPopular": false
+    },
+    {
+      "id": "analytics-reporting",
+      "title": "Analytics & Reporting",
+      "slug": "analytics-reporting",
+      "shortDesc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "fullDesc": "Comprehensive business intelligence, real-time ROI dashboards, multi-touch customer journey attribution, and actionable predictive growth insights.",
+      "category": "Data & Insights",
+      "icon": "BarChart3",
+      "image": "/images/services/analytics-reporting.jpg",
+      "imagePosition": "top",
+      "deliverables": [
+        "GA4 Custom Event & Funnel Architecture",
+        "Real-Time Executive Looker Studio Dashboards",
+        "Multi-Touch Attribution Modeling",
+        "Monthly Growth Insights & Recommendations"
+      ],
+      "techStack": ["Google Analytics 4", "Looker Studio", "BigQuery", "Mixpanel", "Tableau"],
+      "highlights": [
+        "Single Source of Growth Truth",
+        "Automated Executive Dashboards",
+        "Actionable Conversion Recommendations"
+      ],
+      "roiMetric": "100% Data Visibility",
+      "startingPrice": "$1,900",
+      "deliveryTimeline": "1 - 3 Weeks Setup",
+      "isPopular": true
+    },
+    {
       "id": "enterprise-software",
       "title": "Enterprise Software Engineering",
       "slug": "enterprise-software-engineering",
       "shortDesc": "High-throughput, distributed ERP, CRM, and workflow automation systems built for mission-critical scale.",
-      "fullDesc": "We engineer robust custom enterprise software designed to streamline operations, eliminate silos, and unify multi-department workflows. From complex ERP architectures and real-time inventory systems to custom financial hubs, our solutions ensure bulletproof fault tolerance, high concurrency, and zero downtime.",
+      "fullDesc": "We engineer robust custom enterprise software designed to streamline operations, eliminate silos, and unify multi-department workflows.",
       "category": "Enterprise Software",
       "icon": "Building2",
       "deliverables": [
         "Modular Multi-tenant Architecture",
         "Legacy Codebase Modernization",
-        "Microservices & Event-Driven Pipelines",
-        "Enterprise Data Warehouse Integration",
-        "Role-Based Access Control (RBAC) & Audit Logs"
+        "Microservices & Event-Driven Pipelines"
       ],
       "techStack": ["React", "Node.js", "Java Spring Boot", "PostgreSQL", "Kafka", "Docker", "Kubernetes"],
       "highlights": [
         "Scales to 1M+ daily transactions",
-        "Sub-100ms API response benchmark",
-        "SOC2 & ISO 27001 compliant architecture"
+        "Sub-100ms API response benchmark"
       ],
       "roiMetric": "45% Reduction in Operational Overhead",
       "startingPrice": "$4,500",

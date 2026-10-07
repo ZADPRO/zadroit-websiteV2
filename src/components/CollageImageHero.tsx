@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Upload, ArrowUpRight, Play, Pause, RefreshCw, Layers, Sparkles } from 'lucide-react';
+import { Upload, Play, Pause, RefreshCw, Layers, Sparkles } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
 interface CollageImageHeroProps {
