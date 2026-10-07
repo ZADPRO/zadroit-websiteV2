@@ -54,6 +54,40 @@
   }
 }
 
+@layer components {
+  @keyframes marquee-x {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes marquee-y {
+    from {
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+
+  .marquee-horizontal {
+    animation: marquee-x var(--duration) infinite linear;
+  }
+
+  .marquee-vertical {
+    animation: marquee-y var(--duration) infinite linear;
+  }
+
+  .group\/marquee:hover .marquee-pause-on-hover {
+    animation-play-state: paused;
+  }
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -236,6 +270,22 @@
 
 .animate-modal-in {
   animation: modalIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Card Entrance Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 /* 3D Book & Real Physical Flipbook Engine */

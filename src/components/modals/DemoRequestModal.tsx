@@ -36,16 +36,39 @@ export const DemoRequestModal: React.FC<DemoRequestModalProps> = ({ product: ini
     }
 
     setIsSubmitting(true);
+
+    const recipient = "indumathi.r@zadroit.com";
+    const subject = encodeURIComponent(`Product Demo Request - ${selectedProduct.name}`);
+    const emailBody = `Full Name: ${formData.fullName}
+Work Email: ${formData.workEmail}
+Company: ${formData.companyName}
+Phone Number: ${formData.phone || "Not provided"}
+Requested Product: ${selectedProduct.name} (${selectedProduct.category})
+Preferred Date: ${formData.preferredDate || "Earliest available slot"}
+Preferred Time: ${formData.preferredTime}
+Team Size: ${formData.teamSize}
+
+Primary Use Case & Objectives:
+${formData.useCase || "Not specified"}
+
+---
+Dispatched from Zadroit Product Demo Request Portal`;
+
+    const mailtoUrl = `mailto:${recipient}?subject=${subject}&body=${encodeURIComponent(
+      emailBody
+    )}`;
+
     setTimeout(() => {
       setIsSubmitting(false);
       triggerConfetti();
       showToast(
-        'Demo Request Confirmed! 🚀',
-        `We have scheduled your 1-on-1 architecture walkthrough for ${selectedProduct.name}. A calendar invite has been dispatched to ${formData.workEmail}.`,
+        'Demo Request Dispatched! 🚀',
+        `We have received your demo request for ${selectedProduct.name}. Details sent to indumathi.r@zadroit.com.`,
         'success'
       );
+      window.location.href = mailtoUrl;
       closeModal();
-    }, 1200);
+    }, 600);
   };
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {

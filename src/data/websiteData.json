@@ -516,6 +516,7 @@
         { "label": "Uptime SLA", "value": "99.99%" }
       ],
       "imagePlaceholder": "/assets/placeholders/product-zaderp.svg",
+      "logo": "/assets/product logo/ZADPRO-05.png",
       "demoUrl": "#contact",
       "status": "Flagship",
       "pricingNote": "Custom enterprise licensing & modular subscription models available."
@@ -553,6 +554,7 @@
         { "label": "Patient Records Analyzed", "value": "250K+" }
       ],
       "imagePlaceholder": "/assets/placeholders/product-medpredit.svg",
+      "logo": "/assets/product logo/ZADPRO_YOKE-07.png",
       "demoUrl": "#contact",
       "status": "Active Deployment",
       "pricingNote": "Hospital SaaS tier or on-premise deployment with custom SLA."
@@ -590,6 +592,7 @@
         { "label": "Booking Completion Time", "value": "< 15s" }
       ],
       "imagePlaceholder": "/assets/placeholders/product-zadsports.svg",
+      "logo": "/assets/product logo/ZADPRO_MicroFin-05.png",
       "demoUrl": "https://zadsports.com",
       "status": "Production Ready",
       "pricingNote": "Pay-as-you-go commission model or Flat venue subscription."
@@ -623,6 +626,7 @@
         { "label": "Security Checks/sec", "value": "10,000+" }
       ],
       "imagePlaceholder": "/assets/placeholders/product-zadcloud.svg",
+      "logo": "/assets/product logo/ZADPRO_LOGISTICS-09.png",
       "demoUrl": "#contact",
       "status": "Enterprise Beta",
       "pricingNote": "Tiered usage pricing based on connected cloud assets."
@@ -656,6 +660,7 @@
         { "label": "Catalog Capacity", "value": "500K+ SKUs" }
       ],
       "imagePlaceholder": "/assets/placeholders/product-zadcommerce.svg",
+      "logo": "/assets/product logo/ZADPRO-05.png",
       "demoUrl": "#contact",
       "status": "Production Ready",
       "pricingNote": "Custom build or managed hosted commerce engine."
@@ -689,6 +694,7 @@
         { "label": "Telemetry Latency", "value": "< 80ms" }
       ],
       "imagePlaceholder": "/assets/placeholders/product-zadpulse.svg",
+      "logo": "/assets/product logo/ZADPRO_YOKE-07.png",
       "demoUrl": "#contact",
       "status": "Production Ready",
       "pricingNote": "Industrial SaaS or On-Premise Gateway Appliance."

@@ -45,11 +45,22 @@ export const BlogPage: React.FC = () => {
       );
       return;
     }
+    const recipient = "indumathi.r@zadroit.com";
+    const subject = encodeURIComponent("Newsletter Subscription - Zadroit Tech Radar");
+    const emailBody = `Subscriber Email: ${subEmail}
+
+---
+Dispatched from Zadroit Blog & Tech Radar Subscription Form`;
+    const mailtoUrl = `mailto:${recipient}?subject=${subject}&body=${encodeURIComponent(
+      emailBody
+    )}`;
+
     showToast(
       "Subscribed to Tech Radar! 🚀",
-      "You will receive our latest engineering whitepapers directly.",
+      "Subscription details sent to indumathi.r@zadroit.com.",
       "success",
     );
+    window.location.href = mailtoUrl;
     setSubEmail("");
   };
 
@@ -163,7 +174,7 @@ export const BlogPage: React.FC = () => {
               </div>
 
               <div className="pt-2">
-                <button className="px-6 py-2.5 rounded-full bg-[#ded725] text-[#142C42] font-bold text-xs sm:text-sm group-hover:bg-[#142C42] transition-colors flex items-center gap-2 shadow-sm">
+                <button className="px-6 py-2.5 rounded-full bg-[#ded725] text-[#142C42] font-bold text-xs sm:text-sm group-hover:bg-[#ded725] transition-colors flex items-center gap-2 shadow-sm">
                   <span>Read Full Article</span>
                   <ArrowRight className="w-4 h-4 text-[#142C42] group-hover:translate-x-1 transition-transform" />
                 </button>

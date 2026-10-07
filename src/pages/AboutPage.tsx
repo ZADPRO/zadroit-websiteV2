@@ -7,14 +7,11 @@ import {
 } from "../data/websiteData";
 import { ImagePlaceholder } from "../components/ImagePlaceholder";
 import {
-  Building,
   Target,
   Eye,
   Award,
   Users,
-  MapPin,
   Calendar,
-  Globe2,
   ExternalLink,
 } from "lucide-react";
 
@@ -347,7 +344,7 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* Locations & Global Hubs */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="light-card rounded-3xl p-8 sm:p-12 border border-slate-200 bg-slate-50">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             <div className="max-w-xl">
@@ -388,7 +385,7 @@ export const AboutPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

@@ -35,16 +35,39 @@ export const QuickQuoteModal: React.FC<QuickQuoteModalProps> = ({ defaultService
     }
 
     setIsSubmitting(true);
+
+    const recipient = "indumathi.r@zadroit.com";
+    const subject = encodeURIComponent(`Quick Quote Request - ${selectedService}`);
+    const emailBody = `Full Name: ${formData.name}
+Email Address: ${formData.email}
+Phone Number: ${formData.phone || "Not provided"}
+Company: ${formData.company || "Not provided"}
+Selected Service: ${selectedService}
+Project Type: ${projectType}
+Budget Range: ${budgetRange}
+Timeline: ${timeline}
+
+Project Scope & Requirements:
+${formData.projectScope || "Not provided"}
+
+---
+Dispatched from Zadroit Quick Quote Portal`;
+
+    const mailtoUrl = `mailto:${recipient}?subject=${subject}&body=${encodeURIComponent(
+      emailBody
+    )}`;
+
     setTimeout(() => {
       setIsSubmitting(false);
       triggerConfetti();
       showToast(
-        'Quote Request Received! 📋',
-        `Thank you ${formData.name}. Our technical architect will review your requirements for "${selectedService}" and send an itemized proposal within 24 hours.`,
+        'Quote Request Dispatched! 📋',
+        `Thank you ${formData.name}. Details sent to indumathi.r@zadroit.com. Our technical architect will review and send a proposal within 24 hours.`,
         'success'
       );
+      window.location.href = mailtoUrl;
       closeModal();
-    }, 1200);
+    }, 600);
   };
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {

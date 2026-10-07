@@ -90,6 +90,7 @@ export interface Product {
     value: string;
   }[];
   imagePlaceholder?: string;
+  logo?: string;
   demoUrl?: string;
   status: 'Production Ready' | 'Active Deployment' | 'Enterprise Beta' | 'Flagship';
   pricingNote: string;

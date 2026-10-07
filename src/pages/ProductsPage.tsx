@@ -70,10 +70,10 @@ export const ProductsPage: React.FC = () => {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+              className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer ${
                 selectedCategory === cat
-                  ? "bg-[#133A27] text-white shadow-sm"
-                  : "bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200"
+                  ? "bg-[#13273B] text-white shadow-md scale-105"
+                  : "bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200 hover:scale-102"
               }`}
             >
               {cat}
@@ -89,27 +89,37 @@ export const ProductsPage: React.FC = () => {
 
           return (
             <div
-              key={product.id}
-              className="light-card rounded-3xl p-6 sm:p-10 border border-slate-200 bg-white shadow-md overflow-hidden"
+              key={`${selectedCategory}-${product.id}`}
+              style={{ animationDelay: `${idx * 120}ms` }}
+              className="animate-fade-in-up light-card rounded-[32px] sm:rounded-[40px] p-6 sm:p-10 border border-slate-200/90 bg-white shadow-md hover:shadow-2xl hover:border-slate-300 hover:-translate-y-2 transition-all duration-500 ease-out overflow-hidden group relative"
             >
+              {/* Subtle hover gradient glow */}
+              <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#32679a]/8 via-[#ded725]/8 to-transparent rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
               <div
-                className={`grid grid-cols-1 lg:grid-cols-12 gap-8 items-center ${isEven ? "lg:flex-row-reverse" : ""}`}
+                className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10 ${
+                  isEven ? "lg:flex-row-reverse" : ""
+                }`}
               >
                 {/* Product Info */}
-                <div className="lg:col-span-6 space-y-5">
+                <div
+                  className={`lg:col-span-6 space-y-5 ${
+                    isEven ? "lg:order-2" : "lg:order-1"
+                  }`}
+                >
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
+                    <span className="text-xs font-bold px-3 py-1 rounded-full bg-amber-50 text-amber-900 border border-amber-200/80 shadow-xs">
                       {product.badge}
                     </span>
-                    <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-50 text-blue-800 border border-blue-200">
+                    <span className="text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 text-blue-800 border border-blue-200/80 shadow-xs">
                       {product.category}
                     </span>
-                    <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+                    <span className="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200/80 shadow-xs">
                       {product.status}
                     </span>
                   </div>
 
-                  <h2 className="text-3xl sm:text-4xl font-black text-[#090D16] font-heading">
+                  <h2 className="text-3xl sm:text-4xl font-black text-[#090D16] font-heading group-hover:text-[#13273B] transition-colors">
                     {product.name}
                   </h2>
 
@@ -126,7 +136,7 @@ export const ProductsPage: React.FC = () => {
                     {product.features.map((feat, i) => (
                       <div
                         key={i}
-                        className="p-3 rounded-xl bg-slate-50 border border-slate-200"
+                        className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-slate-100 hover:border-slate-300 hover:scale-[1.01] transition-all duration-300"
                       >
                         <div className="text-xs font-bold text-slate-900 mb-1 flex items-center gap-1.5">
                           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
@@ -142,14 +152,14 @@ export const ProductsPage: React.FC = () => {
                   {/* Tech Badges */}
                   <div>
                     <div className="text-xs text-slate-500 font-semibold mb-2 flex items-center gap-1.5">
-                      <Cpu className="w-3.5 h-3.5 text-[#133A27]" />
+                      <Cpu className="w-3.5 h-3.5 text-[#32679a]" />
                       Architecture & Stack:
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {product.techBadges.map((t) => (
                         <span
                           key={t}
-                          className="text-[10px] font-mono px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 border border-slate-200"
+                          className="text-[10px] font-mono px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 border border-slate-200 hover:bg-[#13273B] hover:text-white hover:border-[#13273B] transition-all duration-300 cursor-default"
                         >
                           {t}
                         </span>
@@ -162,12 +172,12 @@ export const ProductsPage: React.FC = () => {
                     {product.metrics.map((m, i) => (
                       <div
                         key={i}
-                        className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-center"
+                        className="p-3 rounded-2xl bg-slate-50 border border-slate-200/80 text-center hover:bg-[#F9F8D8] hover:border-[#E5E055] hover:-translate-y-0.5 transition-all duration-300"
                       >
-                        <div className="text-[10px] text-slate-500">
+                        <div className="text-[10px] text-slate-500 font-medium">
                           {m.label}
                         </div>
-                        <div className="text-base font-extrabold text-[#133A27] font-heading mt-0.5">
+                        <div className="text-base font-black text-[#13273B] font-heading mt-0.5">
                           {m.value}
                         </div>
                       </div>
@@ -180,10 +190,11 @@ export const ProductsPage: React.FC = () => {
                       onClick={() =>
                         openModal({ type: "product-demo", product })
                       }
-                      className="px-6 py-3 rounded-full bg-[#133A27] hover:bg-[#0c2619] text-white font-bold text-xs sm:text-sm shadow-sm flex items-center gap-2"
+                      className="px-6 py-3 rounded-full bg-[#13273B] hover:bg-[#32679a] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all duration-300 flex items-center gap-2 group/btn cursor-pointer"
                     >
-                      <Sparkles className="w-4 h-4 text-[#C6F135]" />
+                      <Sparkles className="w-4 h-4 text-[#ded725]" />
                       <span>Book 1-on-1 Guided Demo</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                     </button>
 
                     <button
@@ -193,7 +204,7 @@ export const ProductsPage: React.FC = () => {
                           defaultService: product.name,
                         })
                       }
-                      className="px-5 py-3 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs sm:text-sm font-semibold flex items-center gap-1.5"
+                      className="px-5 py-3 rounded-full bg-slate-100 hover:bg-[#ded725] hover:text-slate-950 text-slate-800 text-xs sm:text-sm font-bold flex items-center gap-1.5 transition-all duration-300 cursor-pointer"
                     >
                       <span>Licensing & Pricing</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -201,17 +212,25 @@ export const ProductsPage: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Right Visual Image Placeholder */}
-                <div className="lg:col-span-6">
-                  <ImagePlaceholder
-                    src={product.imagePlaceholder}
-                    alt={`${product.name} Interface`}
-                    category={product.category}
-                    label={`${product.name} Enterprise Architecture`}
-                    aspectRatio="video"
-                    dimensionsHint="1200 × 750"
-                    iconType="product"
-                  />
+                {/* Right Visual Image / Showcase */}
+                <div
+                  className={`lg:col-span-6 ${
+                    isEven ? "lg:order-1" : "lg:order-2"
+                  }`}
+                >
+                  <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-md group-hover:shadow-2xl transition-all duration-500 group/img bg-slate-900/5">
+                    <div className="transition-transform duration-700 ease-out group-hover:scale-105">
+                      <ImagePlaceholder
+                        src={product.imagePlaceholder}
+                        alt={`${product.name} Interface`}
+                        category={product.category}
+                        label={`${product.name} Enterprise Architecture`}
+                        aspectRatio="video"
+                        dimensionsHint="1200 × 750"
+                        iconType="product"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -221,7 +240,7 @@ export const ProductsPage: React.FC = () => {
 
       {/* Deployment & Enterprise Options */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="light-card rounded-3xl p-8 sm:p-12 border border-slate-200 bg-slate-50 text-center">
+        <div className="light-card rounded-[32px] sm:rounded-[40px] p-8 sm:p-12 border border-slate-200 bg-slate-50 text-center shadow-md hover:shadow-xl transition-all duration-500">
           <div className="max-w-3xl mx-auto space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 text-blue-800 border border-blue-200 text-xs font-bold">
               <Server className="w-3.5 h-3.5 text-blue-600" />
@@ -230,38 +249,38 @@ export const ProductsPage: React.FC = () => {
             <h3 className="text-3xl font-black text-[#090D16] font-heading">
               Flexible Deployment to Match Your Security Policies
             </h3>
-            <p className="text-sm text-slate-600">
+            <p className="text-sm text-slate-600 leading-relaxed">
               All Zadroit products can be consumed as managed SaaS or deployed
               directly inside your private AWS/Azure VPC or air-gapped
               on-premise datacenter.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 text-left">
-              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
-                <div className="text-sm font-bold text-slate-900 mb-1">
+              <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-1.5 transition-all duration-300">
+                <div className="text-sm font-bold text-slate-900 mb-1.5">
                   Managed Cloud SaaS
                 </div>
-                <div className="text-xs text-slate-600">
+                <div className="text-xs text-slate-600 leading-relaxed">
                   99.99% SLA, continuous updates, automated backups, and 24/7
                   Zadroit DevOps management.
                 </div>
               </div>
 
-              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
-                <div className="text-sm font-bold text-amber-700 mb-1">
+              <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-1.5 transition-all duration-300">
+                <div className="text-sm font-bold text-amber-700 mb-1.5">
                   Private Cloud VPC
                 </div>
-                <div className="text-xs text-slate-600">
+                <div className="text-xs text-slate-600 leading-relaxed">
                   Deployed within your organization's AWS, GCP, or Azure account
                   under your strict IAM policies.
                 </div>
               </div>
 
-              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
-                <div className="text-sm font-bold text-emerald-700 mb-1">
+              <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-1.5 transition-all duration-300">
+                <div className="text-sm font-bold text-emerald-700 mb-1.5">
                   Air-Gapped On-Premise
                 </div>
-                <div className="text-xs text-slate-600">
+                <div className="text-xs text-slate-600 leading-relaxed">
                   Compliant with healthcare and banking data sovereignty. Zero
                   external internet dependence.
                 </div>
