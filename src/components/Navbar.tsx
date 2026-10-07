@@ -63,13 +63,13 @@ export const Navbar: React.FC = () => {
                   key={item.id}
                   onClick={() => handleNavClick(item.id as PageId)}
                   className={`relative py-1 text-sm font-semibold transition-all duration-200 ${isActive
-                    ? 'text-[#133A27] font-bold'
-                    : 'text-slate-600 hover:text-slate-900'
+                    ? 'text-[#1B3853] font-bold'
+                    : 'text-[#1B3853] hover:text-slate-900'
                     }`}
                 >
                   <span>{item.label}</span>
                   {isActive && (
-                    <span className="absolute bottom-[-4px] left-0 right-0 h-[2.5px] rounded-full bg-[#84CC16]" />
+                    <span className="absolute bottom-[-4px] left-0 right-0 h-[2.5px] rounded-full bg-[#1B3853]" />
                   )}
                 </button>
               );
@@ -122,7 +122,7 @@ export const Navbar: React.FC = () => {
                   key={item.id}
                   onClick={() => handleNavClick(item.id as PageId)}
                   className={`w-full px-4 py-3 rounded-xl text-left text-sm font-semibold flex items-center justify-between ${isActive
-                    ? 'bg-slate-100 text-[#133A27] font-bold border-l-4 border-[#84CC16]'
+                    ? 'bg-slate-100 text-[#133A27] font-bold border-l-4 border-[#1B3853]'
                     : 'text-slate-700 hover:bg-slate-50'
                     }`}
                 >

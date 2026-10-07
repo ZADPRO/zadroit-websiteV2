@@ -1358,11 +1358,12 @@
   ],
   "about": {
     "badge": "About Us",
-    "heading": "Architecting the Future of Enterprise Software & Intelligent Automation",
-    "subheading": "Headquartered in Salem, Tamil Nadu, with research operations in Bangalore, Zadroit IT Solutions Private Limited is a specialized technology engineering company building high-throughput distributed applications, AI diagnostic engines, and scalable multi-cloud infrastructure.",
-    "storyDescription": "Founded with the belief that modern software should be impeccably designed, fault-tolerant, and laser-focused on real business ROI, Zadroit has grown from a specialized engineering team in Salem into a full-cycle digital transformation partner delivering high-throughput enterprise systems, cloud infrastructures, and AI automation.",
+    "heading": "Your Vision, Our Technology Together We Build The Future",
+    "subheading": "Transforming challenges into opportunities with cutting-edge digital solutions, enterprise software development, and strategic IT partnerships.",
+    "storyDescription": "What started as a small team of passionate tech experts in Salem, Tamil Nadu, has grown into a trusted global IT solutions provider. With over a decade of hands-on experience, we help businesses streamline operations, boost productivity, and stay ahead with cutting-edge technology.",
     "topImage": "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop",
     "bottomImage": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200&auto=format&fit=crop",
+    "description": "Driven by continuous innovation and strong client partnerships, our mission remains unchanged empowering businesses of all sizes with future-ready digital solutions.",
     "skills": [
       {
         "label": "Marketing & Business Growth",

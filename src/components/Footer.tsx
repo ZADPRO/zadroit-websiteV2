@@ -1,18 +1,43 @@
 import React from "react";
 import { useApp, type PageId } from "../context/AppContext";
-import { companyInfo, navItems, productsData } from "../data/websiteData";
-import {
-  MapPin,
-  Mail,
-  Phone,
-  Sparkles,
-  ShieldCheck,
-  Globe,
-} from "lucide-react";
+import { productsData } from "../data/websiteData";
+import { MapPin, Mail, Phone, Globe } from "lucide-react";
 import logo from "../../public/logo.png";
 
 export const Footer: React.FC = () => {
-  const { navigate, openModal } = useApp();
+  const { navigate } = useApp();
+
+  const latestProducts = productsData.slice(0, 5);
+
+  const footerServices = [
+    "Cybersecurity Services",
+    "Cloud Computing Solutions",
+    "Web & Mobile App Development",
+    "Oracle Software Solutions",
+    "SAP Integration",
+    "AI & Machine Learning Development",
+  ];
+
+  const companyLinks: { label: string; id: PageId }[] = [
+    { label: "Home", id: "home" },
+    { label: "About Us", id: "about" },
+    { label: "Services", id: "services" },
+    { label: "Products", id: "products" },
+    { label: "Blog", id: "blog" },
+    { label: "Careers", id: "careers" },
+    { label: "Contact", id: "contact" },
+  ];
+
+  const socialLinks = [
+    {
+      platform: "LinkedIn",
+      url: "https://linkedin.com/company/zadroit-it-solutions",
+    },
+    { platform: "X", url: "https://x.com/zadroit_tech" },
+    { platform: "Facebook", url: "https://facebook.com/zadroit" },
+    { platform: "Instagram", url: "https://instagram.com/zadroit_official" },
+    { platform: "GitHub", url: "https://github.com/zadroit-tech" },
+  ];
 
   const renderSocialIcon = (platform: string) => {
     const p = platform.toLowerCase();
@@ -30,6 +55,20 @@ export const Footer: React.FC = () => {
         </svg>
       );
     }
+    if (p.includes("facebook")) {
+      return (
+        <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+          <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+        </svg>
+      );
+    }
+    if (p.includes("instagram")) {
+      return (
+        <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+        </svg>
+      );
+    }
     if (p.includes("github")) {
       return (
         <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -41,219 +80,131 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="relative bg-[#0F2E1F] border-t border-[#164E35] pt-12 pb-5 text-slate-300">
+    <footer className="relative bg-[#ded725] border-t border-black/10 pt-12 pb-6 text-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Top Newsletter Banner */}
-        {/* <div className="p-6 sm:p-8 rounded-3xl bg-[#133A27] border border-[#1e583c] mb-14 shadow-lg flex flex-col lg:flex-row items-center justify-between gap-8">
-          <div className="max-w-xl text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C6F135]/20 text-[#C6F135] text-xs font-bold mb-3">
-              <Sparkles className="w-3.5 h-3.5" />
-              Zadroit Tech Radar & Engineering Insights
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-heading">
-              Stay ahead in Enterprise Cloud & AI Engineering
-            </h3>
-            <p className="text-sm text-slate-300 mt-2">
-              Subscribe to get monthly architectural blueprints, benchmark
-              studies, and security insights delivered to your inbox.
-            </p>
-          </div>
-
-          <form
-            onSubmit={handleNewsletterSubmit}
-            className="w-full lg:w-auto flex flex-col sm:flex-row gap-3"
-          >
-            <input
-              type="email"
-              required
-              value={newsletterEmail}
-              onChange={(e) => setNewsletterEmail(e.target.value)}
-              placeholder="Enter your work email address..."
-              className="px-4 py-3 rounded-full bg-[#0F2E1F] border border-[#1e583c] text-white placeholder-slate-400 focus:outline-none focus:border-[#C6F135] text-sm min-w-[280px]"
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 rounded-full bg-[#C6F135] hover:bg-[#b4df27] text-slate-950 font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 whitespace-nowrap"
-            >
-              {subscribed ? (
-                <>
-                  <CheckCircle2 className="w-4 h-4 text-emerald-800" />
-                  Subscribed!
-                </>
-              ) : (
-                <>
-                  <Send className="w-4 h-4" />
-                  Subscribe
-                </>
-              )}
-            </button>
-          </form>
-        </div> */}
-
-        {/* Main Footer Links Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#1e583c]">
-          {/* Column 1: Company Profile */}
-          <div className="lg:col-span-2 space-y-4">
+        {/* Main Footer Links Grid: 3 Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 pb-10">
+          {/* Column 1: Company Profile & Contact Info */}
+          <div className="md:col-span-6 lg:col-span-5 space-y-4 text-black">
             <div
               onClick={() => navigate("home")}
               className="flex items-center gap-2.5 cursor-pointer group select-none"
             >
-              <div className="flex items-center gap-1">
-                {/* <span className="w-2.5 h-6 rounded-full bg-[#C6F135]" />
-                <span className="w-2.5 h-6 rounded-full bg-white" /> */}
-              </div>
-              <img src={logo} alt="Zadroit" className="w-28 h-12" />
+              <img src={logo} alt="Zadroit" className="w-28 h-12 object-contain" />
             </div>
 
-            <p className="text-sm text-slate-300 leading-relaxed max-w-sm">
-              {companyInfo.tagline}. Your trusted partner for custom enterprise
-              software development, cloud infrastructure, AI solutions, SAP
-              integration, and proprietary SaaS platforms.
+            <p className="text-sm text-black leading-relaxed max-w-sm font-normal">
+              Your trusted partner for custom enterprise software development, cloud infrastructure, AI solutions, SAP integration, and proprietary SaaS platforms.
             </p>
 
-            <div className="pt-2 text-xs text-slate-400 space-y-1 font-mono">
-              {/* <div>CIN: {companyInfo.cin}</div> */}
-              <div>
-                HQ: 38/37B, No.1 Logi Street, Gugai, <br />
-                {companyInfo.headquarters.city},{" "}
-                {companyInfo.headquarters.state},{" "}
-                {companyInfo.headquarters.country}
+            <div className="pt-2 text-sm text-[#32679a] space-y-2.5 font-normal">
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-[#32679a] mt-0.5 shrink-0" />
+                <span>
+                  38/37B, No.1 Logi Street, Gugai, <br /> Salem – 636006, Tamil Nadu, India
+                </span>
               </div>
-            </div>
-
-            {/* Social Icons */}
-            <div className="flex items-center gap-2.5 pt-2">
-              {companyInfo.socialLinks.map((s, idx) => (
-                <a
-                  key={idx}
-                  href={s.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bg-[#133A27] hover:bg-[#C6F135] text-slate-300 hover:text-slate-950 border border-[#1e583c] flex items-center justify-center transition-all duration-200"
-                  aria-label={s.platform}
-                >
-                  {renderSocialIcon(s.platform)}
+              <div className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-[#32679a] shrink-0" />
+                <a href="tel:04273562462" className="hover:underline">
+                  0427 3562462
                 </a>
-              ))}
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-[#32679a] shrink-0" />
+                <a href="mailto:info@zadroit.com" className="hover:underline">
+                  info@zadroit.com
+                </a>
+              </div>
             </div>
           </div>
 
-          {/* Column 2: Quick Navigation */}
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4 font-heading">
-              Company
+          {/* Column 2: Services */}
+          <div className="md:col-span-3 lg:col-span-4 text-black">
+            <h4 className="text-xl font-bold text-[#32679a] mb-4 font-heading">
+              Services
             </h4>
-            <ul className="space-y-2.5 text-sm">
-              {navItems.map((item) => (
-                <li key={item.id}>
+            <ul className="space-y-3 text-sm text-black">
+              {footerServices.map((service, idx) => (
+                <li key={idx}>
                   <button
-                    onClick={() => navigate(item.id as PageId)}
-                    className="hover:text-[#C6F135] transition-colors flex items-center gap-1.5"
+                    onClick={() => navigate("services")}
+                    className="hover:opacity-75 transition-opacity text-left text-black font-medium"
                   >
-                    <span>{item.label}</span>
-                    {/* {item.badge && (
-                      <span className="text-[9px] font-bold px-1.5 py-0.2 rounded-full bg-[#133A27] text-[#C6F135] border border-[#1e583c]">
-                        {item.badge}
-                      </span>
-                    )} */}
+                    {service}
                   </button>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 3: Flagship Products */}
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4 font-heading">
-              Our Products
+          {/* Column 3: Products (Latest 5 products, without side heading/badge) */}
+          <div className="md:col-span-3 lg:col-span-3 text-black">
+            <h4 className="text-xl font-bold text-[#32679a] mb-4 font-heading">
+              Products
             </h4>
-            <ul className="space-y-2.5 text-sm">
-              {productsData.map((prod) => (
+            <ul className="space-y-3 text-sm text-black">
+              {latestProducts.map((prod) => (
                 <li key={prod.id}>
                   <button
                     onClick={() => navigate("products")}
-                    className="hover:text-[#C6F135] transition-colors flex items-center justify-between w-full group"
+                    className="hover:opacity-75 transition-opacity text-left text-black font-medium"
                   >
-                    <span>{prod.name}</span>
-                    <span className="text-[10px] text-slate-400 group-hover:text-[#C6F135]">
-                      {prod.badge}
-                    </span>
+                    {prod.name}
                   </button>
                 </li>
               ))}
-            </ul>
-          </div>
-
-          {/* Column 4: Contact & Support */}
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4 font-heading">
-              Get in Touch
-            </h4>
-            <ul className="space-y-3 text-xs">
-              <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#C6F135] mt-0.5 shrink-0" />
-                <span>
-                  {companyInfo.headquarters.address},{" "}
-                  {companyInfo.headquarters.city} -{" "}
-                  {companyInfo.headquarters.pincode}
-                </span>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#C6F135] shrink-0" />
-                <a
-                  href={`mailto:${companyInfo.contact.primaryEmail}`}
-                  className="hover:text-white transition-colors"
-                >
-                  {companyInfo.contact.primaryEmail}
-                </a>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#C6F135] shrink-0" />
-                <a
-                  href={`tel:${companyInfo.contact.primaryPhone}`}
-                  className="hover:text-white transition-colors"
-                >
-                  {companyInfo.contact.primaryPhone}
-                </a>
-              </li>
-              <li className="pt-2">
-                <button
-                  onClick={() => openModal({ type: "quote-modal" })}
-                  className="w-full py-2 px-3 rounded-full bg-[#C6F135] text-slate-950 font-bold hover:bg-[#b4df27] transition-all text-xs flex items-center justify-center gap-1.5"
-                >
-                  <Sparkles className="w-3.5 h-3.5" />
-                  Request Proposal
-                </button>
-              </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom Copyright & Security Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <div className="flex items-center gap-2">
-            <span>
-              © {new Date().getFullYear()} Zadroit IT Solutions Private Limited.
-              All rights reserved.
-            </span>
+        {/* Bottom Centered Area */}
+        <div className="pt-6 pb-2 flex flex-col items-center justify-center gap-5 text-center">
+          {/* Social Media Links with #EDE985 Glow & #1B3853 Icons */}
+          <div className="flex items-center justify-center gap-3">
+            {socialLinks.map((s, idx) => (
+              <a
+                key={idx}
+                href={s.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-xl bg-white text-[#1B3853] shadow-[0_0_18px_#5F88B0,0_2px_8px_rgba(0,0,0,0.06)] border border-[#5F88B0] flex items-center justify-center hover:scale-110 hover:shadow-[0_0_26px_#5F88B0] transition-all duration-200"
+                aria-label={s.platform}
+              >
+                {renderSocialIcon(s.platform)}
+              </a>
+            ))}
           </div>
 
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1 text-[#C6F135]">
-              <ShieldCheck className="w-4 h-4" />
-              ISO 27001 & SOC2 Architecture
-            </span>
+          {/* Company Navigation Links */}
+          <nav className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm font-semibold text-black">
+            {companyLinks.map((link, idx) => (
+              <React.Fragment key={link.id}>
+                <button
+                  onClick={() => navigate(link.id)}
+                  className="hover:opacity-75 transition-opacity text-black"
+                >
+                  {link.label}
+                </button>
+                {idx < companyLinks.length - 1 && (
+                  <span className="text-[#1B3853] select-none font-normal">|</span>
+                )}
+              </React.Fragment>
+            ))}
+          </nav>
+
+          {/* Divider Line */}
+          <div className="w-full border-t border-black/15 my-1" />
+
+          {/* Copyright & Privacy Policy */}
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm text-black font-medium">
+            <span>© {new Date().getFullYear()} ZAdroit IT Solution. All rights reserved.</span>
+            <span className="text-[#1B3853] select-none">•</span>
             <button
               onClick={() => navigate("contact")}
-              className="hover:text-slate-200 transition-colors"
+              className="text-[#1B3853] font-semibold hover:underline"
             >
               Privacy Policy
-            </button>
-            <button
-              onClick={() => navigate("contact")}
-              className="hover:text-slate-200 transition-colors"
-            >
-              Terms of Service
             </button>
           </div>
         </div>

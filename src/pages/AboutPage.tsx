@@ -28,26 +28,15 @@ export const AboutPage: React.FC = () => {
       {/* Hero / About Intro */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16">
         <div className="text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F3F1B1] text-[#13273B] border border-[#EDE985] text-xs font-bold mb-4">
             <div className="flex items-center gap-0">
-              {/* Green circle */}
-              <div className="w-7 h-7 rounded-full bg-lime-400" />
+              <div className="w-5 h-5 rounded-full bg-[#2B5984]" />
 
-              {/* First dark semicircle */}
-              <div
-                className="w-3.5 h-7 bg-green-950"
-                style={{
-                  borderRadius: "0 32px 32px 0",
-                }}
-              />
+              {/* First half circle */}
+              <div className="w-2.5 h-5 bg-[#5F88B0] rounded-r-full" />
 
-              {/* Second dark semicircle */}
-              <div
-                className="w-3.5 h-7 bg-green-950"
-                style={{
-                  borderRadius: "0 32px 32px 0",
-                }}
-              />
+              {/* Second half circle */}
+              <div className="w-2.5 h-5 bg-[#5F88B0] rounded-r-full" />
             </div>
             {aboutData.badge}
           </div>
@@ -103,12 +92,22 @@ export const AboutPage: React.FC = () => {
 
             {/* Right Side: Description, Skill Sliders, and Action Button */}
             <div className="lg:col-span-6 space-y-6 text-left">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#13273B] leading-relaxed">
+                The Story Behind{" "} 
+                <span className="text-[#32679a] text-3xl sm:text-4xl">
+                  ZAdroit IT Solutions
+                </span>
+              </h2>
+              <hr />
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                 {aboutData.storyDescription}
               </p>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                {aboutData.description}
+              </p>
 
               {/* Range Sliders / Skill Metric Bars (Dynamic from JSON) */}
-              <div className="space-y-5 pt-2">
+              {/* <div className="space-y-5 pt-2">
                 {aboutData.skills.map((skill, idx) => (
                   <div key={idx}>
                     <div className="flex justify-between items-center text-xs sm:text-sm font-bold text-slate-900 mb-2">
@@ -129,17 +128,17 @@ export const AboutPage: React.FC = () => {
                     </div>
                   </div>
                 ))}
-              </div>
+              </div> */}
 
               {/* Decorative Lime Pill Button */}
-              <div className="pt-3">
+              {/* <div className="pt-3">
                 <button
                   type="button"
                   className="px-8 py-3 rounded-full bg-[#ded725] hover:bg-[#d3cc11] text-[#133A27] font-bold text-sm sm:text-base shadow-sm transition-all cursor-pointer"
                 >
                   {aboutData.buttonText}
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -151,21 +150,14 @@ export const AboutPage: React.FC = () => {
                   {/* Vertical line */}
 
                   {/* Complete circle */}
-                  <div className="relative z-10 w-7 h-7 rounded-full bg-lime-400" />
-                  <div className="absolute left-[28px] top-1/2 -translate-y-1/2 h-[70px] w-[1.5px] bg-green-950" />
+                  <div className="relative z-10 w-7 h-7 rounded-full bg-[#2B5984]" />
+                  <div className="absolute left-[27px] top-1/2 -translate-y-1/2 h-[70px] w-[1.3px] bg-[#13273B]" />
 
                   {/* First half circle */}
-                  <div
-                    className="relative z-10 w-4 h-7 bg-green-950 rounded-r-full"
-                   
-                  />
+                  <div className="relative z-10 w-4 h-7 bg-[#5F88B0] rounded-r-full" />
 
                   {/* Second half circle */}
-                   <div
-                    className="relative z-10 w-4 h-7 bg-green-950 rounded-r-full"
-                   
-                  />
-
+                  <div className="relative z-10 w-4 h-7 bg-[#5F88B0] rounded-r-full" />
                 </div>
                 <div>
                   <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#090D16] font-heading tracking-tight">

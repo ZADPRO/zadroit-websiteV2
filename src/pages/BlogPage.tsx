@@ -1,36 +1,30 @@
-import React, { useState } from 'react';
-import { useApp } from '../context/AppContext';
-import { blogPostsData } from '../data/websiteData';
-import { ImagePlaceholder } from '../components/ImagePlaceholder';
-import {
-  Search,
-  Clock,
-  ArrowRight,
-  ChevronRight,
-  Send
-} from 'lucide-react';
+import React, { useState } from "react";
+import { useApp } from "../context/AppContext";
+import { blogPostsData } from "../data/websiteData";
+import { ImagePlaceholder } from "../components/ImagePlaceholder";
+import { Search, Clock, ArrowRight, ChevronRight, Send } from "lucide-react";
 
 export const BlogPage: React.FC = () => {
   const { openModal, showToast } = useApp();
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
-  const [subEmail, setSubEmail] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [subEmail, setSubEmail] = useState("");
 
   const categories = [
-    'All',
-    'Cloud Architecture',
-    'AI & Innovation',
-    'Enterprise Engineering',
-    'UI/UX Design',
-    'Cybersecurity',
-    'Product Strategy'
+    "All",
+    "Cloud Architecture",
+    "AI & Innovation",
+    "Enterprise Engineering",
+    "UI/UX Design",
+    "Cybersecurity",
+    "Product Strategy",
   ];
 
   const filteredBlogs = blogPostsData.filter((b) => {
     const matchesCategory =
-      selectedCategory === 'All' || b.category === selectedCategory;
+      selectedCategory === "All" || b.category === selectedCategory;
     const matchesSearch =
-      searchQuery === '' ||
+      searchQuery === "" ||
       b.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       b.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
       b.tags.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()));
@@ -38,20 +32,25 @@ export const BlogPage: React.FC = () => {
     return matchesCategory && matchesSearch;
   });
 
-  const featuredPost = blogPostsData.find((b) => b.featured) || blogPostsData[0];
+  const featuredPost =
+    blogPostsData.find((b) => b.featured) || blogPostsData[0];
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!subEmail || !subEmail.includes('@')) {
-      showToast('Invalid Email', 'Please enter a valid email address.', 'warning');
+    if (!subEmail || !subEmail.includes("@")) {
+      showToast(
+        "Invalid Email",
+        "Please enter a valid email address.",
+        "warning",
+      );
       return;
     }
     showToast(
-      'Subscribed to Tech Radar! 🚀',
-      'You will receive our latest engineering whitepapers directly.',
-      'success'
+      "Subscribed to Tech Radar! 🚀",
+      "You will receive our latest engineering whitepapers directly.",
+      "success",
     );
-    setSubEmail('');
+    setSubEmail("");
   };
 
   return (
@@ -63,37 +62,34 @@ export const BlogPage: React.FC = () => {
       {/* Hero / Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-10">
         <div className="text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-50 text-purple-800 border border-purple-200 text-xs font-bold mb-4">
-            {/* <BookOpen className="w-3.5 h-3.5 text-purple-600" /> */}
-              <div className="flex items-center gap-0">
-              {/* Green circle */}
-              <div className="w-7 h-7 rounded-full bg-lime-400" />
+          <div className="text-center max-w-3xl mx-auto">
+            {/* Dual Pill Capsule Icon + Our Services Label */}
+            <div className="inline-flex items-center gap-2 mb-3">
+              <div className="text-center max-w-4xl mx-auto">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F3F1B1] text-[#13273B] border border-[#EDE985] text-xs font-bold mb-4">
+                  <div className="flex items-center gap-0">
+                    <div className="w-5 h-5 rounded-full bg-[#2B5984]" />
 
-              {/* First dark semicircle */}
-              <div
-                className="w-3.5 h-7 bg-green-950"
-                style={{
-                  borderRadius: "0 32px 32px 0",
-                }}
-              />
+                    {/* First half circle */}
+                    <div className="w-2.5 h-5 bg-[#5F88B0] rounded-r-full" />
 
-              {/* Second dark semicircle */}
-              <div
-                className="w-3.5 h-7 bg-green-950"
-                style={{
-                  borderRadius: "0 32px 32px 0",
-                }}
-              />
+                    {/* Second half circle */}
+                    <div className="w-2.5 h-5 bg-[#5F88B0] rounded-r-full" />
+                  </div>
+                  Zadroit Publications & Tech Radar
+                </div>
+              </div>
             </div>
-            Zadroit Publications & Tech Radar
+
+            {/* Main Display Headline */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#090D16] tracking-tight font-heading leading-[1.18] mt-1">
+              Engineering Insights, Architecture Blueprints & AI
+            </h1>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#090D16] tracking-tight font-heading leading-tight">
-            Engineering Insights, Architecture Blueprints & AI
-          </h1>
-
           <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Practical guides and architectural case studies authored by Zadroit software architects, data scientists, and DevOps leads.
+            Practical guides and architectural case studies authored by Zadroit
+            software architects, data scientists, and DevOps leads.
           </p>
         </div>
 
@@ -119,8 +115,8 @@ export const BlogPage: React.FC = () => {
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all ${
                 selectedCategory === cat
-                  ? 'bg-[#133A27] text-white shadow-sm'
-                  : 'bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200'
+                  ? "bg-[#ded725] text-black shadow-sm"
+                  : "bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200"
               }`}
             >
               {cat}
@@ -130,10 +126,12 @@ export const BlogPage: React.FC = () => {
       </section>
 
       {/* Featured Spotlight Banner */}
-      {!searchQuery && selectedCategory === 'All' && featuredPost && (
+      {!searchQuery && selectedCategory === "All" && featuredPost && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div
-            onClick={() => openModal({ type: 'blog-reader', blog: featuredPost })}
+            onClick={() =>
+              openModal({ type: "blog-reader", blog: featuredPost })
+            }
             className="light-card rounded-3xl p-6 sm:p-10 border border-slate-200 bg-white shadow-md cursor-pointer group hover:border-[#133A27] transition-all grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
           >
             <div className="lg:col-span-6 space-y-4">
@@ -141,10 +139,12 @@ export const BlogPage: React.FC = () => {
                 <span className="text-xs font-bold px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-200">
                   Featured Blueprint
                 </span>
-                <span className="text-xs text-[#133A27] font-bold">{featuredPost.category}</span>
+                <span className="text-xs text-[#32679a] font-bold">
+                  {featuredPost.category}
+                </span>
               </div>
 
-              <h2 className="text-2xl sm:text-4xl font-black text-[#090D16] font-heading group-hover:text-[#133A27] transition-colors leading-tight">
+              <h2 className="text-2xl sm:text-4xl font-black text-[#090D16] font-heading group-hover:text-[#142C42] transition-colors leading-tight">
                 {featuredPost.title}
               </h2>
 
@@ -157,13 +157,15 @@ export const BlogPage: React.FC = () => {
                 <span>•</span>
                 <span>{featuredPost.publishedDate}</span>
                 <span>•</span>
-                <span className="text-amber-700 font-bold">{featuredPost.readTime}</span>
+                <span className="text-amber-700 font-bold">
+                  {featuredPost.readTime}
+                </span>
               </div>
 
               <div className="pt-2">
-                <button className="px-6 py-2.5 rounded-full bg-[#133A27] text-white font-bold text-xs sm:text-sm group-hover:bg-[#0c2619] transition-colors flex items-center gap-2 shadow-sm">
+                <button className="px-6 py-2.5 rounded-full bg-[#ded725] text-[#142C42] font-bold text-xs sm:text-sm group-hover:bg-[#142C42] transition-colors flex items-center gap-2 shadow-sm">
                   <span>Read Full Article</span>
-                  <ArrowRight className="w-4 h-4 text-[#C6F135] group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-[#142C42] group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
             </div>
@@ -185,11 +187,13 @@ export const BlogPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {filteredBlogs.length === 0 ? (
           <div className="py-16 text-center text-slate-500">
-            <p className="text-base font-medium">No articles found matching "{searchQuery}".</p>
+            <p className="text-base font-medium">
+              No articles found matching "{searchQuery}".
+            </p>
             <button
               onClick={() => {
-                setSearchQuery('');
-                setSelectedCategory('All');
+                setSearchQuery("");
+                setSelectedCategory("All");
               }}
               className="mt-3 text-sm text-[#133A27] font-bold hover:underline"
             >
@@ -201,7 +205,7 @@ export const BlogPage: React.FC = () => {
             {filteredBlogs.map((blog) => (
               <div
                 key={blog.id}
-                onClick={() => openModal({ type: 'blog-reader', blog })}
+                onClick={() => openModal({ type: "blog-reader", blog })}
                 className="light-card rounded-3xl p-5 sm:p-6 flex flex-col justify-between cursor-pointer group hover:-translate-y-1 transition-all duration-300 bg-white"
               >
                 <div>
@@ -250,8 +254,12 @@ export const BlogPage: React.FC = () => {
                       {blog.author.name.charAt(0)}
                     </div>
                     <div>
-                      <div className="text-slate-900 font-semibold">{blog.author.name}</div>
-                      <div className="text-[10px] text-slate-500">{blog.publishedDate}</div>
+                      <div className="text-slate-900 font-semibold">
+                        {blog.author.name}
+                      </div>
+                      <div className="text-[10px] text-slate-500">
+                        {blog.publishedDate}
+                      </div>
                     </div>
                   </div>
 
@@ -274,10 +282,14 @@ export const BlogPage: React.FC = () => {
               Never Miss an Engineering Breakthrough
             </h3>
             <p className="text-sm text-slate-600">
-              Get notified when we publish new microservice blueprints, AI case studies, and performance benchmarks. No spam, ever.
+              Get notified when we publish new microservice blueprints, AI case
+              studies, and performance benchmarks. No spam, ever.
             </p>
 
-            <form onSubmit={handleSubscribe} className="pt-2 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <form
+              onSubmit={handleSubscribe}
+              className="pt-2 flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+            >
               <input
                 type="email"
                 required

@@ -5,8 +5,6 @@ import {
   Users,
   ShieldCheck,
   ArrowUpRight,
-  Sparkles,
-  Zap,
 } from "lucide-react";
 import { useApp } from "../context/AppContext";
 
@@ -16,9 +14,9 @@ export const WhyChooseUs: React.FC = () => {
   const reasons = [
     {
       id: "engineering",
-      title: "Full-Cycle Engineering",
+      title: "Advanced & Future-Ready Tech",
       description:
-        "From discovery and cloud architecture to production deployment and automated scaling with zero tech debt.",
+        "We harness AI, Cloud Computing, Blockchain, and SAP integration to give your business a permanent competitive edge.",
       icon: Cpu,
       highlight: "End-to-End Delivery",
       action: "explore",
@@ -66,13 +64,13 @@ export const WhyChooseUs: React.FC = () => {
             {/* Logo shape */}
             <div className="flex items-center gap-0 shrink-0">
               {/* Complete circle */}
-              <div className="w-5 h-5 rounded-full bg-lime-400" />
+              <div className="w-5 h-5 rounded-full bg-[#2B5984]" />
 
               {/* First half circle */}
-              <div className="w-2.5 h-5 bg-green-950 rounded-r-full" />
+              <div className="w-2.5 h-5 bg-[#5F88B0] rounded-r-full" />
 
               {/* Second half circle */}
-              <div className="w-2.5 h-5 bg-green-950 rounded-r-full" />
+              <div className="w-2.5 h-5 bg-[#5F88B0] rounded-r-full" />
             </div>
 
             {/* Text */}
@@ -82,9 +80,10 @@ export const WhyChooseUs: React.FC = () => {
           </div>
 
           {/* Main Display Headline */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#090D16] tracking-tight leading-[1.14] font-heading">
-            Why Our Clients Believe
-            <span className="block text-[#133A27] mt-1">We’re Different</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#13273B] tracking-tight leading-[1.14] font-heading">
+            Built for Innovation, Scalability & Long-Term Excellence
+
+            {/* <span className="block text-[#133A27] mt-1">We’re Different</span> */}
           </h2>
         </div>
 
@@ -123,7 +122,7 @@ export const WhyChooseUs: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                   <span className="text-white text-xs font-bold tracking-wide flex items-center gap-1">
-                    <Sparkles className="w-3.5 h-3.5 text-[#ded725]" />
+                    {/* <Sparkles className="w-3.5 h-3.5 text-[#ded725]" /> */}
                     Collaborative Squads
                   </span>
                 </div>
@@ -141,14 +140,14 @@ export const WhyChooseUs: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3.5">
                     <span className="text-white text-xs font-bold tracking-wide flex items-center gap-1">
-                      <Zap className="w-3.5 h-3.5 text-[#ded725]" />
+                      {/* <Zap className="w-3.5 h-3.5 text-[#ded725]" /> */}
                       Agile Innovation
                     </span>
                   </div>
                 </div>
 
                 {/* Bottom Shape: Vibrant Chartreuse Arch with Smooth Kinetic Serpentine Track */}
-                <div className="w-full h-[40%] bg-[#c6f137] rounded-t-[70px] sm:rounded-t-[80px] rounded-b-[24px] sm:rounded-b-[28px] overflow-hidden relative shadow-md border border-[#c8c01c]/60 flex items-center justify-center p-2 group">
+                <div className="w-full h-[40%] bg-[#E5E055] rounded-t-[70px] sm:rounded-t-[80px] rounded-b-[24px] sm:rounded-b-[28px] overflow-hidden relative shadow-md border border-[#c8c01c]/60 flex items-center justify-center p-2 group">
                   {/* Kinetic Snake Track SVG with 60fps Smooth Moving Beads */}
                   <svg
                     viewBox="0 0 160 210"
@@ -165,14 +164,14 @@ export const WhyChooseUs: React.FC = () => {
                          C 128 115, 128 148, 80 148 
                          C 32 148, 32 181, 80 181 
                          C 128 181, 128 200, 80 200"
-                      stroke="#133A27"
+                      stroke="#13273B"
                       strokeWidth="4.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
 
                     {/* Animated Rolling Ball 1 */}
-                    <circle r="6.5" fill="#133A27">
+                    <circle r="6.5" fill="#13273B">
                       <animateMotion
                         path="M 80 16 C 32 16, 32 49, 80 49 C 128 49, 128 82, 80 82 C 32 82, 32 115, 80 115 C 128 115, 128 148, 80 148 C 32 148, 32 181, 80 181 C 128 181, 128 200, 80 200"
                         dur="3.8s"
@@ -185,7 +184,7 @@ export const WhyChooseUs: React.FC = () => {
                     </circle>
 
                     {/* Animated Rolling Ball 2 (Offset phase for dual bouncing movement) */}
-                    <circle r="6.5" fill="#133A27">
+                    <circle r="6.5" fill="#13273B">
                       <animateMotion
                         path="M 80 16 C 32 16, 32 49, 80 49 C 128 49, 128 82, 80 82 C 32 82, 32 115, 80 115 C 128 115, 128 148, 80 148 C 32 148, 32 181, 80 181 C 128 181, 128 200, 80 200"
                         dur="3.8s"
@@ -200,7 +199,7 @@ export const WhyChooseUs: React.FC = () => {
                   </svg>
 
                   {/* Subtle top indicator */}
-                  <div className="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#133A27]/20" />
+                  <div className="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-1 rounded-full bg-[#13273B]/20" />
                 </div>
               </div>
             </div>
@@ -265,7 +264,7 @@ export const WhyChooseUs: React.FC = () => {
               </div>
 
               {/* Bottom Quick Call to Action Bar inside Card */}
-              <div className="mt-2 pt-3 px-6 border-t border-[#133A27]/15 flex flex-col sm:flex-row items-center justify-between gap-4">
+              {/* <div className="mt-2 pt-3 px-6 border-t border-[#133A27]/15 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm font-bold text-[#133A27]">
                   <span className="w-2 h-2 rounded-full bg-[#133A27] animate-ping" />
                   <span>Ready to accelerate your engineering roadmap?</span>
@@ -278,7 +277,7 @@ export const WhyChooseUs: React.FC = () => {
                   <span>Schedule Consultation</span>
                   <ArrowUpRight className="w-4 h-4 text-[#ded725]" />
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

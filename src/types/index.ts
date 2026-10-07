@@ -230,6 +230,7 @@ export interface AboutData {
   storyDescription: string;
   topImage: string;
   bottomImage: string;
+  description: string;
   skills: AboutSkill[];
   buttonText: string;
   stats: AboutStat[];

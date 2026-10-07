@@ -35,12 +35,22 @@
   }
 
   h1, h2, h3, h4, .font-heading {
-    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    font-family:  'Libre Caslon Condensed';
     color: #090d16;
   }
 
   code, pre, .font-mono {
     font-family: 'Space Grotesk', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  .font-stencil {
+    font-family: 'Libre Caslon Condensed';
+  }
+}
+
+@layer utilities {
+  .font-stencil {
+    font-family: 'Libre Caslon Condensed';
   }
 }
 
@@ -90,6 +100,16 @@
 .bg-dots-dense {
   background-image: radial-gradient(#94a3b8 1.5px, transparent 1.5px);
   background-size: 14px 14px;
+}
+
+.bg-stripes-pattern {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.08),
+    rgba(0, 0, 0, 0) 1.5px,
+    transparent 1.5px,
+    transparent 10px
+  );
 }
 
 /* Animations */
