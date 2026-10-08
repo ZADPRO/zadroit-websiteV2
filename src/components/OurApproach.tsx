@@ -79,8 +79,40 @@ export const OurApproach: React.FC<OurApproachProps> = ({
         </div>
       </ScrollReveal>
 
-      {/* Ambient background blue glow/smudge */}
-      {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-[#32679a]/10 rounded-full blur-3xl pointer-events-none -z-10" /> */}
+      {/* Decorative Gray Dot Pattern */}
+      <div className="absolute top-12 left-10 w-44 h-36 bg-dots opacity-40 pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-48 h-36 bg-dots opacity-40 pointer-events-none" />
+
+      {/* Decorative Blue Concentric Curved Arches (Bottom-Left) */}
+      <div className="absolute -bottom-6 -left-6 sm:-bottom-8 sm:-left-8 pointer-events-none z-0 select-none">
+        <svg
+          className="w-44 h-44 sm:w-56 sm:h-56 text-[#32679a]/10"
+          viewBox="0 0 200 200"
+          fill="none"
+        >
+          {/* Outer Curved Line */}
+          <path
+            d="M 0 50 C 90 40, 160 110, 180 200"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+          />
+          {/* Middle Curved Line */}
+          <path
+            d="M 0 85 C 70 75, 125 130, 145 200"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+          {/* Inner Curved Line */}
+          <path
+            d="M 0 120 C 50 110, 90 150, 110 200"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+          />
+        </svg>
+      </div>
 
       {/* ================= 3-STEP CARDS GRID ================= */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch relative z-10">
@@ -91,12 +123,7 @@ export const OurApproach: React.FC<OurApproachProps> = ({
             delay={idx * 120}
             className="h-full"
           >
-            <div className="relative bg-white/95 rounded-[28px] sm:rounded-[32px] overflow-hidden border border-slate-200/80 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(50,103,154,0.16)] hover:border-[#d3cc11]/50 hover:-translate-y-2 transition-all duration-500 ease-out flex flex-col justify-between h-full group">
-              {/* Blue Smudge Effects inside the Card */}
-              {/* <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-[#d3cc11]/30 rounded-full blur-2xl pointer-events-none group-hover:scale-130 group-hover:bg-[#32679a]/45 transition-all duration-700 ease-out" /> */}
-              {/* <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#5F88B0]/20 rounded-full blur-xl pointer-events-none group-hover:scale-125 transition-all duration-700 ease-out" /> */}
-              {/* <div className="absolute inset-0 bg-gradient-to-b from-[#ded725] via-transparent to-[#ded725]/10 pointer-events-none" /> */}
-
+            <div className="relative bg-white/95 rounded-[28px] sm:rounded-[32px] overflow-hidden border border-slate-200/80 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(50,103,154,0.16)] hover:border-[#32679a]/40 hover:-translate-y-2 transition-all duration-500 ease-out flex flex-col justify-between h-full group">
               {/* Card Content */}
               <div className="p-6 sm:p-7 relative z-10 flex-1 flex flex-col justify-start">
                 {/* Top Row: Title + Step Number */}

@@ -7,15 +7,11 @@ import {
 import { ImagePlaceholder } from "../components/ImagePlaceholder";
 import { ScrollReveal } from "../components/ScrollReveal";
 import { OurApproach } from "../components/OurApproach";
+import { ZadroitEdge } from "../components/ZadroitEdge";
 import {
   Target,
   Eye,
   ExternalLink,
-  Briefcase,
-  Sliders,
-  Maximize2,
-  Lightbulb,
-  Handshake,
 } from "lucide-react";
 
 export const AboutPage: React.FC = () => {
@@ -142,7 +138,7 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* ================= VISION & MISSION / ABOUT SHOWCASE SECTION ================= */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 relative overflow-hidden bg-white">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 relative overflow-hidden bg-white border-b-1 border-slate-200/80">
         <ScrollReveal variant="fade-up">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 items-center">
 
@@ -213,13 +209,13 @@ export const AboutPage: React.FC = () => {
                   <div className="relative flex-[1.75] group">
                     {/* Thick 3D Blue Top-Left Arch Bracket Frame */}
                     <svg
-                      className="absolute -top-2.5 -left-2.5 sm:-top-3 sm:-left-3 w-32 sm:w-40 h-32 sm:h-40 pointer-events-none z-0 overflow-visible"
+                      className="absolute -top-2.5 -left-2.5 sm:-top-3 sm:-left-3 w-40 sm:w-44 h-40 sm:h-44 pointer-events-none z-0 overflow-visible"
                       viewBox="0 0 160 160"
                       fill="none"
                     >
                       <path
                         d="M 10 144 L 10 44 A 34 34 0 0 1 44 10 L 144 10"
-                        stroke="#32679a"
+                        stroke="#ded725"
                         strokeWidth="12"
                         strokeLinecap="round"
                         className="drop-shadow-md"
@@ -304,13 +300,13 @@ export const AboutPage: React.FC = () => {
 
                     {/* Thick 3D Blue Bottom-Right Arch Bracket Frame */}
                     <svg
-                      className="absolute -bottom-2.5 -right-2.5 sm:-bottom-3 sm:-right-3 w-32 sm:w-40 h-32 sm:h-40 pointer-events-none z-0 overflow-visible"
+                      className="absolute -bottom-2.5 -right-2.5 sm:-bottom-3 sm:-right-3 w-40 sm:w-44 h-40 sm:h-44 pointer-events-none z-0 overflow-visible"
                       viewBox="0 0 160 160"
                       fill="none"
                     >
                       <path
                         d="M 16 150 L 116 150 A 34 34 0 0 0 150 116 L 150 16"
-                        stroke="#32679a"
+                        stroke="#ded725"
                         strokeWidth="12"
                         strokeLinecap="round"
                         className="drop-shadow-md"
@@ -328,92 +324,8 @@ export const AboutPage: React.FC = () => {
       {/* ================= OUR APPROACH SECTION ================= */}
       <OurApproach />
 
-      {/* ================= WHAT MAKES ZADROIT DIFFERENT SECTION ================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-slate-50/70 rounded-3xl border border-slate-200/80 my-6">
-        <ScrollReveal variant="fade-up">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F3F1B1] text-[#13273B] border border-[#EDE985] text-xs font-bold mb-2">
-              <div className="flex items-center gap-0">
-                <div className="w-4 h-4 rounded-full bg-[#2B5984]" />
-                <div className="w-2 h-4 bg-[#5F88B0] rounded-r-full" />
-                <div className="w-2 h-4 bg-[#5F88B0] rounded-r-full" />
-              </div>
-              The ZAdroit Edge
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-black text-[#090D16] font-heading tracking-tight">
-              What Makes ZAdroit Different
-            </h2>
-            <p className="mt-3 text-base text-slate-600 leading-relaxed">
-              We focus on outcomes over buzzwords, building systems engineered for real-world reliability and growth.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Business first",
-                description: "We recommend technology because it fits your goals, not because it is new.",
-                icon: Briefcase,
-                tag: "Outcome-Driven",
-              },
-              {
-                title: "Tailored, not templated",
-                description: "Solutions built around how your business really works.",
-                icon: Sliders,
-                tag: "Custom Solutions",
-              },
-              {
-                title: "Scalable by design",
-                description: "Architecture that grows with your organisation.",
-                icon: Maximize2,
-                tag: "High Resilience",
-              },
-              {
-                title: "Practical innovation",
-                description: "AI, cloud and automation where they create real value.",
-                icon: Lightbulb,
-                tag: "Tangible ROI",
-              },
-              {
-                title: "A long-term partner",
-                description: "We keep supporting and improving your technology after launch.",
-                icon: Handshake,
-                tag: "Continuous Care",
-              },
-            ].map((diff, idx) => {
-              const DiffIcon = diff.icon;
-              const isLast = idx === 4;
-              return (
-                <ScrollReveal
-                  key={diff.title}
-                  variant="fade-up"
-                  delay={idx * 80}
-                  className={`light-card rounded-3xl p-6 bg-white border border-slate-200/80 hover:border-[#ded725]/80 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between ${isLast ? "md:col-span-2 lg:col-span-1" : ""
-                    }`}
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-11 h-11 rounded-2xl bg-[#ded725]/25 border border-[#ded725]/50 flex items-center justify-center text-[#13273B] group-hover:scale-105 transition-transform">
-                        <DiffIcon className="w-5 h-5 text-[#13273B]" />
-                      </div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200 group-hover:bg-[#32679a]/10 group-hover:text-[#32679a] transition-colors">
-                        {diff.tag}
-                      </span>
-                    </div>
-
-                    <h3 className="text-lg font-bold text-slate-900 font-heading mb-2 group-hover:text-[#32679a] transition-colors">
-                      {diff.title}
-                    </h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">
-                      {diff.description}
-                    </p>
-                  </div>
-                </ScrollReveal>
-              );
-            })}
-          </div>
-        </ScrollReveal>
-      </section>
+      {/* ================= THE ZADROIT EDGE (CARD GRID) ================= */}
+      <ZadroitEdge />
 
       {/* Milestones & Journey Timeline */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-slate-50 rounded-3xl border border-slate-200 my-8">
