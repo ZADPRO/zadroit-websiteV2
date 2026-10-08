@@ -3,14 +3,19 @@ import {
   aboutData,
   milestonesData,
   teamMembersData,
-  coreValuesData,
 } from "../data/websiteData";
 import { ImagePlaceholder } from "../components/ImagePlaceholder";
 import { ScrollReveal } from "../components/ScrollReveal";
+import { OurApproach } from "../components/OurApproach";
 import {
   Target,
   Eye,
   ExternalLink,
+  Briefcase,
+  Sliders,
+  Maximize2,
+  Lightbulb,
+  Handshake,
 } from "lucide-react";
 
 export const AboutPage: React.FC = () => {
@@ -141,223 +146,271 @@ export const AboutPage: React.FC = () => {
         <ScrollReveal variant="fade-up">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 items-center">
 
-          {/* LEFT SIDE: Content, Vision & Mission Cards */}
-          <div className="lg:col-span-6 space-y-3.5 sm:space-y-4 text-left">
-            {/* Main Display Headline */}
-            <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-black text-[#13273B] font-heading tracking-tight leading-[1.18]">
-              Transforming Ideas <br />
-              <span className="text-[#32679a]">into Digital Reality</span>
-            </h2>
+            {/* LEFT SIDE: Content, Vision & Mission Cards */}
+            <div className="lg:col-span-6 space-y-3.5 sm:space-y-4 text-left">
+              {/* Main Display Headline */}
+              <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-black text-[#13273B] font-heading tracking-tight leading-[1.18]">
+                Transforming Ideas <br />
+                <span className="text-[#32679a]">into Digital Reality</span>
+              </h2>
 
-            {/* Vision & Mission Cards */}
-            <div className="space-y-2.5 pt-0.5">
-              {/* Vision Card */}
-              <div className="p-3.5 sm:p-4 rounded-xl bg-white border border-slate-200/90 shadow-sm hover:border-[#32679a]/50 hover:shadow-md transition-all duration-300 group">
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#32679a]/10 border border-[#32679a]/20 flex items-center justify-center text-[#32679a] shrink-0 group-hover:scale-105 transition-transform">
-                    <Eye className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#32679a]" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between mb-0.5">
-                      <h3 className="text-sm sm:text-base font-bold text-[#13273B] font-heading">
-                        {aboutData.vision.title}
-                      </h3>
-                      <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-[#32679a]/10 text-[#32679a] font-mono">
-                        Horizon
-                      </span>
+              {/* Vision & Mission Cards */}
+              <div className="space-y-2.5 pt-0.5">
+                {/* Vision Card */}
+                <div className="p-3.5 sm:p-4 rounded-xl bg-white border border-slate-200/90 shadow-sm hover:border-[#32679a]/50 hover:shadow-md transition-all duration-300 group">
+                  <div className="flex items-start gap-3">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#32679a]/10 border border-[#32679a]/20 flex items-center justify-center text-[#32679a] shrink-0 group-hover:scale-105 transition-transform">
+                      <Eye className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#32679a]" />
                     </div>
-                    <p className="text-xs text-slate-600 leading-relaxed">
-                      {aboutData.vision.description}
-                    </p>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between mb-0.5">
+                        <h3 className="text-sm sm:text-base font-bold text-[#13273B] font-heading">
+                          {aboutData.vision.title}
+                        </h3>
+                        <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-[#32679a]/10 text-[#32679a] font-mono">
+                          Horizon
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-600 leading-relaxed">
+                        {aboutData.vision.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Mission Card */}
-              <div className="p-3.5 sm:p-4 rounded-xl bg-white border border-slate-200/90 shadow-sm hover:border-[#ded725]/80 hover:shadow-md transition-all duration-300 group">
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#ded725]/25 border border-[#ded725]/50 flex items-center justify-center text-[#13273B] shrink-0 group-hover:scale-105 transition-transform">
-                    <Target className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#13273B]" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between mb-0.5">
-                      <h3 className="text-sm sm:text-base font-bold text-[#13273B] font-heading">
-                        {aboutData.mission.title}
-                      </h3>
-                      <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-[#ded725]/25 text-[#13273B] font-mono">
-                        Execution
-                      </span>
+                {/* Mission Card */}
+                <div className="p-3.5 sm:p-4 rounded-xl bg-white border border-slate-200/90 shadow-sm hover:border-[#ded725]/80 hover:shadow-md transition-all duration-300 group">
+                  <div className="flex items-start gap-3">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#ded725]/25 border border-[#ded725]/50 flex items-center justify-center text-[#13273B] shrink-0 group-hover:scale-105 transition-transform">
+                      <Target className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#13273B]" />
                     </div>
-                    <p className="text-xs text-slate-600 leading-relaxed">
-                      {aboutData.mission.description}
-                    </p>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between mb-0.5">
+                        <h3 className="text-sm sm:text-base font-bold text-[#13273B] font-heading">
+                          {aboutData.mission.title}
+                        </h3>
+                        <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-[#ded725]/25 text-[#13273B] font-mono">
+                          Execution
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-600 leading-relaxed">
+                        {aboutData.mission.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* RIGHT SIDE: 4-Image Geometric Collage */}
-          <div className="lg:col-span-6 relative p-1 sm:p-2">
-            {/* 4 Images 2-Row Asymmetric Collage */}
-            <div className="space-y-2.5 sm:space-y-3 relative z-10">
+            {/* RIGHT SIDE: 4-Image Geometric Collage */}
+            <div className="lg:col-span-6 relative p-1 sm:p-2">
+              {/* 4 Images 2-Row Asymmetric Collage */}
+              <div className="space-y-2.5 sm:space-y-3 relative z-10">
 
-              {/* Row 1: Top-Left (Wider + Top-Left Blue Arch) + Top-Right (Portrait) */}
-              <div className="flex gap-2.5 sm:gap-3 items-stretch">
-                {/* Image 1: Top-Left (Increased Width, ~64% width, Top-Left Curved Arc + 3D Blue Pill Arch Frame) */}
-                <div className="relative flex-[1.75] group">
-                  {/* Thick 3D Blue Top-Left Arch Bracket Frame */}
-                  <svg
-                    className="absolute -top-2.5 -left-2.5 sm:-top-3 sm:-left-3 w-32 sm:w-40 h-32 sm:h-40 pointer-events-none z-0 overflow-visible"
-                    viewBox="0 0 160 160"
-                    fill="none"
-                  >
-                    <path
-                      d="M 10 144 L 10 44 A 34 34 0 0 1 44 10 L 144 10"
-                      stroke="#32679a"
-                      strokeWidth="12"
-                      strokeLinecap="round"
-                      className="drop-shadow-md"
-                    />
-                  </svg>
+                {/* Row 1: Top-Left (Wider + Top-Left Blue Arch) + Top-Right (Portrait) */}
+                <div className="flex gap-2.5 sm:gap-3 items-stretch">
+                  {/* Image 1: Top-Left (Increased Width, ~64% width, Top-Left Curved Arc + 3D Blue Pill Arch Frame) */}
+                  <div className="relative flex-[1.75] group">
+                    {/* Thick 3D Blue Top-Left Arch Bracket Frame */}
+                    <svg
+                      className="absolute -top-2.5 -left-2.5 sm:-top-3 sm:-left-3 w-32 sm:w-40 h-32 sm:h-40 pointer-events-none z-0 overflow-visible"
+                      viewBox="0 0 160 160"
+                      fill="none"
+                    >
+                      <path
+                        d="M 10 144 L 10 44 A 34 34 0 0 1 44 10 L 144 10"
+                        stroke="#32679a"
+                        strokeWidth="12"
+                        strokeLinecap="round"
+                        className="drop-shadow-md"
+                      />
+                    </svg>
 
-                  <div className="w-full h-44 sm:h-52 rounded-tl-[34px] sm:rounded-tl-[40px] rounded-tr-lg rounded-bl-lg rounded-br-lg overflow-hidden shadow-md bg-slate-100 relative z-10">
-                    <img
-                      src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
-                      alt="Zadroit team collaborating on laptops"
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
-                      loading="lazy"
-                    />
+                    <div className="w-full h-44 sm:h-52 rounded-tl-[34px] sm:rounded-tl-[40px] rounded-tr-lg rounded-bl-lg rounded-br-lg overflow-hidden shadow-md bg-slate-100 relative z-10">
+                      <img
+                        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
+                        alt="Zadroit team collaborating on laptops"
+                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Image 2: Top-Right (Portrait, ~36% width + Top-Right Curved Arc) */}
+                  <div className="relative flex-1 group">
+                    <div className="w-full h-44 sm:h-52 rounded-tr-[34px] sm:rounded-tr-[40px] rounded-tl-lg rounded-bl-lg rounded-br-lg overflow-hidden shadow-md bg-slate-100">
+                      <img
+                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop"
+                        alt="Zadroit software architect"
+                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
+                        loading="lazy"
+                      />
+                    </div>
                   </div>
                 </div>
 
-                {/* Image 2: Top-Right (Portrait, ~36% width + Top-Right Curved Arc) */}
-                <div className="relative flex-1 group">
-                  <div className="w-full h-44 sm:h-52 rounded-tr-[34px] sm:rounded-tr-[40px] rounded-tl-lg rounded-bl-lg rounded-br-lg overflow-hidden shadow-md bg-slate-100">
-                    <img
-                      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop"
-                      alt="Zadroit software architect"
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
-                      loading="lazy"
-                    />
+                {/* Row 2: Bottom-Left (Portrait + Sparkle Stars) + Bottom-Right (Wide + Bottom-Right Blue Arch) */}
+                <div className="flex gap-2.5 sm:gap-3 items-stretch">
+                  {/* Image 3: Bottom-Left (Portrait, ~42% width + Decorative Blue Sparkle Stars) */}
+                  <div className="relative flex-1 group">
+                    <div className="w-full h-38 sm:h-46 rounded-xl sm:rounded-2xl overflow-hidden shadow-md bg-slate-100 relative z-10">
+                      <img
+                        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
+                        alt="Zadroit technology specialist"
+                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    {/* Decorative Organic Curved 4-Point Sparkle Stars */}
+                    <div className="absolute -bottom-4 -left-4 sm:-bottom-5 sm:-left-5 pointer-events-none z-30 drop-shadow-[0_0_15px_#ded725]">
+                      {/* Top-Left Medium Sparkle Star */}
+                      <div className="absolute -top-2.5 -left-1 z-30 pointer-events-none opacity-90 animate-pulse-glow">
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#ded725] drop-shadow-sm" viewBox="0 0 100 100" fill="currentColor">
+                          <path d="M50 0 C50 32, 68 50, 100 50 C68 50, 50 68, 50 100 C50 68, 32 50, 0 50 C32 50, 50 32, 50 0 Z" />
+                        </svg>
+                      </div>
+
+                      {/* Center Main Large Sparkle Star */}
+                      <div className="ml-1.5 z-30 pointer-events-none">
+                        <svg
+                          className="w-8 h-8 sm:w-10 sm:h-10 text-[#32679a] drop-shadow-md"
+                          viewBox="0 0 100 100"
+                          fill="currentColor"
+                        >
+                          <path d="M50 0 C50 32, 68 50, 100 50 C68 50, 50 68, 50 100 C50 68, 32 50, 0 50 C32 50, 50 32, 50 0 Z" />
+                        </svg>
+                      </div>
+
+                      {/* Bottom-Left Small Sparkle Star */}
+                      <div className="absolute -bottom-1 -left-1.5 z-30 pointer-events-none opacity-85">
+                        <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#32679a] drop-shadow-sm" viewBox="0 0 100 100" fill="currentColor">
+                          <path d="M50 0 C50 32, 68 50, 100 50 C68 50, 50 68, 50 100 C50 68, 32 50, 0 50 C32 50, 50 32, 50 0 Z" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Image 4: Bottom-Right (Wide, ~58% width + Bottom-Right Curved Arc + 3D Blue Pill Arch Frame) */}
+                  <div className="relative flex-[1.4] group">
+                    <div className="w-full h-38 sm:h-46 rounded-br-[34px] sm:rounded-br-[40px] rounded-tl-lg rounded-tr-lg rounded-bl-lg overflow-hidden shadow-md bg-slate-100 relative z-10">
+                      <img
+                        src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop"
+                        alt="Zadroit engineers programming"
+                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    {/* Thick 3D Blue Bottom-Right Arch Bracket Frame */}
+                    <svg
+                      className="absolute -bottom-2.5 -right-2.5 sm:-bottom-3 sm:-right-3 w-32 sm:w-40 h-32 sm:h-40 pointer-events-none z-0 overflow-visible"
+                      viewBox="0 0 160 160"
+                      fill="none"
+                    >
+                      <path
+                        d="M 16 150 L 116 150 A 34 34 0 0 0 150 116 L 150 16"
+                        stroke="#32679a"
+                        strokeWidth="12"
+                        strokeLinecap="round"
+                        className="drop-shadow-md"
+                      />
+                    </svg>
                   </div>
                 </div>
+
               </div>
-
-              {/* Row 2: Bottom-Left (Portrait + Sparkle Stars) + Bottom-Right (Wide + Bottom-Right Blue Arch) */}
-              <div className="flex gap-2.5 sm:gap-3 items-stretch">
-                {/* Image 3: Bottom-Left (Portrait, ~42% width + Decorative Blue Sparkle Stars) */}
-                <div className="relative flex-1 group">
-                  <div className="w-full h-38 sm:h-46 rounded-xl sm:rounded-2xl overflow-hidden shadow-md bg-slate-100 relative z-10">
-                    <img
-                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
-                      alt="Zadroit technology specialist"
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
-                      loading="lazy"
-                    />
-                  </div>
-
-                  {/* Decorative Organic Curved 4-Point Sparkle Stars */}
-                  <div className="absolute -bottom-4 -left-4 sm:-bottom-5 sm:-left-5 pointer-events-none z-30">
-                    {/* Top-Left Medium Sparkle Star */}
-                    <div className="absolute -top-2.5 -left-1 z-30 pointer-events-none opacity-90 animate-pulse-glow">
-                      <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#ded725] drop-shadow-sm" viewBox="0 0 100 100" fill="currentColor">
-                        <path d="M50 0 C50 32, 68 50, 100 50 C68 50, 50 68, 50 100 C50 68, 32 50, 0 50 C32 50, 50 32, 50 0 Z" />
-                      </svg>
-                    </div>
-
-                    {/* Center Main Large Sparkle Star */}
-                    <div className="ml-1.5 z-30 pointer-events-none">
-                      <svg
-                        className="w-8 h-8 sm:w-10 sm:h-10 text-[#32679a] drop-shadow-md"
-                        viewBox="0 0 100 100"
-                        fill="currentColor"
-                      >
-                        <path d="M50 0 C50 32, 68 50, 100 50 C68 50, 50 68, 50 100 C50 68, 32 50, 0 50 C32 50, 50 32, 50 0 Z" />
-                      </svg>
-                    </div>
-
-                    {/* Bottom-Left Small Sparkle Star */}
-                    <div className="absolute -bottom-1 -left-1.5 z-30 pointer-events-none opacity-85">
-                      <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#32679a] drop-shadow-sm" viewBox="0 0 100 100" fill="currentColor">
-                        <path d="M50 0 C50 32, 68 50, 100 50 C68 50, 50 68, 50 100 C50 68, 32 50, 0 50 C32 50, 50 32, 50 0 Z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Image 4: Bottom-Right (Wide, ~58% width + Bottom-Right Curved Arc + 3D Blue Pill Arch Frame) */}
-                <div className="relative flex-[1.4] group">
-                  <div className="w-full h-38 sm:h-46 rounded-br-[34px] sm:rounded-br-[40px] rounded-tl-lg rounded-tr-lg rounded-bl-lg overflow-hidden shadow-md bg-slate-100 relative z-10">
-                    <img
-                      src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop"
-                      alt="Zadroit engineers programming"
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
-                      loading="lazy"
-                    />
-                  </div>
-
-                  {/* Thick 3D Blue Bottom-Right Arch Bracket Frame */}
-                  <svg
-                    className="absolute -bottom-2.5 -right-2.5 sm:-bottom-3 sm:-right-3 w-32 sm:w-40 h-32 sm:h-40 pointer-events-none z-0 overflow-visible"
-                    viewBox="0 0 160 160"
-                    fill="none"
-                  >
-                    <path
-                      d="M 16 150 L 116 150 A 34 34 0 0 0 150 116 L 150 16"
-                      stroke="#32679a"
-                      strokeWidth="12"
-                      strokeLinecap="round"
-                      className="drop-shadow-md"
-                    />
-                  </svg>
-                </div>
-              </div>
-
             </div>
           </div>
-        </div>
-      </ScrollReveal>
-    </section>
+        </ScrollReveal>
+      </section>
 
-      {/* Core Values Bento Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      {/* ================= OUR APPROACH SECTION ================= */}
+      <OurApproach />
+
+      {/* ================= WHAT MAKES ZADROIT DIFFERENT SECTION ================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-slate-50/70 rounded-3xl border border-slate-200/80 my-6">
         <ScrollReveal variant="fade-up">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#32679A]/10 text-[#13273B] border border-[#32679A]/20 text-xs font-bold mb-2">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F3F1B1] text-[#13273B] border border-[#EDE985] text-xs font-bold mb-2">
               <div className="flex items-center gap-0">
                 <div className="w-4 h-4 rounded-full bg-[#2B5984]" />
                 <div className="w-2 h-4 bg-[#5F88B0] rounded-r-full" />
                 <div className="w-2 h-4 bg-[#5F88B0] rounded-r-full" />
               </div>
-              Guiding Principles
+              The ZAdroit Edge
             </div>
-            <h2 className="text-3xl font-black text-[#090D16] font-heading">
-              The Values That Power Every Line of Code
+            <h2 className="text-3xl sm:text-4xl font-black text-[#090D16] font-heading tracking-tight">
+              What Makes ZAdroit Different
             </h2>
+            <p className="mt-3 text-base text-slate-600 leading-relaxed">
+              We focus on outcomes over buzzwords, building systems engineered for real-world reliability and growth.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {coreValuesData.map((val, idx) => (
-              <ScrollReveal
-                key={val.id}
-                variant="fade-up"
-                delay={idx * 80}
-                className="light-card rounded-3xl p-6 relative flex flex-col justify-between bg-white border border-slate-200/80 hover:border-[#ded725]/60 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
-              >
-                <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#ded725]/25 text-[#13273B] border border-[#ded725]/40 mb-3 inline-block">
-                    {val.highlight}
-                  </span>
-                  <h4 className="text-lg font-bold text-slate-900 font-heading mb-2 group-hover:text-[#32679a] transition-colors">
-                    {val.title}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    {val.description}
-                  </p>
-                </div>
-              </ScrollReveal>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Business first",
+                description: "We recommend technology because it fits your goals, not because it is new.",
+                icon: Briefcase,
+                tag: "Outcome-Driven",
+              },
+              {
+                title: "Tailored, not templated",
+                description: "Solutions built around how your business really works.",
+                icon: Sliders,
+                tag: "Custom Solutions",
+              },
+              {
+                title: "Scalable by design",
+                description: "Architecture that grows with your organisation.",
+                icon: Maximize2,
+                tag: "High Resilience",
+              },
+              {
+                title: "Practical innovation",
+                description: "AI, cloud and automation where they create real value.",
+                icon: Lightbulb,
+                tag: "Tangible ROI",
+              },
+              {
+                title: "A long-term partner",
+                description: "We keep supporting and improving your technology after launch.",
+                icon: Handshake,
+                tag: "Continuous Care",
+              },
+            ].map((diff, idx) => {
+              const DiffIcon = diff.icon;
+              const isLast = idx === 4;
+              return (
+                <ScrollReveal
+                  key={diff.title}
+                  variant="fade-up"
+                  delay={idx * 80}
+                  className={`light-card rounded-3xl p-6 bg-white border border-slate-200/80 hover:border-[#ded725]/80 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between ${isLast ? "md:col-span-2 lg:col-span-1" : ""
+                    }`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-11 h-11 rounded-2xl bg-[#ded725]/25 border border-[#ded725]/50 flex items-center justify-center text-[#13273B] group-hover:scale-105 transition-transform">
+                        <DiffIcon className="w-5 h-5 text-[#13273B]" />
+                      </div>
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200 group-hover:bg-[#32679a]/10 group-hover:text-[#32679a] transition-colors">
+                        {diff.tag}
+                      </span>
+                    </div>
+
+                    <h3 className="text-lg font-bold text-slate-900 font-heading mb-2 group-hover:text-[#32679a] transition-colors">
+                      {diff.title}
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      {diff.description}
+                    </p>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
           </div>
         </ScrollReveal>
       </section>

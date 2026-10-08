@@ -77,13 +77,44 @@
     }
   },
   "navItems": [
-    { "id": "home", "label": "Home", "path": "#home" },
-    { "id": "about", "label": "About", "path": "#about" },
-    { "id": "services", "label": "Services", "path": "#services", "badge": "Hot" },
-    { "id": "products", "label": "Products", "path": "#products", "badge": "New" },
-    { "id": "blog", "label": "Blog", "path": "#blog" },
-    { "id": "careers", "label": "Careers", "path": "#careers", "badge": "We're Hiring" },
-    { "id": "contact", "label": "Contact", "path": "#contact" }
+    {
+      "id": "home",
+      "label": "Home",
+      "path": "#home"
+    },
+    {
+      "id": "about",
+      "label": "About",
+      "path": "#about"
+    },
+    {
+      "id": "services",
+      "label": "Services",
+      "path": "#services",
+      "badge": "Hot"
+    },
+    {
+      "id": "products",
+      "label": "Products",
+      "path": "#products",
+      "badge": "New"
+    },
+    {
+      "id": "blog",
+      "label": "Blog",
+      "path": "#blog"
+    },
+    {
+      "id": "careers",
+      "label": "Careers",
+      "path": "#careers",
+      "badge": "We're Hiring"
+    },
+    {
+      "id": "contact",
+      "label": "Contact",
+      "path": "#contact"
+    }
   ],
   "services": [
     {
@@ -102,7 +133,14 @@
         "Community Engagement & Response Protocols",
         "Comprehensive Monthly ROI Analytics"
       ],
-      "techStack": ["Meta Ads", "LinkedIn Ads", "TikTok Ads", "Hootsuite", "Canva", "Buffer"],
+      "techStack": [
+        "Meta Ads",
+        "LinkedIn Ads",
+        "TikTok Ads",
+        "Hootsuite",
+        "Canva",
+        "Buffer"
+      ],
       "highlights": [
         "3.8x Average Social Engagement Lift",
         "Data-driven audience segmentation",
@@ -130,7 +168,14 @@
         "Conversion Copywriting & Landing Pages",
         "Content Distribution & Repurposing Engine"
       ],
-      "techStack": ["Semrush", "Ahrefs", "SurferSEO", "Notion", "WordPress", "HubSpot"],
+      "techStack": [
+        "Semrush",
+        "Ahrefs",
+        "SurferSEO",
+        "Notion",
+        "WordPress",
+        "HubSpot"
+      ],
       "highlights": [
         "240% Inbound Organic Traffic Growth",
         "Top 3 Google SERP Rankings",
@@ -157,7 +202,13 @@
         "A/B Subject Line & Creative Testing",
         "Dedicated IP Warm-Up & High Deliverability"
       ],
-      "techStack": ["Klaviyo", "Mailchimp", "Customer.io", "ActiveCampaign", "SendGrid"],
+      "techStack": [
+        "Klaviyo",
+        "Mailchimp",
+        "Customer.io",
+        "ActiveCampaign",
+        "SendGrid"
+      ],
       "highlights": [
         "42% Average Open Rate Benchmark",
         "Automated Cart Recovery Funnels",
@@ -184,7 +235,13 @@
         "Negative Keyword Exclusion Management",
         "Server-Side Conversion Tracking & Pixel Setup"
       ],
-      "techStack": ["Google Ads", "Microsoft Ads", "Google Tag Manager", "Looker Studio", "Meta Pixel"],
+      "techStack": [
+        "Google Ads",
+        "Microsoft Ads",
+        "Google Tag Manager",
+        "Looker Studio",
+        "Meta Pixel"
+      ],
       "highlights": [
         "4.2x Average Return on Ad Spend (ROAS)",
         "Sub-dollar Customer Acquisition Cost",
@@ -211,7 +268,13 @@
         "Short-Form Reels & TikTok Repurposing",
         "Custom Motion Graphics & 3D Visuals"
       ],
-      "techStack": ["Adobe Premiere", "After Effects", "DaVinci Resolve", "CapCut Pro", "Framer"],
+      "techStack": [
+        "Adobe Premiere",
+        "After Effects",
+        "DaVinci Resolve",
+        "CapCut Pro",
+        "Framer"
+      ],
       "highlights": [
         "82% Viewer Retention Benchmark",
         "Cinematic Production Quality",
@@ -238,7 +301,13 @@
         "Creative Briefs & Campaign Direction",
         "Whitelisted Paid Ad Amplification"
       ],
-      "techStack": ["AspireIQ", "Upfluence", "GRIN", "CreatorIQ", "Modash"],
+      "techStack": [
+        "AspireIQ",
+        "Upfluence",
+        "GRIN",
+        "CreatorIQ",
+        "Modash"
+      ],
       "highlights": [
         "Zero-Fraud Vetted Creator Network",
         "Authentic User-Generated Content (UGC)",
@@ -265,7 +334,14 @@
         "Blazing Fast Core Web Vitals 95+",
         "Database Architecture & REST/GraphQL APIs"
       ],
-      "techStack": ["React 19", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL"],
+      "techStack": [
+        "React 19",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "PostgreSQL"
+      ],
       "highlights": [
         "Sub-second page navigation with SSR/SSG",
         "100% Mobile Responsive & WCAG Compliant",
@@ -292,7 +368,13 @@
         "Fraud Prevention & Click Attribution",
         "Automated Payout & Commission Engine"
       ],
-      "techStack": ["Impact.com", "CJ Affiliate", "ShareASale", "Post Affiliate Pro", "Everflow"],
+      "techStack": [
+        "Impact.com",
+        "CJ Affiliate",
+        "ShareASale",
+        "Post Affiliate Pro",
+        "Everflow"
+      ],
       "highlights": [
         "Performance-Only Marketing Spend",
         "High-Volume Network Distribution",
@@ -319,7 +401,13 @@
         "Multi-Touch Attribution Modeling",
         "Monthly Growth Insights & Recommendations"
       ],
-      "techStack": ["Google Analytics 4", "Looker Studio", "BigQuery", "Mixpanel", "Tableau"],
+      "techStack": [
+        "Google Analytics 4",
+        "Looker Studio",
+        "BigQuery",
+        "Mixpanel",
+        "Tableau"
+      ],
       "highlights": [
         "Single Source of Growth Truth",
         "Automated Executive Dashboards",
@@ -343,7 +431,15 @@
         "Legacy Codebase Modernization",
         "Microservices & Event-Driven Pipelines"
       ],
-      "techStack": ["React", "Node.js", "Java Spring Boot", "PostgreSQL", "Kafka", "Docker", "Kubernetes"],
+      "techStack": [
+        "React",
+        "Node.js",
+        "Java Spring Boot",
+        "PostgreSQL",
+        "Kafka",
+        "Docker",
+        "Kubernetes"
+      ],
       "highlights": [
         "Scales to 1M+ daily transactions",
         "Sub-100ms API response benchmark"
@@ -369,7 +465,15 @@
         "Cloud Cost Optimization (FinOps Audit)",
         "24/7 Monitoring with Prometheus & Grafana"
       ],
-      "techStack": ["AWS", "Google Cloud", "Terraform", "Docker", "Kubernetes", "Helm", "Prometheus"],
+      "techStack": [
+        "AWS",
+        "Google Cloud",
+        "Terraform",
+        "Docker",
+        "Kubernetes",
+        "Helm",
+        "Prometheus"
+      ],
       "highlights": [
         "Zero-downtime continuous deployment",
         "Up to 35% reduction in cloud monthly burn",
@@ -396,7 +500,15 @@
         "Automated Business Workflow Agents",
         "MLOps Model Lifecycle & Drift Monitoring"
       ],
-      "techStack": ["Python", "PyTorch", "LangChain", "OpenAI / Claude API", "FastAPI", "Pinecone", "MLflow"],
+      "techStack": [
+        "Python",
+        "PyTorch",
+        "LangChain",
+        "OpenAI / Claude API",
+        "FastAPI",
+        "Pinecone",
+        "MLflow"
+      ],
       "highlights": [
         "Custom trained on your confidential data",
         "Real-time inference with sub-second latency",
@@ -423,7 +535,15 @@
         "Stripe, Razorpay & Multi-currency Gateways",
         "Progressive Web App (PWA) Offline Caching"
       ],
-      "techStack": ["React 19", "Next.js", "TypeScript", "React Native", "Flutter", "Tailwind CSS", "GraphQL"],
+      "techStack": [
+        "React 19",
+        "Next.js",
+        "TypeScript",
+        "React Native",
+        "Flutter",
+        "Tailwind CSS",
+        "GraphQL"
+      ],
       "highlights": [
         "Lighthouse performance score 95+",
         "Single shared codebase for iOS & Android",
@@ -450,7 +570,14 @@
         "Usability Testing & Conversion Rate Optimization",
         "Developer Hand-off Specs & Component Tokens"
       ],
-      "techStack": ["Figma", "Design Tokens", "Framer", "Adobe CC", "Tailwind Design", "Lottie Animations"],
+      "techStack": [
+        "Figma",
+        "Design Tokens",
+        "Framer",
+        "Adobe CC",
+        "Tailwind Design",
+        "Lottie Animations"
+      ],
       "highlights": [
         "Pixel-perfect auto-layout components",
         "Full WCAG 2.1 AA accessibility compliance",
@@ -477,7 +604,14 @@
         "OWASP Top 10 Vulnerability Remediation Guide",
         "GDPR, HIPAA & ISO 27001 Readiness Audit"
       ],
-      "techStack": ["OWASP ZAP", "Burp Suite", "SonarQube", "Wazuh", "Snyk", "HashiCorp Vault"],
+      "techStack": [
+        "OWASP ZAP",
+        "Burp Suite",
+        "SonarQube",
+        "Wazuh",
+        "Snyk",
+        "HashiCorp Vault"
+      ],
       "highlights": [
         "Comprehensive executive and technical reports",
         "Zero false-positive verification",
@@ -517,11 +651,27 @@
           "description": "Granular permissions, multi-level approval workflows, and immutable timestamped action logs."
         }
       ],
-      "techBadges": ["React 19", "Node.js", "PostgreSQL", "Redis", "Docker", "REST & GraphQL"],
+      "techBadges": [
+        "React 19",
+        "Node.js",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "REST & GraphQL"
+      ],
       "metrics": [
-        { "label": "Time Saved in Billing", "value": "72%" },
-        { "label": "Active Daily Users", "value": "12,000+" },
-        { "label": "Uptime SLA", "value": "99.99%" }
+        {
+          "label": "Time Saved in Billing",
+          "value": "72%"
+        },
+        {
+          "label": "Active Daily Users",
+          "value": "12,000+"
+        },
+        {
+          "label": "Uptime SLA",
+          "value": "99.99%"
+        }
       ],
       "imagePlaceholder": "/assets/placeholders/product-zaderp.svg",
       "images": [
@@ -565,11 +715,27 @@
           "description": "End-to-end 256-bit encryption for all protected health information (PHI) at rest and in transit."
         }
       ],
-      "techBadges": ["Python AI", "PyTorch", "FastAPI", "FHIR / HL7", "PostgreSQL", "AWS HealthLake"],
+      "techBadges": [
+        "Python AI",
+        "PyTorch",
+        "FastAPI",
+        "FHIR / HL7",
+        "PostgreSQL",
+        "AWS HealthLake"
+      ],
       "metrics": [
-        { "label": "Diagnostic Accuracy", "value": "96.4%" },
-        { "label": "Triage Speedup", "value": "4.2x" },
-        { "label": "Patient Records Analyzed", "value": "250K+" }
+        {
+          "label": "Diagnostic Accuracy",
+          "value": "96.4%"
+        },
+        {
+          "label": "Triage Speedup",
+          "value": "4.2x"
+        },
+        {
+          "label": "Patient Records Analyzed",
+          "value": "250K+"
+        }
       ],
       "imagePlaceholder": "/assets/placeholders/product-medpredit.svg",
       "images": [
@@ -613,11 +779,27 @@
           "description": "Daily revenue analytics, customer retention metrics, member subscriptions, and expense manager."
         }
       ],
-      "techBadges": ["Flutter Mobile", "React Web", "Node.js", "Firebase", "Razorpay", "MQTT IoT"],
+      "techBadges": [
+        "Flutter Mobile",
+        "React Web",
+        "Node.js",
+        "Firebase",
+        "Razorpay",
+        "MQTT IoT"
+      ],
       "metrics": [
-        { "label": "Bookings Processed", "value": "45,000+" },
-        { "label": "Partner Sports Venues", "value": "80+" },
-        { "label": "Booking Completion Time", "value": "< 15s" }
+        {
+          "label": "Bookings Processed",
+          "value": "45,000+"
+        },
+        {
+          "label": "Partner Sports Venues",
+          "value": "80+"
+        },
+        {
+          "label": "Booking Completion Time",
+          "value": "< 15s"
+        }
       ],
       "imagePlaceholder": "/assets/placeholders/product-zadsports.svg",
       "images": [
@@ -657,11 +839,27 @@
           "description": "Real-time compliance checks against CIS Benchmarks, SOC2, and PCI-DSS standards."
         }
       ],
-      "techBadges": ["Golang", "Rust", "React", "Kubernetes Operator", "Terraform", "OpenTelemetry"],
+      "techBadges": [
+        "Golang",
+        "Rust",
+        "React",
+        "Kubernetes Operator",
+        "Terraform",
+        "OpenTelemetry"
+      ],
       "metrics": [
-        { "label": "Avg Monthly Savings", "value": "32%" },
-        { "label": "Clusters Managed", "value": "350+" },
-        { "label": "Security Checks/sec", "value": "10,000+" }
+        {
+          "label": "Avg Monthly Savings",
+          "value": "32%"
+        },
+        {
+          "label": "Clusters Managed",
+          "value": "350+"
+        },
+        {
+          "label": "Security Checks/sec",
+          "value": "10,000+"
+        }
       ],
       "imagePlaceholder": "/assets/placeholders/product-zadcloud.svg",
       "images": [
@@ -701,11 +899,27 @@
           "description": "Instant synchronization with offline POS stores, Amazon, Shopify, and warehouse hubs."
         }
       ],
-      "techBadges": ["Next.js 15", "GraphQL", "Tailwind CSS", "Stripe Connect", "PostgreSQL", "Algolia"],
+      "techBadges": [
+        "Next.js 15",
+        "GraphQL",
+        "Tailwind CSS",
+        "Stripe Connect",
+        "PostgreSQL",
+        "Algolia"
+      ],
       "metrics": [
-        { "label": "Lighthouse Score", "value": "99/100" },
-        { "label": "Checkout Conversion Lift", "value": "+38%" },
-        { "label": "Catalog Capacity", "value": "500K+ SKUs" }
+        {
+          "label": "Lighthouse Score",
+          "value": "99/100"
+        },
+        {
+          "label": "Checkout Conversion Lift",
+          "value": "+38%"
+        },
+        {
+          "label": "Catalog Capacity",
+          "value": "500K+ SKUs"
+        }
       ],
       "imagePlaceholder": "/assets/placeholders/product-zadcommerce.svg",
       "images": [
@@ -745,11 +959,27 @@
           "description": "3D interactive facility digital twin with live component heatmaps and instant incident alerting."
         }
       ],
-      "techBadges": ["Kafka", "ClickHouse", "Go", "WebSockets", "Three.js", "Grafana API"],
+      "techBadges": [
+        "Kafka",
+        "ClickHouse",
+        "Go",
+        "WebSockets",
+        "Three.js",
+        "Grafana API"
+      ],
       "metrics": [
-        { "label": "Sensor Ingestion Rate", "value": "50K/sec" },
-        { "label": "Downtime Prevention", "value": "84%" },
-        { "label": "Telemetry Latency", "value": "< 80ms" }
+        {
+          "label": "Sensor Ingestion Rate",
+          "value": "50K/sec"
+        },
+        {
+          "label": "Downtime Prevention",
+          "value": "84%"
+        },
+        {
+          "label": "Telemetry Latency",
+          "value": "< 80ms"
+        }
       ],
       "imagePlaceholder": "/assets/placeholders/product-zadpulse.svg",
       "images": [
@@ -788,7 +1018,12 @@
       "publishedDate": "Oct 02, 2026",
       "readTime": "6 min read",
       "category": "Cloud Architecture",
-      "tags": ["Cloud Migration", "DevOps", "Kubernetes", "Database Architecture"],
+      "tags": [
+        "Cloud Migration",
+        "DevOps",
+        "Kubernetes",
+        "Database Architecture"
+      ],
       "coverImagePlaceholder": "/assets/placeholders/blog-cloud.svg",
       "featured": true
     },
@@ -811,7 +1046,12 @@
       "publishedDate": "Sep 24, 2026",
       "readTime": "8 min read",
       "category": "AI & Innovation",
-      "tags": ["AI & ML", "Healthcare Tech", "LLM", "Data Science"],
+      "tags": [
+        "AI & ML",
+        "Healthcare Tech",
+        "LLM",
+        "Data Science"
+      ],
       "coverImagePlaceholder": "/assets/placeholders/blog-ai.svg",
       "featured": true
     },
@@ -834,7 +1074,12 @@
       "publishedDate": "Sep 12, 2026",
       "readTime": "5 min read",
       "category": "UI/UX Design",
-      "tags": ["Design Systems", "Figma", "UI/UX", "Frontend Architecture"],
+      "tags": [
+        "Design Systems",
+        "Figma",
+        "UI/UX",
+        "Frontend Architecture"
+      ],
       "coverImagePlaceholder": "/assets/placeholders/blog-design.svg",
       "featured": false
     },
@@ -857,7 +1102,12 @@
       "publishedDate": "Aug 29, 2026",
       "readTime": "7 min read",
       "category": "Product Strategy",
-      "tags": ["IoT", "Embedded Tech", "Sports Tech", "Mobile App"],
+      "tags": [
+        "IoT",
+        "Embedded Tech",
+        "Sports Tech",
+        "Mobile App"
+      ],
       "coverImagePlaceholder": "/assets/placeholders/blog-iot.svg",
       "featured": false
     },
@@ -880,7 +1130,12 @@
       "publishedDate": "Aug 15, 2026",
       "readTime": "6 min read",
       "category": "Cybersecurity",
-      "tags": ["Cybersecurity", "Zero Trust", "DevSecOps", "Cloud Security"],
+      "tags": [
+        "Cybersecurity",
+        "Zero Trust",
+        "DevSecOps",
+        "Cloud Security"
+      ],
       "coverImagePlaceholder": "/assets/placeholders/blog-security.svg",
       "featured": false
     }
@@ -909,7 +1164,15 @@
         "Experience with Docker, CI/CD pipelines, and cloud platforms (AWS or GCP).",
         "Excellent problem-solving skills and passion for clean, self-documenting code."
       ],
-      "skills": ["React 19", "Node.js", "TypeScript", "PostgreSQL", "Go", "Docker", "Redis"],
+      "skills": [
+        "React 19",
+        "Node.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Go",
+        "Docker",
+        "Redis"
+      ],
       "perks": [
         "Top-of-the-line Apple M-series MacBook Pro",
         "Comprehensive health & family medical insurance",
@@ -943,7 +1206,15 @@
         "Solid grasp of data privacy, prompt engineering guardrails, and model governance.",
         "Published research or tangible open-source AI projects is a strong plus."
       ],
-      "skills": ["Python", "PyTorch", "LangChain", "Vector DBs", "FastAPI", "Docker GPU", "MLflow"],
+      "skills": [
+        "Python",
+        "PyTorch",
+        "LangChain",
+        "Vector DBs",
+        "FastAPI",
+        "Docker GPU",
+        "MLflow"
+      ],
       "perks": [
         "High-performance cloud GPU compute cluster access",
         "Sponsorship for top AI research conferences",
@@ -977,7 +1248,14 @@
         "Familiarity with HTML/CSS and frontend implementation constraints.",
         "Empathetic mindset with relentless attention to detail."
       ],
-      "skills": ["Figma", "Design Systems", "Prototyping", "User Research", "Wireframing", "Micro-animations"],
+      "skills": [
+        "Figma",
+        "Design Systems",
+        "Prototyping",
+        "User Research",
+        "Wireframing",
+        "Micro-animations"
+      ],
       "perks": [
         "Latest design hardware & multi-display setup",
         "Figma Enterprise & plugin subscriptions paid",
@@ -1011,7 +1289,15 @@
         "Hands-on experience with Prometheus, Grafana, Loki, and ELK observability stacks.",
         "AWS Solutions Architect or CKA (Certified Kubernetes Administrator) certification is a plus."
       ],
-      "skills": ["AWS", "Kubernetes", "Terraform", "Docker", "CI/CD", "Prometheus", "Linux"],
+      "skills": [
+        "AWS",
+        "Kubernetes",
+        "Terraform",
+        "Docker",
+        "CI/CD",
+        "Prometheus",
+        "Linux"
+      ],
       "perks": [
         "Cloud certification reimbursement program",
         "Top-tier health and accidental insurance",
@@ -1043,7 +1329,15 @@
         "Familiarity with CI/CD integration and test reporting dashboards.",
         "Keen eye for functional edge cases, UI glitches, and performance regressions."
       ],
-      "skills": ["Playwright", "TypeScript", "Cypress", "k6", "Postman", "CI/CD", "Jira"],
+      "skills": [
+        "Playwright",
+        "TypeScript",
+        "Cypress",
+        "k6",
+        "Postman",
+        "CI/CD",
+        "Jira"
+      ],
       "perks": [
         "Health insurance coverage",
         "Flexible work policies",
@@ -1073,7 +1367,14 @@
         "Enthusiasm to learn modern frameworks like React, Next.js, and Node.js.",
         "Eagerness to receive feedback and collaborate within an agile team."
       ],
-      "skills": ["JavaScript", "React", "Node.js", "Git", "HTML/CSS", "SQL"],
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "Git",
+        "HTML/CSS",
+        "SQL"
+      ],
       "perks": [
         "Pre-Placement Offer (PPO) for top performers",
         "Direct 1-on-1 mentorship from tech leads",
@@ -1091,7 +1392,12 @@
       "role": "Founder & Chief Executive Officer",
       "department": "Executive Leadership",
       "bio": "Visionary entrepreneur with over a decade of experience driving enterprise digital transformations, enterprise SaaS architectures, and engineering innovation across South India.",
-      "skills": ["Strategic Leadership", "Enterprise Architecture", "Product Vision", "Cloud Strategy"],
+      "skills": [
+        "Strategic Leadership",
+        "Enterprise Architecture",
+        "Product Vision",
+        "Cloud Strategy"
+      ],
       "avatarPlaceholder": "/assets/placeholders/team-indrajith.svg",
       "social": {
         "linkedin": "https://linkedin.com",
@@ -1105,7 +1411,12 @@
       "role": "Chief Technology Officer",
       "department": "Engineering Leadership",
       "bio": "Distributed systems specialist and cloud evangelist who oversees technical direction, infrastructure resilience, and the core engineering stack at Zadroit.",
-      "skills": ["Distributed Systems", "Kubernetes", "Multi-Cloud", "High-Throughput APIs"],
+      "skills": [
+        "Distributed Systems",
+        "Kubernetes",
+        "Multi-Cloud",
+        "High-Throughput APIs"
+      ],
       "avatarPlaceholder": "/assets/placeholders/team-karthik.svg",
       "social": {
         "linkedin": "https://linkedin.com",
@@ -1118,7 +1429,12 @@
       "role": "Head of AI & Data Intelligence",
       "department": "AI & Innovation Labs",
       "bio": "PhD in Computational Intelligence. Leads Zadroit's proprietary AI research including the Medpredit diagnostic engine and enterprise LLM integrations.",
-      "skills": ["Machine Learning", "Deep Learning", "Clinical NLP", "Predictive Analytics"],
+      "skills": [
+        "Machine Learning",
+        "Deep Learning",
+        "Clinical NLP",
+        "Predictive Analytics"
+      ],
       "avatarPlaceholder": "/assets/placeholders/team-ananya.svg",
       "social": {
         "linkedin": "https://linkedin.com",
@@ -1131,7 +1447,12 @@
       "role": "Head of UI/UX & Design Experience",
       "department": "Product Design",
       "bio": "Passionate design leader crafting award-winning digital experiences, design systems, and micro-interactions that turn complex software into delightful products.",
-      "skills": ["Figma Systems", "Interaction Design", "User Research", "Brand Identity"],
+      "skills": [
+        "Figma Systems",
+        "Interaction Design",
+        "User Research",
+        "Brand Identity"
+      ],
       "avatarPlaceholder": "/assets/placeholders/team-praveen.svg",
       "social": {
         "linkedin": "https://linkedin.com",
@@ -1144,7 +1465,12 @@
       "role": "Principal Security & DevOps Lead",
       "department": "Cybersecurity & Operations",
       "bio": "Certified ethical hacker (CEH) and cloud security architect dedicated to keeping enterprise infrastructure bulletproof against sophisticated threats.",
-      "skills": ["Zero-Trust", "VAPT", "Cloud Security", "DevSecOps"],
+      "skills": [
+        "Zero-Trust",
+        "VAPT",
+        "Cloud Security",
+        "DevSecOps"
+      ],
       "avatarPlaceholder": "/assets/placeholders/team-vignesh.svg",
       "social": {
         "linkedin": "https://linkedin.com",
@@ -1157,7 +1483,12 @@
       "role": "Lead IoT & Embedded Systems Engineer",
       "department": "Hardware & IoT",
       "bio": "Specialist in edge computing, MQTT telemetry, and sports technology automation who pioneered the ZadSports hardware-software bridge.",
-      "skills": ["IoT Gateways", "MQTT", "Embedded C", "Real-Time Telemetry"],
+      "skills": [
+        "IoT Gateways",
+        "MQTT",
+        "Embedded C",
+        "Real-Time Telemetry"
+      ],
       "avatarPlaceholder": "/assets/placeholders/team-dinesh.svg",
       "social": {
         "linkedin": "https://linkedin.com",
@@ -1224,11 +1555,25 @@
       "challenge": "Emergency departments were overwhelmed with manual patient risk assessments, causing critical triage delays and high physician burnout.",
       "solution": "Deployed Medpredit's real-time predictive ML risk scoring pipeline integrated directly with hospital EHR systems via HL7/FHIR.",
       "impactMetrics": [
-        { "label": "Triage Time Reduction", "value": "62%" },
-        { "label": "Diagnostic Precision", "value": "96.4%" },
-        { "label": "Patients Screened", "value": "250K+" }
+        {
+          "label": "Triage Time Reduction",
+          "value": "62%"
+        },
+        {
+          "label": "Diagnostic Precision",
+          "value": "96.4%"
+        },
+        {
+          "label": "Patients Screened",
+          "value": "250K+"
+        }
       ],
-      "tags": ["AI/ML", "Healthcare", "FastAPI", "FHIR"],
+      "tags": [
+        "AI/ML",
+        "Healthcare",
+        "FastAPI",
+        "FHIR"
+      ],
       "imagePlaceholder": "/assets/placeholders/case-healthcare.svg"
     },
     {
@@ -1239,11 +1584,25 @@
       "challenge": "Manual telephone slot bookings led to double bookings, revenue leakages, and expensive electricity waste during idle turf hours.",
       "solution": "Built ZadSports unified mobile booking app connected to custom IoT hardware relays for automated floodlight and gate access control.",
       "impactMetrics": [
-        { "label": "Online Booking Growth", "value": "320%" },
-        { "label": "Power Cost Savings", "value": "28%" },
-        { "label": "Zero Booking Overlaps", "value": "100%" }
+        {
+          "label": "Online Booking Growth",
+          "value": "320%"
+        },
+        {
+          "label": "Power Cost Savings",
+          "value": "28%"
+        },
+        {
+          "label": "Zero Booking Overlaps",
+          "value": "100%"
+        }
       ],
-      "tags": ["Flutter", "IoT", "Node.js", "Payment Gateways"],
+      "tags": [
+        "Flutter",
+        "IoT",
+        "Node.js",
+        "Payment Gateways"
+      ],
       "imagePlaceholder": "/assets/placeholders/case-sports.svg"
     },
     {
@@ -1254,11 +1613,25 @@
       "challenge": "A 15-year-old monolithic desktop ERP caused inventory discrepancies and prevented real-time multi-city tracking.",
       "solution": "Architected a cloud-native, microservices-based ZadERP system with offline POS syncing and automated tax compliance.",
       "impactMetrics": [
-        { "label": "Operational Cost Drop", "value": "45%" },
-        { "label": "Inventory Accuracy", "value": "99.8%" },
-        { "label": "API Response Speed", "value": "85ms" }
+        {
+          "label": "Operational Cost Drop",
+          "value": "45%"
+        },
+        {
+          "label": "Inventory Accuracy",
+          "value": "99.8%"
+        },
+        {
+          "label": "API Response Speed",
+          "value": "85ms"
+        }
       ],
-      "tags": ["React", "PostgreSQL", "Kafka", "Docker"],
+      "tags": [
+        "React",
+        "PostgreSQL",
+        "Kafka",
+        "Docker"
+      ],
       "imagePlaceholder": "/assets/placeholders/case-enterprise.svg"
     }
   ],
@@ -1307,7 +1680,11 @@
       "title": "Discovery & Architecture Blueprint",
       "description": "We conduct deep-dive technical discovery sessions, define data models, analyze user personas, and engineer a bulletproof technical architecture blueprint.",
       "duration": "Week 1 - 2",
-      "deliverables": ["Product Requirement Doc (PRD)", "System Architecture Diagram", "Sprint Milestone Roadmap"],
+      "deliverables": [
+        "Product Requirement Doc (PRD)",
+        "System Architecture Diagram",
+        "Sprint Milestone Roadmap"
+      ],
       "icon": "Compass"
     },
     {
@@ -1316,7 +1693,11 @@
       "title": "UI/UX Prototyping & Design Systems",
       "description": "Our product designers craft wireframes, high-fidelity Figma design tokens, interactive prototypes, and conduct usability tests to validate conversion funnels.",
       "duration": "Week 2 - 4",
-      "deliverables": ["Figma Design Tokens Kit", "Clickable High-Fidelity Prototype", "User Journey Flowcharts"],
+      "deliverables": [
+        "Figma Design Tokens Kit",
+        "Clickable High-Fidelity Prototype",
+        "User Journey Flowcharts"
+      ],
       "icon": "Layers"
     },
     {
@@ -1325,7 +1706,11 @@
       "title": "Agile Development & Continuous Testing",
       "description": "Our engineers build features in 2-week agile sprints with automated CI/CD builds, comprehensive unit tests, security scans, and bi-weekly demo walkthroughs.",
       "duration": "Week 4 - 10",
-      "deliverables": ["Production-Grade Codebase", "Automated Test Coverage > 85%", "Staging Preview Environments"],
+      "deliverables": [
+        "Production-Grade Codebase",
+        "Automated Test Coverage > 85%",
+        "Staging Preview Environments"
+      ],
       "icon": "CodeXml"
     },
     {
@@ -1334,7 +1719,11 @@
       "title": "Zero-Downtime Deployment & 24/7 SLA",
       "description": "We deploy your system onto auto-scaling cloud infrastructure, conduct load tests, verify DNS & SSL security, and provide 24/7 proactive SLA monitoring.",
       "duration": "Ongoing",
-      "deliverables": ["Cloud Production Deployment", "Observability & Alerting Dashboards", "Comprehensive Admin Handover Docs"],
+      "deliverables": [
+        "Cloud Production Deployment",
+        "Observability & Alerting Dashboards",
+        "Comprehensive Admin Handover Docs"
+      ],
       "icon": "Rocket"
     }
   ],
@@ -1413,31 +1802,95 @@
     }
   ],
   "techStackIcons": [
-    { "name": "React 19", "category": "Frontend", "level": "Expert" },
-    { "name": "Next.js", "category": "Frontend", "level": "Expert" },
-    { "name": "TypeScript", "category": "Language", "level": "Expert" },
-    { "name": "Node.js", "category": "Backend", "level": "Expert" },
-    { "name": "Python", "category": "AI / Backend", "level": "Expert" },
-    { "name": "Go (Golang)", "category": "Backend", "level": "Advanced" },
-    { "name": "PostgreSQL", "category": "Database", "level": "Expert" },
-    { "name": "Redis", "category": "Cache & Queue", "level": "Expert" },
-    { "name": "AWS Cloud", "category": "Cloud & Infra", "level": "Expert" },
-    { "name": "Google Cloud", "category": "Cloud & Infra", "level": "Advanced" },
-    { "name": "Docker & K8s", "category": "DevOps", "level": "Expert" },
-    { "name": "Flutter", "category": "Mobile", "level": "Expert" },
-    { "name": "Tailwind CSS", "category": "Styling", "level": "Expert" },
-    { "name": "PyTorch / AI", "category": "Data Science", "level": "Advanced" },
-    { "name": "Kafka", "category": "Streaming", "level": "Advanced" },
-    { "name": "Figma", "category": "UI/UX", "level": "Expert" }
+    {
+      "name": "React 19",
+      "category": "Frontend",
+      "level": "Expert"
+    },
+    {
+      "name": "Next.js",
+      "category": "Frontend",
+      "level": "Expert"
+    },
+    {
+      "name": "TypeScript",
+      "category": "Language",
+      "level": "Expert"
+    },
+    {
+      "name": "Node.js",
+      "category": "Backend",
+      "level": "Expert"
+    },
+    {
+      "name": "Python",
+      "category": "AI / Backend",
+      "level": "Expert"
+    },
+    {
+      "name": "Go (Golang)",
+      "category": "Backend",
+      "level": "Advanced"
+    },
+    {
+      "name": "PostgreSQL",
+      "category": "Database",
+      "level": "Expert"
+    },
+    {
+      "name": "Redis",
+      "category": "Cache & Queue",
+      "level": "Expert"
+    },
+    {
+      "name": "AWS Cloud",
+      "category": "Cloud & Infra",
+      "level": "Expert"
+    },
+    {
+      "name": "Google Cloud",
+      "category": "Cloud & Infra",
+      "level": "Advanced"
+    },
+    {
+      "name": "Docker & K8s",
+      "category": "DevOps",
+      "level": "Expert"
+    },
+    {
+      "name": "Flutter",
+      "category": "Mobile",
+      "level": "Expert"
+    },
+    {
+      "name": "Tailwind CSS",
+      "category": "Styling",
+      "level": "Expert"
+    },
+    {
+      "name": "PyTorch / AI",
+      "category": "Data Science",
+      "level": "Advanced"
+    },
+    {
+      "name": "Kafka",
+      "category": "Streaming",
+      "level": "Advanced"
+    },
+    {
+      "name": "Figma",
+      "category": "UI/UX",
+      "level": "Expert"
+    }
   ],
   "about": {
     "badge": "About Us",
     "heading": "Your Vision, Our Technology Together We Build The Future",
     "subheading": "Transforming challenges into opportunities with cutting-edge digital solutions, enterprise software development, and strategic IT partnerships.",
-    "storyDescription": "What started as a small team of passionate tech experts in Salem, Tamil Nadu, has grown into a trusted global IT solutions provider. With over a decade of hands-on experience, we help businesses streamline operations, boost productivity, and stay ahead with cutting-edge technology.",
+    "storyDescription": "ZAdroit IT Solutions Private Limited is a technology and IT consulting company based in Salem, Tamil Nadu. We started as a small team of engineers who believed technology should be simple, secure and useful, and that belief still guides our work.",
     "topImage": "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop",
     "bottomImage": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200&auto=format&fit=crop",
-    "description": "Driven by continuous innovation and strong client partnerships, our mission remains unchanged empowering businesses of all sizes with future-ready digital solutions.",
+    "description": "With years of experience, we help businesses simplify operations, improve productivity, strengthen digital experiences and build scalable solutions. Our work spans custom software, web and mobile applications, cloud, Oracle and SAP, AI and cybersecurity.",
     "skills": [
       {
         "label": "Marketing & Business Growth",
@@ -1473,11 +1926,11 @@
     ],
     "vision": {
       "title": "Our Vision",
-      "description": "To be recognized as the premier global engineering powerhouse that turns complex computational challenges into elegant, hyper-scalable software, shaping how enterprises automate intelligence in the AI era."
+      "description": "To empower businesses through technology, encouraging innovation, efficiency, sustainable growth and long-term digital transformation."
     },
     "mission": {
       "title": "Our Mission",
-      "description": "To empower startups and established enterprises with resilient software architectures, state-of-the-art AI tooling, and transparent agile delivery that drives exponential operational efficiency and sustainable revenue growth."
+      "description": "To simplify complex business challenges through secure, scalable and practical technology solutions that deliver meaningful value."
     },
     "milestones": [
       {
