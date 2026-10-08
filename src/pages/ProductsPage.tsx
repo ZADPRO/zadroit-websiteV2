@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useApp } from "../context/AppContext";
 import { productsData } from "../data/websiteData";
 import { ProductCollage } from "../components/ProductCollage";
-import { Sparkles, CheckCircle2, Server } from "lucide-react";
+import { Sparkles, CheckCircle2 } from "lucide-react";
 
 export const ProductsPage: React.FC = () => {
   const { openModal } = useApp();
