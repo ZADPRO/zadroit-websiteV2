@@ -327,36 +327,32 @@ export const HomePage: React.FC = () => {
               const TextBlock = (
                 <div
                   key="text"
-                  className={`w-full rounded-[20px] p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 ${
-                    isCenterHighlighted
-                      ? "bg-[#ded725] text-slate-950"
-                      : "bg-[#32679a]/75 border-0 border-[#F9F8D8] text-white"
-                  }`}
+                  className={`w-full rounded-[20px] p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 ${isCenterHighlighted
+                    ? "bg-[#ded725] text-slate-950"
+                    : "bg-[#32679a]/75 border-0 border-[#F9F8D8] text-white"
+                    }`}
                 >
                   <div>
                     <h3
-                      className={`text-xl sm:text-2xl font-black font-heading tracking-tight ${
-                        isCenterHighlighted
-                          ? "text-slate-950"
-                          : "text-white group-hover:text-[#F9F8D8] transition-colors"
-                      }`}
+                      className={`text-xl sm:text-2xl font-black font-heading tracking-tight ${isCenterHighlighted
+                        ? "text-slate-950"
+                        : "text-white group-hover:text-[#F9F8D8] transition-colors"
+                        }`}
                     >
                       {service.title}
                     </h3>
 
                     {/* Divider line matching screenshot */}
                     <div
-                      className={`h-px my-3.5 ${
-                        isCenterHighlighted ? "bg-slate-950/15" : "bg-white/10"
-                      }`}
+                      className={`h-px my-3.5 ${isCenterHighlighted ? "bg-slate-950/15" : "bg-white/10"
+                        }`}
                     />
 
                     <p
-                      className={`text-xs sm:text-sm leading-relaxed line-clamp-3 ${
-                        isCenterHighlighted
-                          ? "text-slate-900 font-medium"
-                          : "text-slate-300 font-normal"
-                      }`}
+                      className={`text-xs sm:text-sm leading-relaxed line-clamp-3 ${isCenterHighlighted
+                        ? "text-slate-900 font-medium"
+                        : "text-slate-300 font-normal"
+                        }`}
                     >
                       {service.shortDesc}
                     </p>
@@ -425,6 +421,9 @@ export const HomePage: React.FC = () => {
       {/* ================= PROPRIETARY PRODUCTS MARQUEE SECTION ================= */}
       <section className="py-16 sm:py-20 bg-white text-white relative overflow-hidden border-b border-slate-800">
         {/* Glow ambient background elements */}
+        <div className="absolute top-0 left-0 right-0 h-4 bg-stripes-pattern opacity-60 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-4 bg-stripes-pattern opacity-60 pointer-events-none" />
+
         <div className="absolute -top-24 left-1/4 w-96 h-96 bg-[#ded725]/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-24 right-1/4 w-96 h-96 bg-[#32679a]/20 rounded-full blur-3xl pointer-events-none" />
 
@@ -449,8 +448,8 @@ export const HomePage: React.FC = () => {
 
               {/* Main Display Headline */}
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#13273B]  font-heading tracking-tight leading-[1.12]">
-                Scalable enterprise software <br/>
-                 engineered by Zadroit
+                Scalable enterprise software <br />
+                engineered by Zadroit
               </h2>
             </div>
             <div>
@@ -478,7 +477,7 @@ export const HomePage: React.FC = () => {
                 <div
                   key={product.id}
                   onClick={() => openModal({ type: "product-demo", product })}
-                  className="w-[300px] sm:w-[360px] bg-[#32679a] hover:bg-slate-800 border border-slate-700/80 hover:border-[#ded725]/60 rounded-2xl p-5 sm:p-6 flex flex-col justify-between backdrop-blur-md shadow-xl hover:shadow-2xl hover:shadow-[#ded725]/10 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer group/card shrink-0"
+                  className="w-[300px] sm:w-[360px] bg-[#32679a] hover:bg-[#255280] border border-white/15 hover:border-[#ded725]/60 rounded-2xl p-5 sm:p-6 flex flex-col justify-between backdrop-blur-md shadow-xl hover:shadow-2xl hover:shadow-[#ded725]/10 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer group/card shrink-0"
                 >
                   <div>
                     {/* Top Row: Logo & Category Badge */}
@@ -538,7 +537,7 @@ export const HomePage: React.FC = () => {
                 <div
                   key={`${product.id}-duplicate`}
                   onClick={() => openModal({ type: "product-demo", product })}
-                  className="w-[300px] sm:w-[360px] bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 hover:border-[#ded725]/60 rounded-2xl p-5 sm:p-6 flex flex-col justify-between backdrop-blur-md shadow-xl hover:shadow-2xl hover:shadow-[#ded725]/10 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer group/card shrink-0"
+                  className="w-[300px] sm:w-[360px] bg-[#32679a] hover:bg-[#255280] border border-white/15 hover:border-[#ded725]/60 rounded-2xl p-5 sm:p-6 flex flex-col justify-between backdrop-blur-md shadow-xl hover:shadow-2xl hover:shadow-[#ded725]/10 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer group/card shrink-0"
                 >
                   <div>
                     {/* Top Row: Logo & Category Badge */}
@@ -642,9 +641,8 @@ export const HomePage: React.FC = () => {
             <div
               className="flex transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
               style={{
-                transform: `translateX(-${
-                  testimonialIndex * (100 / visibleTestimonialCards)
-                }%)`,
+                transform: `translateX(-${testimonialIndex * (100 / visibleTestimonialCards)
+                  }%)`,
               }}
             >
               {testimonialsData.map((t) => (
@@ -716,11 +714,10 @@ export const HomePage: React.FC = () => {
               <button
                 key={idx}
                 onClick={() => setTestimonialIndex(idx)}
-                className={`transition-all duration-300 rounded-full h-2.5 cursor-pointer ${
-                  testimonialIndex === idx
-                    ? "w-8 bg-[#13273B]"
-                    : "w-2.5 bg-slate-300 hover:bg-slate-400"
-                }`}
+                className={`transition-all duration-300 rounded-full h-2.5 cursor-pointer ${testimonialIndex === idx
+                  ? "w-8 bg-[#13273B]"
+                  : "w-2.5 bg-slate-300 hover:bg-slate-400"
+                  }`}
                 aria-label={`Go to testimonial slide ${idx + 1}`}
               />
             ))}

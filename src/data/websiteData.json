@@ -1,4 +1,8 @@
 {
+  "notificationEmails": [
+    "indumathi.r@zadroit.com",
+    "Vijay.loganathan@zadroit.com"
+  ],
   "company": {
     "name": "Zadroit IT Solutions",
     "tagline": "Architecting Next-Gen Enterprise Software & Intelligent Cloud Systems",
@@ -33,6 +37,10 @@
       "supportEmail": "support@zadroit.com",
       "careersEmail": "careers@zadroit.com",
       "salesEmail": "sales@zadroit.com",
+      "notificationEmails": [
+        "indumathi.r@zadroit.com",
+        "Vijay.loganathan@zadroit.com"
+      ],
       "primaryPhone": "+91 98427 89100",
       "supportPhone": "+91 80 4120 7800",
       "workingHours": "Mon - Fri: 9:00 AM - 7:00 PM IST (24/7 On-Call Support)"

@@ -7,12 +7,11 @@ import {
 } from "../data/websiteData";
 import { ImagePlaceholder } from "../components/ImagePlaceholder";
 import {
-  Target,
-  Eye,
   Award,
   Users,
   Calendar,
   ExternalLink,
+  CheckCircle2,
 } from "lucide-react";
 
 export const AboutPage: React.FC = () => {
@@ -90,7 +89,7 @@ export const AboutPage: React.FC = () => {
             {/* Right Side: Description, Skill Sliders, and Action Button */}
             <div className="lg:col-span-6 space-y-6 text-left">
               <h2 className="text-2xl sm:text-3xl font-bold text-[#13273B] leading-relaxed">
-                The Story Behind{" "} 
+                The Story Behind{" "}
                 <span className="text-[#32679a] text-3xl sm:text-4xl">
                   ZAdroit IT Solutions
                 </span>
@@ -170,31 +169,108 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Vision & Mission Cards */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="light-card rounded-3xl p-8 border-l-4 border-l-[#133A27] bg-white">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center mb-4">
-              <Eye className="w-6 h-6 text-[#133A27]" />
+      {/* ================= VISION & MISSION SECTION ================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#32679A]/10 text-[#13273B] border border-[#32679A]/20 text-xs font-bold mb-3">
+            <div className="flex items-center gap-0">
+              <div className="w-4 h-4 rounded-full bg-[#2B5984]" />
+              <div className="w-2 h-4 bg-[#5F88B0] rounded-r-full" />
+              <div className="w-2 h-4 bg-[#5F88B0] rounded-r-full" />
             </div>
-            <h3 className="text-2xl font-black text-[#090D16] font-heading mb-3">
-              {aboutData.vision.title}
-            </h3>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              {aboutData.vision.description}
-            </p>
+            Strategic Direction
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#090D16] font-heading tracking-tight">
+            Our Vision & Mission
+          </h2>
+          <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
+            The guiding principles and high-velocity engineering mindset driving Zadroit's global impact.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Card 1: Our Vision */}
+          <div className="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-[#EFEDA9] via-[#E6E27A] to-[#DDD745] p-8 sm:p-10 border border-slate-700/60 shadow-xl hover:shadow-2xl hover:shadow-[#32679a]/25 hover:-translate-y-1.5 transition-all duration-500 group flex flex-col justify-between">
+            {/* Ambient Corner Glow & Watermark */}
+            <div className="absolute -top-16 -right-16 w-56 h-56 bg-[#ded725]/15 rounded-full blur-3xl pointer-events-none group-hover:scale-125 transition-transform duration-700" />
+            <div className="absolute -bottom-8 right-6 text-7xl sm:text-8xl font-black text-[#1B3853]/30 select-none pointer-events-none tracking-widest font-heading">
+              VISION
+            </div>
+
+            <div>
+
+              <h3 className="text-2xl sm:text-3xl font-black text-[#13273B] font-heading tracking-tight mb-4 group-hover:text-[#13273B] transition-colors">
+                {aboutData.vision.title}
+              </h3>
+              <p className="text-sm sm:text-base text-[#1B3853] leading-relaxed">
+                {aboutData.vision.description}
+              </p>
+            </div>
+
+            {/* Strategic Pillars / Focus Tags */}
+            <div className="mt-8 pt-6 border-t border-white/10">
+              <div className="text-xs font-bold text-[#13273B] uppercase tracking-wider mb-3">
+                Key Strategic Pillars
+              </div>
+              <div className="flex flex-wrap gap-2 text-[#2B5984]">
+                {[
+                  "Hyper-Scalable Cloud Systems",
+                  "Agentic AI Automation",
+                  "Global Engineering Standards",
+                ].map((pillar, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-[#2B5984] text-xs font-semibold border border-white/15 backdrop-blur-sm"
+                  >
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#2B5984]" />
+                    {pillar}
+                  </span>
+                ))}
+              </div>
+
+              {/* Bottom decorative bar */}
+              {/* <d  iv className="h-1 w-full bg-gradient-to-r from-[#ded725] via-[#32679a] to-transparent rounded-full mt-6 opacity-60 group-hover:opacity-100 transition-opacity" /> */}
+            </div>
           </div>
 
-          <div className="light-card rounded-3xl p-8 border-l-4 border-l-amber-500 bg-white">
-            <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center mb-4">
-              <Target className="w-6 h-6 text-amber-600" />
+          {/* Card 2: Our Mission */}
+          <div className="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-[#EFEDA9] via-[#E6E27A] to-[#DDD745] p-8 sm:p-10 border border-slate-700/60 shadow-xl hover:shadow-2xl hover:shadow-[#32679a]/25 hover:-translate-y-1.5 transition-all duration-500 group flex flex-col justify-between">
+            {/* Ambient Corner Glow & Watermark */}
+            <div className="absolute -top-16 -right-16 w-56 h-56 bg-[#ded725]/15 rounded-full blur-3xl pointer-events-none group-hover:scale-125 transition-transform duration-700" />
+            <div className="absolute -bottom-8 right-6 text-7xl sm:text-8xl font-black text-[#1B3853]/30 select-none pointer-events-none tracking-widest font-heading">
+              MISSION
             </div>
-            <h3 className="text-2xl font-black text-[#090D16] font-heading mb-3">
-              {aboutData.mission.title}
-            </h3>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              {aboutData.mission.description}
-            </p>
+
+            <div>
+              <h3 className="text-2xl sm:text-3xl font-black text-[#13273B] font-heading tracking-tight mb-4 group-hover:text-[#13273B] transition-colors">
+                {aboutData.mission.title}
+              </h3>
+              <p className="text-sm sm:text-base text-[#1B3853] leading-relaxed">
+                {aboutData.mission.description}
+              </p>
+            </div>
+
+            {/* Strategic Pillars / Focus Tags */}
+            <div className="mt-8 pt-6 border-t border-white/10">
+              <div className="text-xs font-bold text-[#13273B] uppercase tracking-wider mb-3">
+                Core Commitments
+              </div>
+              <div className="flex flex-wrap gap-2 text-[#2B5984]">
+                {[
+                  "Resilient Software Architectures",
+                  "Transparent Agile Delivery",
+                  "Measurable Enterprise ROI",
+                ].map((pillar, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-[#2B5984] text-xs font-semibold border border-white/15 backdrop-blur-sm"
+                  >
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#2B5984]" />
+                    {pillar}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -202,8 +278,8 @@ export const AboutPage: React.FC = () => {
       {/* Core Values Bento Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 text-blue-800 border border-blue-200 text-xs font-bold mb-2">
-            <Award className="w-3.5 h-3.5 text-blue-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#32679A]/10 text-[#13273B] border border-[#32679A]/20 text-xs font-bold mb-2">
+            <Award className="w-3.5 h-3.5 text-[#32679A]" />
             Guiding Principles
           </div>
           <h2 className="text-3xl font-black text-[#090D16] font-heading">
@@ -215,13 +291,13 @@ export const AboutPage: React.FC = () => {
           {coreValuesData.map((val) => (
             <div
               key={val.id}
-              className="light-card rounded-3xl p-6 relative flex flex-col justify-between bg-white"
+              className="light-card rounded-3xl p-6 relative flex flex-col justify-between bg-white border border-slate-200/80 hover:border-[#ded725]/60 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
             >
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 mb-3 inline-block">
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#ded725]/25 text-[#13273B] border border-[#ded725]/40 mb-3 inline-block">
                   {val.highlight}
                 </span>
-                <h4 className="text-lg font-bold text-slate-900 font-heading mb-2">
+                <h4 className="text-lg font-bold text-slate-900 font-heading mb-2 group-hover:text-[#32679a] transition-colors">
                   {val.title}
                 </h4>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -236,8 +312,8 @@ export const AboutPage: React.FC = () => {
       {/* Milestones & Journey Timeline */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-slate-50 rounded-3xl border border-slate-200 my-8">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold mb-2">
-            <Calendar className="w-3.5 h-3.5 text-emerald-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#32679A]/10 text-[#13273B] border border-[#32679A]/20 text-xs font-bold mb-2">
+            <Calendar className="w-3.5 h-3.5 text-[#32679A]" />
             Our Track Record
           </div>
           <h2 className="text-3xl font-black text-[#090D16] font-heading">
@@ -249,9 +325,9 @@ export const AboutPage: React.FC = () => {
           {milestonesData.map((m, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm relative"
+              className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-[#32679a]/40 transition-all relative"
             >
-              <div className="text-2xl font-black text-[#133A27] font-heading mb-2">
+              <div className="text-2xl font-black text-[#32679a] font-heading mb-2">
                 {m.year}
               </div>
               <h4 className="text-base font-bold text-slate-900 font-heading mb-2">
@@ -268,8 +344,8 @@ export const AboutPage: React.FC = () => {
       {/* Leadership & Engineering Team */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-xs font-bold mb-2">
-            <Users className="w-3.5 h-3.5 text-amber-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ded725]/25 text-[#13273B] border border-[#ded725]/40 text-xs font-bold mb-2">
+            <Users className="w-3.5 h-3.5 text-[#13273B]" />
             Leadership & Core Architects
           </div>
           <h2 className="text-3xl font-black text-[#090D16] font-heading">
@@ -285,7 +361,7 @@ export const AboutPage: React.FC = () => {
           {teamMembersData.map((member) => (
             <div
               key={member.id}
-              className="light-card rounded-3xl p-6 flex flex-col justify-between bg-white"
+              className="light-card rounded-3xl p-6 flex flex-col justify-between bg-white border border-slate-200/80 hover:border-[#32679a]/40 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300"
             >
               <div>
                 <ImagePlaceholder
@@ -298,13 +374,13 @@ export const AboutPage: React.FC = () => {
                   className="mb-4"
                 />
 
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#133A27]">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#32679a]">
                   {member.department}
                 </span>
                 <h3 className="text-xl font-bold text-slate-900 font-heading mt-0.5">
                   {member.name}
                 </h3>
-                <div className="text-xs font-semibold text-amber-600 mb-3">
+                <div className="text-xs font-semibold text-[#32679a] mb-3">
                   {member.role}
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
@@ -330,7 +406,7 @@ export const AboutPage: React.FC = () => {
                       href={member.social.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-1.5 rounded-lg bg-slate-100 hover:bg-[#133A27] text-slate-600 hover:text-white transition-colors"
+                      className="p-1.5 rounded-lg bg-slate-100 hover:bg-[#32679a] text-slate-600 hover:text-white transition-colors"
                       aria-label="LinkedIn"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />

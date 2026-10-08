@@ -36,6 +36,12 @@ export const processStepsData: ProcessStep[] = websiteData.processSteps;
 export const culturePerksData: CulturePerk[] = websiteData.culturePerks;
 export const coreValuesData: ValueItem[] = websiteData.coreValues;
 export const techStackData = websiteData.techStackIcons;
+export const notificationEmails: string[] =
+  websiteData.notificationEmails ||
+  websiteData.company?.contact?.notificationEmails || [
+    "indumathi.r@zadroit.com",
+    "Vijay.loganathan@zadroit.com",
+  ];
 
 // Helper query functions
 export function getServiceById(id: string): Service | undefined {

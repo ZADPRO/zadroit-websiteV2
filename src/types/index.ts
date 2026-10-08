@@ -24,6 +24,7 @@ export interface CompanyInfo {
     supportEmail: string;
     careersEmail: string;
     salesEmail: string;
+    notificationEmails?: string[];
     primaryPhone: string;
     supportPhone: string;
     workingHours: string;
@@ -250,6 +251,7 @@ export interface AboutData {
 
 export interface WebsiteDataSchema {
   company: CompanyInfo;
+  notificationEmails?: string[];
   about: AboutData;
   navItems: NavItem[];
   services: Service[];
