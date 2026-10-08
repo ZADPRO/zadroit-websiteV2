@@ -6,7 +6,7 @@ import { ImagePlaceholder } from "../components/ImagePlaceholder";
 import { Search, Clock, ArrowRight, ChevronRight } from "lucide-react";
 
 export const BlogPage: React.FC = () => {
-  const { openModal } = useApp();
+  const { navigateToBlog } = useApp();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   // const [subEmail, setSubEmail] = useState("");
@@ -139,9 +139,7 @@ export const BlogPage: React.FC = () => {
       {!searchQuery && selectedCategory === "All" && featuredPost && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div
-            onClick={() =>
-              openModal({ type: "blog-reader", blog: featuredPost })
-            }
+            onClick={() => navigateToBlog(featuredPost.id)}
             className="light-card rounded-3xl p-6 sm:p-10 border border-slate-200 bg-white shadow-md cursor-pointer group hover:border-[#133A27] transition-all grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
           >
             <div className="lg:col-span-6 space-y-4">
@@ -173,7 +171,13 @@ export const BlogPage: React.FC = () => {
               </div>
 
               <div className="pt-2">
-                <button className="px-6 py-2.5 rounded-full bg-[#ded725] text-[#142C42] font-bold text-xs sm:text-sm group-hover:bg-[#ded725] transition-colors flex items-center gap-2 shadow-sm">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigateToBlog(featuredPost.id);
+                  }}
+                  className="px-6 py-2.5 rounded-full bg-[#ded725] text-[#142C42] font-bold text-xs sm:text-sm group-hover:bg-[#ded725] transition-colors flex items-center gap-2 shadow-sm cursor-pointer"
+                >
                   <span>Read Full Article</span>
                   <ArrowRight className="w-4 h-4 text-[#142C42] group-hover:translate-x-1 transition-transform" />
                 </button>
@@ -215,7 +219,7 @@ export const BlogPage: React.FC = () => {
             {filteredBlogs.map((blog) => (
               <div
                 key={blog.id}
-                onClick={() => openModal({ type: "blog-reader", blog })}
+                onClick={() => navigateToBlog(blog.id)}
                 className="light-card rounded-3xl p-5 sm:p-6 flex flex-col justify-between cursor-pointer group hover:-translate-y-1 transition-all duration-300 bg-white"
               >
                 <div>

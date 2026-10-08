@@ -25,7 +25,7 @@ export const Navbar: React.FC = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled
-        ? 'py-3.5 light-nav shadow-sm'
+        ? 'py-3.5 bg-white/80 shadow-sm backdrop-blur-md'
         : 'py-5 bg-white/90 backdrop-blur-md'
         }`}
     >
@@ -57,7 +57,7 @@ export const Navbar: React.FC = () => {
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-8">
             {navItems.map((item) => {
-              const isActive = currentPage === item.id;
+              const isActive = currentPage === item.id || (item.id === 'blog' && currentPage === 'blog-detail');
               return (
                 <button
                   key={item.id}
@@ -79,7 +79,7 @@ export const Navbar: React.FC = () => {
           {/* Right CTA Button matching template */}
           <div className="hidden sm:flex items-center gap-3">
             {/* Search Trigger */}
-          
+
 
             {/* Dark Green Pill CTA */}
             <button
@@ -116,7 +116,7 @@ export const Navbar: React.FC = () => {
         <div className="lg:hidden bg-white border-t border-slate-200 px-4 pt-4 pb-6 mt-3 shadow-xl animate-modal-in">
           <div className="flex flex-col space-y-2">
             {navItems.map((item) => {
-              const isActive = currentPage === item.id;
+              const isActive = currentPage === item.id || (item.id === 'blog' && currentPage === 'blog-detail');
               return (
                 <button
                   key={item.id}
@@ -146,7 +146,7 @@ export const Navbar: React.FC = () => {
               className="w-full py-3 rounded-full bg-[#ded725] !text-[#32679a] text-white font-bold text-sm shadow-md flex items-center justify-center gap-2"
             >
               <span
-              className="!text-[#32679a]"
+                className="!text-[#32679a]"
               >Get A Quote</span>
               <ArrowRight className="w-4 h-4 text-[#32679a]" />
             </button>

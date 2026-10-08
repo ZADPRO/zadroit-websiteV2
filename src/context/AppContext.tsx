@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect, type ReactNode }
 import type { Service, Product, BlogPost, JobOpening } from '../types';
 import confetti from 'canvas-confetti';
 
-export type PageId = 'home' | 'about' | 'services' | 'products' | 'blog' | 'careers' | 'contact';
+export type PageId = 'home' | 'about' | 'services' | 'products' | 'blog' | 'careers' | 'contact' | 'blog-detail';
 
 export type ModalState =
   | { type: 'job-apply'; job: JobOpening }
@@ -23,7 +23,9 @@ export interface ToastInfo {
 
 interface AppContextType {
   currentPage: PageId;
-  navigate: (page: PageId, options?: { scrollToTop?: boolean; anchor?: string }) => void;
+  currentBlogId: string | null;
+  navigate: (page: PageId | string, options?: { scrollToTop?: boolean; anchor?: string; blogId?: string }) => void;
+  navigateToBlog: (blogId: string) => void;
   activeModal: ModalState;
   openModal: (modal: ModalState) => void;
   closeModal: () => void;
@@ -33,14 +35,51 @@ interface AppContextType {
   triggerConfetti: () => void;
 }
 
+const parseHashState = (): { page: PageId; blogId: string | null } => {
+  const rawHash = window.location.hash.replace(/^#\/?/, '').trim();
+  if (!rawHash) return { page: 'home', blogId: null };
+
+  let path = rawHash;
+  let queryBlogId: string | null = null;
+  if (rawHash.includes('?')) {
+    const [cleanPath, query] = rawHash.split('?');
+    path = cleanPath;
+    const params = new URLSearchParams(query);
+    queryBlogId = params.get('id') || params.get('blogId');
+  }
+
+  const parts = path.split('/').filter(Boolean);
+  const base = parts[0]?.toLowerCase();
+
+  if (base === 'blog') {
+    if (parts.length > 1 && parts[1]) {
+      return { page: 'blog-detail', blogId: parts[1] };
+    }
+    if (queryBlogId) {
+      return { page: 'blog-detail', blogId: queryBlogId };
+    }
+    return { page: 'blog', blogId: null };
+  }
+
+  if (base === 'blog-detail') {
+    const bId = parts[1] || queryBlogId;
+    return { page: 'blog-detail', blogId: bId || null };
+  }
+
+  const validPages: PageId[] = ['home', 'about', 'services', 'products', 'blog', 'careers', 'contact', 'blog-detail'];
+  if (validPages.includes(base as PageId)) {
+    return { page: base as PageId, blogId: null };
+  }
+
+  return { page: 'home', blogId: null };
+};
+
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [currentPage, setCurrentPage] = useState<PageId>(() => {
-    const hash = window.location.hash.replace('#', '').toLowerCase();
-    const validPages: PageId[] = ['home', 'about', 'services', 'products', 'blog', 'careers', 'contact'];
-    return validPages.includes(hash as PageId) ? (hash as PageId) : 'home';
-  });
+  const [{ page: initialPage, blogId: initialBlogId }] = useState(parseHashState);
+  const [currentPage, setCurrentPage] = useState<PageId>(initialPage);
+  const [currentBlogId, setCurrentBlogId] = useState<string | null>(initialBlogId);
 
   const [activeModal, setActiveModal] = useState<ModalState>(null);
   const [toasts, setToasts] = useState<ToastInfo[]>([]);
@@ -48,11 +87,9 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
   // Sync with browser hash
   useEffect(() => {
     const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '').toLowerCase();
-      const validPages: PageId[] = ['home', 'about', 'services', 'products', 'blog', 'careers', 'contact'];
-      if (validPages.includes(hash as PageId)) {
-        setCurrentPage(hash as PageId);
-      }
+      const { page, blogId } = parseHashState();
+      setCurrentPage(page);
+      setCurrentBlogId(blogId);
     };
 
     window.addEventListener('hashchange', handleHashChange);
@@ -75,12 +112,32 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  const navigate = (page: PageId, options?: { scrollToTop?: boolean; anchor?: string }) => {
-    setCurrentPage(page);
-    window.location.hash = page;
+  const navigate = (
+    page: PageId | string,
+    options?: { scrollToTop?: boolean; anchor?: string; blogId?: string }
+  ) => {
+    if (page === 'blog-detail' || page.startsWith('blog/')) {
+      const blogId = options?.blogId || (page.startsWith('blog/') ? page.replace('blog/', '') : currentBlogId);
+      if (blogId) {
+        navigateToBlog(blogId);
+        return;
+      }
+    }
+
+    const targetPage = (page as PageId) || 'home';
+    setCurrentPage(targetPage);
+    setCurrentBlogId(null);
+    window.location.hash = targetPage;
     if (options?.scrollToTop !== false) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  };
+
+  const navigateToBlog = (blogId: string) => {
+    setCurrentPage('blog-detail');
+    setCurrentBlogId(blogId);
+    window.location.hash = `blog/${encodeURIComponent(blogId)}`;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const openModal = (modal: ModalState) => {
@@ -127,7 +184,9 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     <AppContext.Provider
       value={{
         currentPage,
+        currentBlogId,
         navigate,
+        navigateToBlog,
         activeModal,
         openModal,
         closeModal,

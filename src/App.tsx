@@ -12,6 +12,7 @@ import { AboutPage } from './pages/AboutPage';
 import { ServicesPage } from './pages/ServicesPage';
 import { ProductsPage } from './pages/ProductsPage';
 import { BlogPage } from './pages/BlogPage';
+import { BlogDetailPage } from './pages/BlogDetailPage';
 import { CareersPage } from './pages/CareersPage';
 import { ContactPage } from './pages/ContactPage';
 
@@ -39,6 +40,8 @@ const MainLayout: React.FC = () => {
         return <ProductsPage />;
       case 'blog':
         return <BlogPage />;
+      case 'blog-detail':
+        return <BlogDetailPage />;
       case 'careers':
         return <CareersPage />;
       case 'contact':

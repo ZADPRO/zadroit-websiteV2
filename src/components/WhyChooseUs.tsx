@@ -4,7 +4,6 @@ import {
   TrendingUp,
   Users,
   ShieldCheck,
-  ArrowUpRight,
 } from "lucide-react";
 import { useApp } from "../context/AppContext";
 
@@ -238,7 +237,7 @@ export const WhyChooseUs: React.FC = () => {
                         {/* Title */}
                         <h3 className="text-lg sm:text-xl font-black text-[#090D16] tracking-tight font-heading group-hover:text-[#133A27] transition-colors flex items-center justify-between">
                           <span>{item.title}</span>
-                          <ArrowUpRight className="w-4 h-4 text-[#133A27] opacity-0 group-hover:opacity-100 -translate-x-1 translate-y-1 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 shrink-0 ml-1" />
+                          {/* <ArrowUpRight className="w-4 h-4 text-[#133A27] opacity-0 group-hover:opacity-100 -translate-x-1 translate-y-1 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 shrink-0 ml-1" /> */}
                         </h3>
 
                         {/* Description */}

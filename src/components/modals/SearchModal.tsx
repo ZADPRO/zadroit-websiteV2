@@ -4,7 +4,7 @@ import { servicesData, productsData, blogPostsData, jobOpeningsData } from '../.
 import { Search, X, Layers, Box, BookOpen, Briefcase, ArrowRight } from 'lucide-react';
 
 export const SearchModal: React.FC = () => {
-  const { closeModal, openModal } = useApp();
+  const { closeModal, openModal, navigateToBlog } = useApp();
   const [query, setQuery] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -193,7 +193,7 @@ export const SearchModal: React.FC = () => {
                         key={b.id}
                         onClick={() => {
                           closeModal();
-                          openModal({ type: 'blog-reader', blog: b });
+                          navigateToBlog(b.id);
                         }}
                         className="p-3 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-200 flex items-center justify-between cursor-pointer group transition-all"
                       >
