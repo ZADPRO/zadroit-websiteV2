@@ -251,8 +251,13 @@ export const ProductsPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="light-card rounded-[32px] sm:rounded-[40px] p-8 sm:p-12 border border-slate-200 bg-slate-50 text-center shadow-md hover:shadow-xl transition-all duration-500">
           <div className="max-w-3xl mx-auto space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 text-blue-800 border border-blue-200 text-xs font-bold">
-              <Server className="w-3.5 h-3.5 text-blue-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#32679A]/10 text-[#13273B] border border-[#32679A]/20 text-xs font-bold mb-3">
+              {/* <Server className="w-3.5 h-3.5 text-blue-600" /> */}
+              <div className="flex items-center gap-0">
+                <div className="w-4 h-4 rounded-full bg-[#2B5984]" />
+                <div className="w-2 h-4 bg-[#5F88B0] rounded-r-full" />
+                <div className="w-2 h-4 bg-[#5F88B0] rounded-r-full" />
+              </div>
               Enterprise Deployment Options
             </div>
             <h3 className="text-3xl font-black text-[#090D16] font-heading">

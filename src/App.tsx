@@ -3,6 +3,8 @@ import { AppProvider, useApp } from './context/AppContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ToastNotification } from './components/ToastNotification';
+import { ScrollProgressBar } from './components/ScrollProgressBar';
+import { useAutoScrollReveal } from './hooks/useAutoScrollReveal';
 
 // Pages
 import { HomePage } from './pages/HomePage';
@@ -23,6 +25,9 @@ import { SearchModal } from './components/modals/SearchModal';
 
 const MainLayout: React.FC = () => {
   const { currentPage, activeModal } = useApp();
+
+  // Initialize smooth scroll reveal listener across all pages
+  useAutoScrollReveal();
 
   const renderCurrentPage = () => {
     switch (currentPage) {
@@ -46,11 +51,16 @@ const MainLayout: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#0B0F19] text-slate-100 flex flex-col justify-between selection:bg-amber-400 selection:text-black">
+      {/* Top Global Scroll Progress & Page Load Indicator */}
+      <ScrollProgressBar />
+
       {/* Navigation Header */}
       <Navbar />
 
-      {/* Main Dynamic Page Content */}
-      <main className="flex-grow">{renderCurrentPage()}</main>
+      {/* Main Dynamic Page Content with Smooth Transition */}
+      <main key={currentPage} className="flex-grow animate-page-enter">
+        {renderCurrentPage()}
+      </main>
 
       {/* Global Footer */}
       <Footer />

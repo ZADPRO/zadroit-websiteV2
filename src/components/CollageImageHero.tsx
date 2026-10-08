@@ -41,7 +41,7 @@ export const CollageImageHero: React.FC<CollageImageHeroProps> = ({
         return (
           <div
             key={preset.url}
-            className={`absolute bg-no-repeat transition-all duration-[1200ms] ease-in-out will-change-[opacity,transform,filter] grayscale contrast-[1.12] brightness-[0.98] ${
+            className={`absolute bg-no-repeat transition-all duration-[1200ms] ease-in-out will-change-[opacity,transform,filter] grayscale group-hover:grayscale-0 contrast-[1.12] brightness-[0.98] ${
               isActive
                 ? 'opacity-100 scale-100 blur-0 z-10 pointer-events-auto'
                 : 'opacity-0 scale-105 blur-[6px] pointer-events-none z-0'

@@ -117,7 +117,7 @@ export const WhyChooseUs: React.FC = () => {
                 <img
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop"
                   alt="Zadroit collaborative engineering team at work"
-                  className="w-full h-full object-cover grayscale contrast-[1.12] brightness-[0.96] transition-all duration-700 ease-out group-hover:scale-105 group-hover:contrast-100 group-hover:brightness-100"
+                  className="w-full h-full object-cover grayscale contrast-[1.12] brightness-[0.96] transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-105 group-hover:contrast-100 group-hover:brightness-100"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
@@ -135,7 +135,7 @@ export const WhyChooseUs: React.FC = () => {
                   <img
                     src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200&auto=format&fit=crop"
                     alt="Zadroit tech team in strategic discussion"
-                    className="w-full h-full object-cover grayscale contrast-[1.12] brightness-[0.96] transition-all duration-700 ease-out group-hover:scale-105 group-hover:contrast-100 group-hover:brightness-100"
+                    className="w-full h-full object-cover grayscale contrast-[1.12] brightness-[0.96] transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-105 group-hover:contrast-100 group-hover:brightness-100"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3.5">

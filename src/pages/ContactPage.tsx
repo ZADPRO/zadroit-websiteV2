@@ -8,10 +8,10 @@ import {
   MapPin,
   Clock,
   Send,
-  Sparkles,
   ChevronDown,
   Building,
   Calendar,
+  HelpCircle,
 } from "lucide-react";
 
 export const ContactPage: React.FC = () => {
@@ -270,11 +270,10 @@ export const ContactPage: React.FC = () => {
                           });
                           setIsDropdownOpen(false);
                         }}
-                        className={`p-3 rounded-xl flex items-center justify-between text-xs sm:text-sm cursor-pointer transition-colors ${
-                          formData.interestedService === svc.name
-                            ? "bg-sky-50 text-[#0284c7] font-bold"
-                            : "hover:bg-slate-50 text-slate-700"
-                        }`}
+                        className={`p-3 rounded-xl flex items-center justify-between text-xs sm:text-sm cursor-pointer transition-colors ${formData.interestedService === svc.name
+                          ? "bg-sky-50 text-[#0284c7] font-bold"
+                          : "hover:bg-slate-50 text-slate-700"
+                          }`}
                       >
                         <span>{svc.name}</span>
                         <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-600">
@@ -411,48 +410,117 @@ export const ContactPage: React.FC = () => {
       </section>
 
       {/* Frequently Asked Questions Accordion */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold mb-2">
-            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
+        {/* Subtle background ambient light glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-[#32679A]/5 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="text-center max-w-3xl mx-auto mb-12 relative z-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#32679A]/10 text-[#13273B] border border-[#32679A]/20 text-xs font-bold mb-3">
+            <div className="flex items-center gap-0">
+              <div className="w-4 h-4 rounded-full bg-[#2B5984]" />
+              <div className="w-2 h-4 bg-[#5F88B0] rounded-r-full" />
+              <div className="w-2 h-4 bg-[#5F88B0] rounded-r-full" />
+            </div>
             Quick Answers
           </div>
-          <h2 className="text-3xl font-black text-[#090D16] font-heading">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#090D16] font-heading tracking-tight">
             Frequently Asked Questions
           </h2>
+          <p className="mt-3 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            Everything you need to know about our engineering process, security standards, and partnership models.
+          </p>
         </div>
 
-        <div className="space-y-3">
-          {faqItemsData.map((faq) => {
+        <div className="space-y-3.5 relative z-10">
+          {faqItemsData.map((faq, idx) => {
             const isOpen = openFaqId === faq.id;
             return (
               <div
                 key={faq.id}
-                className="light-card rounded-2xl border border-slate-200 overflow-hidden bg-white"
+                className={`rounded-2xl transition-all duration-300 overflow-hidden bg-white border ${
+                  isOpen
+                    ? "border-[#32679a]/40 shadow-md ring-1 ring-[#32679a]/15 bg-gradient-to-b from-white to-slate-50/40"
+                    : "border-slate-200/90 shadow-sm hover:border-[#32679a]/30 hover:shadow-md"
+                }`}
               >
                 <button
                   type="button"
                   onClick={() => setOpenFaqId(isOpen ? null : faq.id)}
-                  className="w-full p-5 text-left flex items-center justify-between gap-4 hover:bg-slate-50 transition-colors"
+                  className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 cursor-pointer transition-colors"
                 >
-                  <span className="text-sm sm:text-base font-bold text-slate-900 font-heading flex items-center gap-2">
-                    <span className="text-[#133A27]">Q:</span> {faq.question}
-                  </span>
-                  <ChevronDown
-                    className={`w-5 h-5 text-slate-500 transition-transform duration-200 shrink-0 ${
-                      isOpen ? "rotate-180 text-[#133A27]" : ""
-                    }`}
-                  />
+                  <div className="flex items-center gap-3.5 flex-1 pr-2">
+                    <span
+                      className={`w-7 h-7 sm:w-8 sm:h-8 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center shrink-0 font-mono transition-colors ${
+                        isOpen
+                          ? "bg-[#32679a] text-white shadow-xs"
+                          : "bg-slate-100 text-slate-600"
+                      }`}
+                    >
+                      0{idx + 1}
+                    </span>
+                    <span
+                      className={`text-sm sm:text-base font-bold font-heading leading-snug transition-colors ${
+                        isOpen ? "text-[#32679a]" : "text-slate-900"
+                      }`}
+                    >
+                      {faq.question}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-2 shrink-0">
+                    <span className="hidden sm:inline-block text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200/60">
+                      {faq.category}
+                    </span>
+                    <div
+                      className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+                        isOpen
+                          ? "bg-[#32679a] text-white rotate-180 shadow-xs"
+                          : "bg-slate-100 text-slate-500 hover:bg-slate-200"
+                      }`}
+                    >
+                      <ChevronDown className="w-4 h-4" />
+                    </div>
+                  </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3 animate-modal-in">
-                    {faq.answer}
+                  <div className="px-5 sm:px-6 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 animate-modal-in">
+                    <div className="flex items-start gap-3 pt-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#ded725] mt-2 shrink-0" />
+                      <p className="flex-1 text-slate-600 leading-relaxed text-sm sm:text-[15px]">
+                        {faq.answer}
+                      </p>
+                    </div>
                   </div>
                 )}
               </div>
             );
           })}
+        </div>
+
+        {/* Quick Help Callout Banner */}
+        <div className="mt-10 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#F4F8FC] via-white to-[#FDFDE8]/60 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left relative z-10">
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <div className="w-12 h-12 rounded-2xl bg-[#32679a]/10 border border-[#32679a]/20 flex items-center justify-center text-[#32679a] shrink-0">
+              <HelpCircle className="w-6 h-6 text-[#32679a]" />
+            </div>
+            <div>
+              <h4 className="text-base font-bold text-[#13273B] font-heading">
+                Still have questions about our services?
+              </h4>
+              <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
+                Can't find what you're looking for? Reach out directly to our solutions architecture team.
+              </p>
+            </div>
+          </div>
+
+          <a
+            href={`mailto:${companyInfo.contact.primaryEmail}?subject=Technical%20Inquiry%20from%20Website`}
+            className="px-5 py-2.5 rounded-full bg-[#ded725] hover:bg-[#d3cc11] text-[#13273B] font-extrabold text-xs sm:text-sm shadow-sm hover:shadow-md transition-all flex items-center gap-2 shrink-0 cursor-pointer"
+          >
+            <span>Ask Our Team</span>
+            <Send className="w-3.5 h-3.5 text-[#13273B]" />
+          </a>
         </div>
       </section>
     </div>
