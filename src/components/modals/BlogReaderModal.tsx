@@ -2,7 +2,7 @@ import React from 'react';
 import { useApp } from '../../context/AppContext';
 import type { BlogPost } from '../../types';
 import { blogPostsData } from '../../data/websiteData';
-import { X, Calendar, Clock, Tag, Share2, ArrowRight, Sparkles } from 'lucide-react';
+import { X, Calendar, Clock, Tag, Share2, ArrowRight } from 'lucide-react';
 import { ImagePlaceholder } from '../ImagePlaceholder';
 
 interface BlogReaderModalProps {
@@ -67,8 +67,8 @@ export const BlogReaderModal: React.FC<BlogReaderModalProps> = ({ blog }) => {
           {/* Author info & Share bar */}
           <div className="mt-4 flex items-center justify-between pb-6 border-b border-slate-100">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#133A27] to-[#32679a] p-0.5 shadow-sm">
-                <div className="w-full h-full rounded-full bg-white flex items-center justify-center text-xs font-black text-[#133A27]">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#d3cc11] to-[#ded725] p-0.5 shadow-sm">
+                <div className="w-full h-full rounded-full bg-white flex items-center justify-center text-xs font-black text-[#32679a]">
                   {blog.author.name.charAt(0)}
                 </div>
               </div>
@@ -128,7 +128,7 @@ export const BlogReaderModal: React.FC<BlogReaderModalProps> = ({ blog }) => {
         {/* Author Consultation CTA */}
         <div className="mt-8 p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-full bg-[#133A27] text-white flex items-center justify-center font-bold text-sm shadow-xs shrink-0">
+            <div className="w-11 h-11 rounded-full bg-[#d3cc11]  text-[#32679a]  flex items-center justify-center font-bold text-sm shadow-xs shrink-0">
               {blog.author.name.charAt(0)}
             </div>
             <div>
@@ -142,9 +142,9 @@ export const BlogReaderModal: React.FC<BlogReaderModalProps> = ({ blog }) => {
               closeModal();
               openModal({ type: 'quote-modal', defaultService: blog.title });
             }}
-            className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-[#133A27] hover:bg-[#0c2619] text-white text-xs sm:text-sm font-bold shadow-sm inline-flex items-center justify-center gap-2 transition-all cursor-pointer shrink-0"
+            className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-[#d3cc11] hover:bg-[#ded725] text-[#32679a] text-xs sm:text-sm font-bold shadow-sm inline-flex items-center justify-center gap-2 transition-all cursor-pointer shrink-0"
           >
-            <Sparkles className="w-4 h-4 text-[#ded725]" />
+            {/* <Sparkles className="w-4 h-4 text-[#ded725]" /> */}
             <span>Consult Author</span>
           </button>
         </div>

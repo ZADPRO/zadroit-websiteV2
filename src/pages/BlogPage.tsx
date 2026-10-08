@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { useApp } from "../context/AppContext";
 import { blogPostsData } from "../data/websiteData";
 import { ImagePlaceholder } from "../components/ImagePlaceholder";
-import { sendEmailToAdmin } from "../services/emailService";
-import { Search, Clock, ArrowRight, ChevronRight, Send } from "lucide-react";
+// import { sendEmailToAdmin } from "../services/emailService";
+import { Search, Clock, ArrowRight, ChevronRight } from "lucide-react";
 
 export const BlogPage: React.FC = () => {
-  const { openModal, showToast } = useApp();
+  const { openModal } = useApp();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
-  const [subEmail, setSubEmail] = useState("");
+  // const [subEmail, setSubEmail] = useState("");
 
   const categories = [
     "All",
@@ -36,33 +36,33 @@ export const BlogPage: React.FC = () => {
   const featuredPost =
     blogPostsData.find((b) => b.featured) || blogPostsData[0];
 
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!subEmail || !subEmail.includes("@")) {
-      showToast(
-        "Invalid Email",
-        "Please enter a valid email address.",
-        "warning",
-      );
-      return;
-    }
+  // const handleSubscribe = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   if (!subEmail || !subEmail.includes("@")) {
+  //     showToast(
+  //       "Invalid Email",
+  //       "Please enter a valid email address.",
+  //       "warning",
+  //     );
+  //     return;
+  //   }
 
-    sendEmailToAdmin({
-      subject: `New Newsletter Subscription: ${subEmail}`,
-      senderEmail: subEmail,
-      formType: "Tech Radar Newsletter Subscription",
-      data: {
-        subscriber_email: subEmail,
-      },
-    });
+  //   sendEmailToAdmin({
+  //     subject: `New Newsletter Subscription: ${subEmail}`,
+  //     senderEmail: subEmail,
+  //     formType: "Tech Radar Newsletter Subscription",
+  //     data: {
+  //       subscriber_email: subEmail,
+  //     },
+  //   });
 
-    showToast(
-      "Subscribed to Tech Radar! 🚀",
-      "Thank you for subscribing. You will receive our latest engineering whitepapers directly.",
-      "success",
-    );
-    setSubEmail("");
-  };
+  //   showToast(
+  //     "Subscribed to Tech Radar! 🚀",
+  //     "Thank you for subscribing. You will receive our latest engineering whitepapers directly.",
+  //     "success",
+  //   );
+  //   setSubEmail("");
+  // };
 
   return (
     <div className="relative overflow-hidden pt-24 pb-16 bg-white">
@@ -124,11 +124,10 @@ export const BlogPage: React.FC = () => {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all ${
-                selectedCategory === cat
-                  ? "bg-[#ded725] text-black shadow-sm"
-                  : "bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200"
-              }`}
+              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all ${selectedCategory === cat
+                ? "bg-[#ded725] text-black shadow-sm"
+                : "bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200"
+                }`}
             >
               {cat}
             </button>
@@ -261,7 +260,7 @@ export const BlogPage: React.FC = () => {
 
                 <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
                   <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-full bg-[#133A27] flex items-center justify-center font-bold text-white text-[11px]">
+                    <div className="w-7 h-7 rounded-full bg-[#d3cc11] hover:bg-[#ded725] text-[#32679a] flex items-center justify-center font-bold text-white text-[11px]">
                       {blog.author.name.charAt(0)}
                     </div>
                     <div>
@@ -274,7 +273,7 @@ export const BlogPage: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="text-[#133A27] font-bold group-hover:translate-x-1 transition-transform flex items-center gap-0.5">
+                  <div className="text-[#32679a] font-bold group-hover:translate-x-1 transition-transform flex items-center gap-0.5">
                     <span>Read</span>
                     <ChevronRight className="w-3.5 h-3.5" />
                   </div>
@@ -286,7 +285,7 @@ export const BlogPage: React.FC = () => {
       </section>
 
       {/* Tech Newsletter Banner */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="light-card rounded-3xl p-8 sm:p-12 border border-slate-200 bg-slate-50 text-center relative overflow-hidden">
           <div className="max-w-2xl mx-auto space-y-4">
             <h3 className="text-2xl sm:text-3xl font-black text-[#090D16] font-heading">
@@ -319,7 +318,7 @@ export const BlogPage: React.FC = () => {
             </form>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { servicesData } from '../../data/websiteData';
 import { sendEmailToAdmin } from '../../services/emailService';
-import { X, Calculator, Send, ShieldCheck, Sparkles } from 'lucide-react';
+import { X, Calculator, Send } from 'lucide-react';
 
 interface QuickQuoteModalProps {
   defaultService?: string;
@@ -129,11 +129,10 @@ export const QuickQuoteModal: React.FC<QuickQuoteModalProps> = ({ defaultService
                   key={type}
                   type="button"
                   onClick={() => setProjectType(type)}
-                  className={`py-2 px-2 text-xs font-bold rounded-xl border transition-all cursor-pointer ${
-                    projectType === type
-                      ? 'bg-[#133A27] text-white border-[#133A27] shadow-sm'
-                      : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 hover:text-slate-900'
-                  }`}
+                  className={`py-2 px-2 text-xs font-bold rounded-xl border transition-all cursor-pointer ${projectType === type
+                    ? 'bg-[#ded725] text-white border-[#d3cc11] shadow-sm'
+                    : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 hover:text-slate-900'
+                    }`}
                 >
                   {type}
                 </button>
@@ -246,21 +245,21 @@ export const QuickQuoteModal: React.FC<QuickQuoteModalProps> = ({ defaultService
           </div>
 
           {/* Submission button */}
-          <div className="pt-3 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
+          <div className="pt-3 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-end gap-3">
+            {/* <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
               <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
               <span>Strict NDA & 100% confidentiality guaranteed</span>
-            </div>
+            </div> */}
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-[#133A27] hover:bg-[#0c2619] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
+              className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-[#d3cc11] hover:bg-[#ded725] text-[#32679a] font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
             >
               {isSubmitting ? (
                 <span>Generating Proposal...</span>
               ) : (
                 <>
-                  <Sparkles className="w-4 h-4 text-[#ded725]" />
+                  {/* <Sparkles className="w-4 h-4 text-[#ded725]" /> */}
                   <span>Request Itemized Quote</span>
                   <Send className="w-3.5 h-3.5" />
                 </>

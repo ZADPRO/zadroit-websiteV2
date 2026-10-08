@@ -7,9 +7,6 @@ import {
 } from "../data/websiteData";
 import { ImagePlaceholder } from "../components/ImagePlaceholder";
 import {
-  Award,
-  Users,
-  Calendar,
   ExternalLink,
   CheckCircle2,
 } from "lucide-react";
@@ -65,9 +62,9 @@ export const AboutPage: React.FC = () => {
                 {/* Stack of 3 Geometric Shapes (2 Outline Semicircles + 1 Solid Lime-Yellow Circle) - ENLARGED */}
                 <div className="flex flex-col items-center justify-end   shrink-0">
                   {/* Outline Arch 1 */}
-                  <div className="w-20 h-12 sm:w-26 sm:h-12 md:w-34 md:h-16 border-2 sm:border-[2.5px] border-slate-300 rounded-t-full bg-transparent" />
+                  <div className="w-20 h-12 sm:w-26 sm:h-12 md:w-34 md:h-16 border-2 sm:border-[2.5px] border-[#32679a] rounded-t-full bg-transparent" />
                   {/* Outline Arch 2 */}
-                  <div className="w-20 h-12 sm:w-26 sm:h-12 md:w-34 md:h-16 border-2 sm:border-[2.5px] border-slate-300 rounded-t-full bg-transparent" />
+                  <div className="w-20 h-12 sm:w-26 sm:h-12 md:w-34 md:h-16 border-2 sm:border-[2.5px] border-[#32679a] rounded-t-full bg-transparent" />
                   {/* Solid Lime-Yellow Circle */}
                   <div className="w-24 h-24 sm:w-26 sm:h-26 md:w-34 md:h-34 rounded-full bg-[#ded725] shadow-sm" />
                 </div>
@@ -278,14 +275,22 @@ export const AboutPage: React.FC = () => {
       {/* Core Values Bento Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center max-w-3xl mx-auto mb-12">
+
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#32679A]/10 text-[#13273B] border border-[#32679A]/20 text-xs font-bold mb-2">
-            <Award className="w-3.5 h-3.5 text-[#32679A]" />
+            {/* <Award className="w-3.5 h-3.5 text-[#32679A]" /> */}
+            <div className="flex items-center gap-0">
+              <div className="w-4 h-4 rounded-full bg-[#2B5984]" />
+              <div className="w-2 h-4 bg-[#5F88B0] rounded-r-full" />
+              <div className="w-2 h-4 bg-[#5F88B0] rounded-r-full" />
+            </div>
             Guiding Principles
           </div>
           <h2 className="text-3xl font-black text-[#090D16] font-heading">
             The Values That Power Every Line of Code
           </h2>
         </div>
+
+
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {coreValuesData.map((val) => (
@@ -313,7 +318,12 @@ export const AboutPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-slate-50 rounded-3xl border border-slate-200 my-8">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#32679A]/10 text-[#13273B] border border-[#32679A]/20 text-xs font-bold mb-2">
-            <Calendar className="w-3.5 h-3.5 text-[#32679A]" />
+            {/* <Calendar className="w-3.5 h-3.5 text-[#32679A]" /> */}
+            <div className="flex items-center gap-0">
+              <div className="w-4 h-4 rounded-full bg-[#2B5984]" />
+              <div className="w-2 h-4 bg-[#5F88B0] rounded-r-full" />
+              <div className="w-2 h-4 bg-[#5F88B0] rounded-r-full" />
+            </div>
             Our Track Record
           </div>
           <h2 className="text-3xl font-black text-[#090D16] font-heading">
@@ -345,7 +355,12 @@ export const AboutPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ded725]/25 text-[#13273B] border border-[#ded725]/40 text-xs font-bold mb-2">
-            <Users className="w-3.5 h-3.5 text-[#13273B]" />
+            {/* <Users className="w-3.5 h-3.5 text-[#13273B]" /> */}
+            <div className="flex items-center gap-0">
+              <div className="w-4 h-4 rounded-full bg-[#2B5984]" />
+              <div className="w-2 h-4 bg-[#5F88B0] rounded-r-full" />
+              <div className="w-2 h-4 bg-[#5F88B0] rounded-r-full" />
+            </div>
             Leadership & Core Architects
           </div>
           <h2 className="text-3xl font-black text-[#090D16] font-heading">

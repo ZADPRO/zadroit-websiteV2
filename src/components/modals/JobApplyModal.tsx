@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import type { JobOpening } from '../../types';
 import { sendEmailToAdmin } from '../../services/emailService';
-import { X, Briefcase, MapPin, Upload, CheckCircle2, Send, Sparkles, AlertCircle } from 'lucide-react';
+import { X, Briefcase, MapPin, Upload, CheckCircle2, Send, AlertCircle } from 'lucide-react';
 
 interface JobApplyModalProps {
   job: JobOpening;
@@ -213,10 +213,10 @@ export const JobApplyModal: React.FC<JobApplyModalProps> = ({ job }) => {
                     }
                     setStep(2);
                   }}
-                  className="px-6 py-2.5 rounded-full bg-[#133A27] hover:bg-[#0c2619] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer"
+                  className="px-6 py-2.5 text-[#32679a] rounded-full bg-[#ded725] hover:bg-[#d3cc11] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer"
                 >
-                  <span>Continue to Resume & Notes</span>
-                  <Sparkles className="w-4 h-4 text-[#ded725]" />
+                  <span className=' text-[#32679a] '>Continue to Resume & Notes</span>
+                  {/* <Sparkles className="w-4 h-4 text-[#ded725]" /> */}
                 </button>
               </div>
             </>
