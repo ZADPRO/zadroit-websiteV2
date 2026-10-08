@@ -7,7 +7,7 @@ import {
   Calendar,
   Clock,
   Tag,
-  Share2,
+  // Share2,
   ArrowRight,
   ChevronRight,
   Sparkles,
@@ -38,18 +38,18 @@ export const BlogDetailPage: React.FC = () => {
     }
   };
 
-  const handleTwitterShare = () => {
-    if (!blog) return;
-    const text = encodeURIComponent(`Read "${blog.title}" on Zadroit Engineering Tech Radar: `);
-    const url = encodeURIComponent(window.location.href);
-    window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
-  };
+  // const handleTwitterShare = () => {
+  //   if (!blog) return;
+  //   const text = encodeURIComponent(`Read "${blog.title}" on Zadroit Engineering Tech Radar: `);
+  //   const url = encodeURIComponent(window.location.href);
+  //   window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+  // };
 
-  const handleLinkedInShare = () => {
-    if (!blog) return;
-    const url = encodeURIComponent(window.location.href);
-    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
-  };
+  // const handleLinkedInShare = () => {
+  //   if (!blog) return;
+  //   const url = encodeURIComponent(window.location.href);
+  //   window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+  // };
 
   if (!blog) {
     return (
@@ -170,7 +170,7 @@ export const BlogDetailPage: React.FC = () => {
                 <span>{copied ? 'Copied!' : 'Copy Link'}</span>
               </button>
 
-              <button
+              {/* <button
                 onClick={handleLinkedInShare}
                 className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-100 hover:bg-[#0077B5] hover:text-white text-slate-600 transition-colors cursor-pointer"
                 title="Share on LinkedIn"
@@ -184,7 +184,7 @@ export const BlogDetailPage: React.FC = () => {
                 title="Share on X"
               >
                 <span className="text-xs font-bold">𝕏</span>
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
