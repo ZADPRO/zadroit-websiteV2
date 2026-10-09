@@ -1,17 +1,14 @@
 import React from "react";
 import {
   aboutData,
-  milestonesData,
-  teamMembersData,
 } from "../data/websiteData";
-import { ImagePlaceholder } from "../components/ImagePlaceholder";
 import { ScrollReveal } from "../components/ScrollReveal";
 import { OurApproach } from "../components/OurApproach";
 import { ZadroitEdge } from "../components/ZadroitEdge";
+import { LeadershipCarousel } from "../components/LeadershipCarousel";
 import {
   Target,
   Eye,
-  ExternalLink,
 } from "lucide-react";
 
 export const AboutPage: React.FC = () => {
@@ -153,7 +150,7 @@ export const AboutPage: React.FC = () => {
               {/* Vision & Mission Cards */}
               <div className="space-y-2.5 pt-0.5">
                 {/* Vision Card */}
-                <div className="p-3.5 sm:p-4 rounded-xl bg-white border border-slate-200/90 shadow-sm hover:border-[#32679a]/50 hover:shadow-md transition-all duration-300 group">
+                <div className="p-5 sm:p-4 rounded-xl bg-white border border-slate-200/90 shadow-sm hover:border-[#32679a]/50 hover:shadow-md transition-all duration-300 group">
                   <div className="flex items-start gap-3">
                     <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#32679a]/10 border border-[#32679a]/20 flex items-center justify-center text-[#32679a] shrink-0 group-hover:scale-105 transition-transform">
                       <Eye className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#32679a]" />
@@ -328,7 +325,7 @@ export const AboutPage: React.FC = () => {
       <ZadroitEdge />
 
       {/* Milestones & Journey Timeline */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-slate-50 rounded-3xl border border-slate-200 my-8">
+      {/* <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-slate-50 rounded-3xl border border-slate-200 my-8">
         <ScrollReveal variant="fade-up">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#32679A]/10 text-[#13273B] border border-[#32679A]/20 text-xs font-bold mb-2">
@@ -365,93 +362,10 @@ export const AboutPage: React.FC = () => {
             ))}
           </div>
         </ScrollReveal>
-      </section>
+      </section> */}
 
-      {/* Leadership & Engineering Team */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <ScrollReveal variant="fade-up">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ded725]/25 text-[#13273B] border border-[#ded725]/40 text-xs font-bold mb-2">
-              <div className="flex items-center gap-0">
-                <div className="w-4 h-4 rounded-full bg-[#2B5984]" />
-                <div className="w-2 h-4 bg-[#5F88B0] rounded-r-full" />
-                <div className="w-2 h-4 bg-[#5F88B0] rounded-r-full" />
-              </div>
-              Leadership & Core Architects
-            </div>
-            <h2 className="text-3xl font-black text-[#090D16] font-heading">
-              Meet the Minds Behind Zadroit
-            </h2>
-            <p className="mt-2 text-sm text-slate-600">
-              A passionate collective of software architects, AI researchers, and
-              product designers.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {teamMembersData.map((member, idx) => (
-              <ScrollReveal
-                key={member.id}
-                variant="fade-up"
-                delay={idx * 100}
-                className="light-card rounded-3xl p-6 flex flex-col justify-between bg-white border border-slate-200/80 hover:border-[#32679a]/40 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300"
-              >
-                <div>
-                  <ImagePlaceholder
-                    src={member.avatarPlaceholder}
-                    alt={member.name}
-                    category={member.department}
-                    label={member.name}
-                    aspectRatio="square"
-                    dimensionsHint="400 × 400"
-                    className="mb-4"
-                  />
-
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#32679a]">
-                    {member.department}
-                  </span>
-                  <h3 className="text-xl font-bold text-slate-900 font-heading mt-0.5">
-                    {member.name}
-                  </h3>
-                  <div className="text-xs font-semibold text-[#32679a] mb-3">
-                    {member.role}
-                  </div>
-                  <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
-                    {member.bio}
-                  </p>
-                </div>
-
-                <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <div className="flex flex-wrap gap-1">
-                    {member.skills.slice(0, 2).map((s, i) => (
-                      <span
-                        key={i}
-                        className="text-[10px] px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono"
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex items-center gap-2">
-                    {member.social.linkedin && (
-                      <a
-                        href={member.social.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-1.5 rounded-lg bg-slate-100 hover:bg-[#32679a] text-slate-600 hover:text-white transition-colors"
-                        aria-label="LinkedIn"
-                      >
-                        <ExternalLink className="w-3.5 h-3.5" />
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </ScrollReveal>
-      </section>
+      {/* Leadership & Core Architects Carousel */}
+      <LeadershipCarousel />
 
       {/* Locations & Global Hubs */}
       {/* <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

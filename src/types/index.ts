@@ -141,12 +141,15 @@ export interface TeamMember {
   role: string;
   department: string;
   bio: string;
+  quote?: string;
   skills: string[];
   avatarPlaceholder?: string;
+  image?: string;
   social: {
     linkedin?: string;
     twitter?: string;
     github?: string;
+    instagram?: string;
   };
 }
 

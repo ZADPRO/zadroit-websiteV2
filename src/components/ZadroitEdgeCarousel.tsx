@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { ScrollReveal } from "./ScrollReveal";
 import {
   Briefcase,
@@ -481,6 +481,7 @@ export const ZadroitEdgeCarousel: React.FC<ZadroitEdgeCarouselProps> = ({
                 >
                   {pillar.step}
                 </div>
+                <TabIcon className="w-3.5 h-3.5 opacity-80" />
                 <span>{pillar.tabLabel}</span>
               </button>
             );

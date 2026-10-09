@@ -1392,6 +1392,7 @@
       "role": "Founder & Chief Executive Officer",
       "department": "Executive Leadership",
       "bio": "Visionary entrepreneur with over a decade of experience driving enterprise digital transformations, enterprise SaaS architectures, and engineering innovation across South India.",
+      "quote": "Great software isn't just about code—it is about empowering enterprises to operate with speed, intelligence, and unwavering resilience.",
       "skills": [
         "Strategic Leadership",
         "Enterprise Architecture",
@@ -1399,10 +1400,12 @@
         "Cloud Strategy"
       ],
       "avatarPlaceholder": "/assets/placeholders/team-indrajith.svg",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
       "social": {
         "linkedin": "https://linkedin.com",
         "twitter": "https://x.com",
-        "github": "https://github.com"
+        "github": "https://github.com",
+        "instagram": "https://instagram.com"
       }
     },
     {
@@ -1411,6 +1414,7 @@
       "role": "Chief Technology Officer",
       "department": "Engineering Leadership",
       "bio": "Distributed systems specialist and cloud evangelist who oversees technical direction, infrastructure resilience, and the core engineering stack at Zadroit.",
+      "quote": "By utilizing distributed event meshes alongside infrastructure orchestration, enterprise teams can achieve 99.99% availability without losing a single database transaction.",
       "skills": [
         "Distributed Systems",
         "Kubernetes",
@@ -1418,9 +1422,12 @@
         "High-Throughput APIs"
       ],
       "avatarPlaceholder": "/assets/placeholders/team-karthik.svg",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
       "social": {
         "linkedin": "https://linkedin.com",
-        "github": "https://github.com"
+        "twitter": "https://x.com",
+        "github": "https://github.com",
+        "instagram": "https://instagram.com"
       }
     },
     {
@@ -1429,6 +1436,7 @@
       "role": "Head of AI & Data Intelligence",
       "department": "AI & Innovation Labs",
       "bio": "PhD in Computational Intelligence. Leads Zadroit's proprietary AI research including the Medpredit diagnostic engine and enterprise LLM integrations.",
+      "quote": "Generative AI in mission-critical healthcare systems requires unmatched precision; our deterministic retrieval pipelines establish absolute trustworthiness.",
       "skills": [
         "Machine Learning",
         "Deep Learning",
@@ -1436,9 +1444,11 @@
         "Predictive Analytics"
       ],
       "avatarPlaceholder": "/assets/placeholders/team-ananya.svg",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
       "social": {
         "linkedin": "https://linkedin.com",
-        "twitter": "https://x.com"
+        "twitter": "https://x.com",
+        "instagram": "https://instagram.com"
       }
     },
     {
@@ -1447,6 +1457,7 @@
       "role": "Head of UI/UX & Design Experience",
       "department": "Product Design",
       "bio": "Passionate design leader crafting award-winning digital experiences, design systems, and micro-interactions that turn complex software into delightful products.",
+      "quote": "I enjoy working in a team environment, crafting seamless digital journeys and organizing agile collaboration to elevate our team's creative productivity.",
       "skills": [
         "Figma Systems",
         "Interaction Design",
@@ -1454,9 +1465,11 @@
         "Brand Identity"
       ],
       "avatarPlaceholder": "/assets/placeholders/team-praveen.svg",
+      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
       "social": {
         "linkedin": "https://linkedin.com",
-        "twitter": "https://x.com"
+        "twitter": "https://x.com",
+        "instagram": "https://instagram.com"
       }
     },
     {
@@ -1465,6 +1478,7 @@
       "role": "Principal Security & DevOps Lead",
       "department": "Cybersecurity & Operations",
       "bio": "Certified ethical hacker (CEH) and cloud security architect dedicated to keeping enterprise infrastructure bulletproof against sophisticated threats.",
+      "quote": "Zero-trust isn't just a compliance checklist; it's a foundational mindset that protects every packet, pipeline, and container from day zero.",
       "skills": [
         "Zero-Trust",
         "VAPT",
@@ -1472,8 +1486,10 @@
         "DevSecOps"
       ],
       "avatarPlaceholder": "/assets/placeholders/team-vignesh.svg",
+      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800&auto=format&fit=crop",
       "social": {
         "linkedin": "https://linkedin.com",
+        "twitter": "https://x.com",
         "github": "https://github.com"
       }
     },
@@ -1483,6 +1499,7 @@
       "role": "Lead IoT & Embedded Systems Engineer",
       "department": "Hardware & IoT",
       "bio": "Specialist in edge computing, MQTT telemetry, and sports technology automation who pioneered the ZadSports hardware-software bridge.",
+      "quote": "Bridging the physical world with real-time cloud data unlocks unprecedented telemetry insights for high-performance sports and smart manufacturing.",
       "skills": [
         "IoT Gateways",
         "MQTT",
@@ -1490,8 +1507,10 @@
         "Real-Time Telemetry"
       ],
       "avatarPlaceholder": "/assets/placeholders/team-dinesh.svg",
+      "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop",
       "social": {
         "linkedin": "https://linkedin.com",
+        "twitter": "https://x.com",
         "github": "https://github.com"
       }
     }
