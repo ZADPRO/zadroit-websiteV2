@@ -11,7 +11,7 @@ import {
   TrendingUp,
   Laptop,
   Users,
-  
+
 } from "lucide-react";
 
 export const CareersPage: React.FC = () => {
@@ -81,23 +81,20 @@ export const CareersPage: React.FC = () => {
               {/* Second half circle */}
               <div className="w-2.5 h-5 bg-[#5F88B0] rounded-r-full" />
             </div>
-           We're Hiring Visionaries & Builders
+            We're Hiring Visionaries & Builders
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#090D16] tracking-tight font-heading leading-tight">
             Build the Future of Deep Tech & AI Platforms
           </h1>
-           
+
 
           <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Join Zadroit's high-performance engineering culture in Salem,
-            Bangalore, or Remote. We offer competitive pay, equity ESOPs,
-            cutting-edge tech stacks, and relentless support for your personal
-            growth.
+            Join Zadroit's high-performance engineering culture in Salem, Bangalore or remote. We offer competitive pay, ESOPs, a modern tech stack and genuine support for your growth.
           </p>
         </div>
 
-        
+
       </section>
 
       {/* Perks & Benefits Bento Grid */}
@@ -158,11 +155,10 @@ export const CareersPage: React.FC = () => {
             <button
               key={dept}
               onClick={() => setSelectedDept(dept)}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
-                selectedDept === dept
-                  ? "bg-[#ded725] text-[#142C42] shadow-sm"
-                  : "bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200"
-              }`}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${selectedDept === dept
+                ? "bg-[#ded725] text-[#142C42] shadow-sm"
+                : "bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200"
+                }`}
             >
               {dept}
             </button>
@@ -205,7 +201,7 @@ export const CareersPage: React.FC = () => {
                   </span>
                   {job.isUrgent && (
                     <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200">
-                       Urgent Need
+                      Urgent Need
                     </span>
                   )}
                 </div>

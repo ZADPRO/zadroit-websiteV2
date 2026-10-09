@@ -1147,9 +1147,9 @@
       "department": "Engineering",
       "location": "Salem / Bangalore / Hybrid",
       "type": "Full-Time",
-      "experience": "4 - 7 Years",
+      "experience": "4+ years",
       "salaryRange": "₹12,00,000 - ₹22,00,000 P.A. + Stock Options",
-      "shortDesc": "Join our core product engineering team to build scalable microservices, distributed queues, and sleek web interfaces for ZadERP and enterprise clients.",
+      "shortDesc": "Join our core product engineering team to build scalable microservices, distributed queues and sleek web interfaces for ZadERP and enterprise clients.",
       "responsibilities": [
         "Architect and maintain high-throughput backend APIs using Node.js, Go, and PostgreSQL.",
         "Craft pixel-perfect, accessible, and hyper-responsive frontends with React 19 and Next.js.",
@@ -1189,9 +1189,9 @@
       "department": "AI & Data",
       "location": "Bangalore / Remote",
       "type": "Full-Time",
-      "experience": "3 - 6 Years",
+      "experience": "5+ years",
       "salaryRange": "₹15,00,000 - ₹28,00,000 P.A. + Equity",
-      "shortDesc": "Lead the development of custom LLM agent architectures, clinical NLP models for Medpredit, and enterprise predictive analytics pipelines.",
+      "shortDesc": "You will lead our AI engineering efforts, shaping how language models and predictive systems power Medpredit and our enterprise clients.",
       "responsibilities": [
         "Fine-tune and deploy open-source LLMs (Llama 3, Mistral) and vector databases for enterprise RAG systems.",
         "Develop predictive machine learning models for clinical risk stratification and demand forecasting.",
@@ -1231,9 +1231,9 @@
       "department": "Design",
       "location": "Salem / Remote",
       "type": "Full-Time",
-      "experience": "3 - 6 Years",
+      "experience": "4+ Years",
       "salaryRange": "₹8,00,000 - ₹16,00,000 P.A.",
-      "shortDesc": "Create breathtaking, user-centric interfaces and complete design systems for flagship products and global client applications.",
+      "shortDesc": "You will shape the look, feel and usability of Zadroit's products and our clients' applications, from first sketch to developer handoff.",
       "responsibilities": [
         "Lead the end-to-end design lifecycle from user research and wireframing to high-fidelity Figma components.",
         "Build and evolve Zadroit's unified design system tokens, typography scales, and component libraries.",
@@ -1272,9 +1272,9 @@
       "department": "Cloud & DevOps",
       "location": "Bangalore / Hybrid",
       "type": "Full-Time",
-      "experience": "5 - 9 Years",
+      "experience": "6+ Years",
       "salaryRange": "₹16,00,000 - ₹30,00,000 P.A.",
-      "shortDesc": "Design and manage resilient multi-cloud infrastructures, Kubernetes clusters, and automated continuous delivery pipelines.",
+      "shortDesc": "Design and manage resilient multi-cloud infrastructure, Kubernetes clusters and automated continuous delivery pipelines.",
       "responsibilities": [
         "Architect scalable cloud infrastructures on AWS and Google Cloud using Terraform and Helm.",
         "Implement zero-downtime CI/CD workflows and automated container security scans.",
@@ -1314,9 +1314,9 @@
       "department": "Engineering",
       "location": "Salem / Remote",
       "type": "Full-Time",
-      "experience": "2 - 5 Years",
+      "experience": "2+ Years",
       "salaryRange": "₹6,00,000 - ₹12,00,000 P.A.",
-      "shortDesc": "Build robust end-to-end automated test suites, API automation, and load testing pipelines to guarantee zero software defects.",
+      "shortDesc": "Build robust end-to-end automated test suites, API automation and load testing pipelines to catch defects before they reach customers.",
       "responsibilities": [
         "Develop and maintain automated UI and API test suites using Playwright, Cypress, and Postman.",
         "Execute performance, load, and stress testing with k6 and JMeter to identify bottlenecks.",
@@ -1355,7 +1355,7 @@
       "type": "Internship",
       "experience": "Fresher / Final Year Students",
       "salaryRange": "₹15,000 - ₹25,000 / Month + Full-time PPO Opportunity",
-      "shortDesc": "Kickstart your career with hands-on mentorship building live web, mobile, and cloud software applications.",
+      "shortDesc": "Kickstart your career with hands-on mentorship while building live web, mobile and cloud applications.",
       "responsibilities": [
         "Work directly alongside senior engineers on production features in React, Node, and Flutter.",
         "Write clean, tested frontend components and backend CRUD routes.",
@@ -1750,42 +1750,42 @@
     {
       "id": "p1",
       "title": "Cutting-Edge Tech Stack",
-      "description": "Work with React 19, TypeScript, Go, PyTorch, Kubernetes, and state-of-the-art AI tooling without legacy constraints.",
+      "description": "Work with React 19, TypeScript, Go, PyTorch, Kubernetes and state-of-the-art AI tooling, without legacy constraints holding you back.",
       "icon": "Cpu",
       "badge": "Modern Tech"
     },
     {
       "id": "p2",
       "title": "Hybrid & Remote Flexibility",
-      "description": "Balance productivity and life with our flexible hybrid work culture and generous work-from-home allowances.",
+      "description": "Balance productivity and life with a flexible hybrid culture and a generous work-from-home allowance.",
       "icon": "Home",
       "badge": "Work-Life Balance"
     },
     {
       "id": "p3",
       "title": "Continuous Learning Budget",
-      "description": "₹50,000 annual allowance for certifications (AWS, CKA, Google Cloud), books, courses, and global tech conferences.",
+      "description": "An annual allowance of ₹50,000 for certifications (AWS, CKA, Google Cloud), books, courses and tech conferences.",
       "icon": "GraduationCap",
       "badge": "Growth First"
     },
     {
       "id": "p4",
       "title": "Comprehensive Health & Wellness",
-      "description": "Complete medical insurance for you and your family, mental health support, and annual health checkups.",
+      "description": "Medical insurance for you and your family, mental health support and annual health check-ups.",
       "icon": "HeartPulse",
       "badge": "Full Coverage"
     },
     {
       "id": "p5",
       "title": "Equity & Performance Incentives",
-      "description": "Generous employee stock options (ESOPs) and quarterly milestone bonuses so you truly own what you build.",
+      "description": "Employee stock options (ESOPs) and quarterly milestone bonuses, so you share in what you help build.",
       "icon": "TrendingUp",
       "badge": "Wealth Creation"
     },
     {
       "id": "p6",
       "title": "Apple Hardware & Setup Grant",
-      "description": "Every engineer receives a top-spec Apple MacBook Pro and high-res external monitor setup.",
+      "description": "Every engineer receives a MacBook Pro and a high-resolution external monitor setup.",
       "icon": "Laptop",
       "badge": "Premium Tools"
     }

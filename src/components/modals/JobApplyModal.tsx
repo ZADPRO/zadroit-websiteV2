@@ -305,13 +305,13 @@ export const JobApplyModal: React.FC<JobApplyModalProps> = ({ job }) => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-6 py-2.5 rounded-full bg-[#133A27] hover:bg-[#0c2619] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer disabled:opacity-60"
+                  className="px-6 py-2.5 rounded-full bg-[#ded725] hover:bg-[#d3cc11] text-[#32679a] font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer disabled:opacity-60"
                 >
                   {isSubmitting ? (
                     <span>Submitting Application...</span>
                   ) : (
                     <>
-                      <Send className="w-4 h-4 text-[#ded725]" />
+                      <Send className="w-4 h-4 text-[#32679a]" />
                       <span>Submit Application</span>
                     </>
                   )}
