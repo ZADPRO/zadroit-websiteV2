@@ -40,38 +40,17 @@ const BLOB_STYLES = [
   },
 ];
 
-interface OrbitState {
-  currentIndex: number;
-  slots: number[];
-  instantItems: Set<number>;
-}
-
-const getInitialSlots = (total: number, activeIdx: number = 0): number[] => {
-  const slots: number[] = [];
-  for (let i = 0; i < total; i++) {
-    let offset = ((i - activeIdx) % total + total) % total;
-    if (offset > Math.floor(total / 2)) {
-      offset -= total;
-    }
-    slots.push(offset);
-  }
-  return slots;
-};
-
 export const LeadershipCarousel: React.FC = () => {
   const { navigate } = useApp();
   const total = teamMembersData.length;
-  const [orbitState, setOrbitState] = useState<OrbitState>(() => ({
-    currentIndex: 0,
-    slots: getInitialSlots(total, 0),
-    instantItems: new Set<number>(),
-  }));
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [direction, setDirection] = useState<1 | -1>(1);
   const [isPaused, setIsPaused] = useState<boolean>(false);
   const [windowWidth, setWindowWidth] = useState<number>(typeof window !== "undefined" ? window.innerWidth : 1200);
   const touchStartX = useRef<number | null>(null);
-  const resetTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const prevSlotsRef = useRef<{ [key: number]: number }>({});
 
-  const currentLeader: TeamMember = teamMembersData[orbitState.currentIndex] || teamMembersData[0];
+  const currentLeader: TeamMember = teamMembersData[currentIndex] || teamMembersData[0];
 
   // Track window resize for responsive orbital coordinates
   useEffect(() => {
@@ -80,180 +59,25 @@ export const LeadershipCarousel: React.FC = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Quietly reposition items between hidden left and hidden right when they are fully invisible
-  const scheduleQuietReset = useCallback(() => {
-    if (resetTimeoutRef.current) {
-      clearTimeout(resetTimeoutRef.current);
-    }
-    resetTimeoutRef.current = setTimeout(() => {
-      setOrbitState((prev) => {
-        let hasChanges = false;
-        const newSlots = [...prev.slots];
-        const newInstant = new Set<number>();
-
-        for (let i = 0; i < total; i++) {
-          if (newSlots[i] <= -3) {
-            newSlots[i] = 3;
-            newInstant.add(i);
-            hasChanges = true;
-          }
-        }
-
-        if (!hasChanges) return prev;
-        return {
-          ...prev,
-          slots: newSlots,
-          instantItems: newInstant,
-        };
-      });
-    }, 750);
+  const handleNext = useCallback(() => {
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 1) % total);
   }, [total]);
 
-  // Clean up timer on unmount
-  useEffect(() => {
-    return () => {
-      if (resetTimeoutRef.current) {
-        clearTimeout(resetTimeoutRef.current);
-      }
-    };
-  }, []);
-
-  const handleNext = useCallback(() => {
-    if (resetTimeoutRef.current) {
-      clearTimeout(resetTimeoutRef.current);
-    }
-
-    setOrbitState((prev) => {
-      const nextIndex = (prev.currentIndex + 1) % total;
-      const slots = [...prev.slots];
-
-      // Any item currently in hidden-left pocket (<= -3) must teleport to hidden-right pocket (+3) before sliding left
-      const needsTeleport: number[] = [];
-      for (let i = 0; i < total; i++) {
-        if (slots[i] <= -3) {
-          needsTeleport.push(i);
-        }
-      }
-
-      if (needsTeleport.length > 0) {
-        for (const idx of needsTeleport) {
-          slots[idx] = 3;
-        }
-        const instantSet = new Set(needsTeleport);
-
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            setOrbitState((curr) => {
-              const shiftedSlots = curr.slots.map((s) => s - 1);
-              return {
-                currentIndex: nextIndex,
-                slots: shiftedSlots,
-                instantItems: new Set(),
-              };
-            });
-            scheduleQuietReset();
-          });
-        });
-
-        return {
-          ...prev,
-          slots,
-          instantItems: instantSet,
-        };
-      }
-
-      const shiftedSlots = slots.map((s) => s - 1);
-      scheduleQuietReset();
-
-      return {
-        currentIndex: nextIndex,
-        slots: shiftedSlots,
-        instantItems: new Set(),
-      };
-    });
-  }, [total, scheduleQuietReset]);
-
   const handlePrev = useCallback(() => {
-    if (resetTimeoutRef.current) {
-      clearTimeout(resetTimeoutRef.current);
-    }
-
-    setOrbitState((prev) => {
-      const nextIndex = (prev.currentIndex - 1 + total) % total;
-      const slots = [...prev.slots];
-
-      // Any item currently in hidden-right pocket (>= 3) must teleport to hidden-left pocket (-3) before sliding right
-      const needsTeleport: number[] = [];
-      for (let i = 0; i < total; i++) {
-        if (slots[i] >= 3) {
-          needsTeleport.push(i);
-        }
-      }
-
-      if (needsTeleport.length > 0) {
-        for (const idx of needsTeleport) {
-          slots[idx] = -3;
-        }
-        const instantSet = new Set(needsTeleport);
-
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            setOrbitState((curr) => {
-              const shiftedSlots = curr.slots.map((s) => s + 1);
-              return {
-                currentIndex: nextIndex,
-                slots: shiftedSlots,
-                instantItems: new Set(),
-              };
-            });
-            scheduleQuietReset();
-          });
-        });
-
-        return {
-          ...prev,
-          slots,
-          instantItems: instantSet,
-        };
-      }
-
-      const shiftedSlots = slots.map((s) => s + 1);
-      scheduleQuietReset();
-
-      return {
-        currentIndex: nextIndex,
-        slots: shiftedSlots,
-        instantItems: new Set(),
-      };
-    });
-  }, [total, scheduleQuietReset]);
+    setDirection(-1);
+    setCurrentIndex((prev) => (prev - 1 + total) % total);
+  }, [total]);
 
   const handleSelect = useCallback((targetIdx: number) => {
-    setOrbitState((prev) => {
-      if (targetIdx === prev.currentIndex) return prev;
-      let diff = ((targetIdx - prev.currentIndex) % total + total) % total;
-      if (diff > total / 2) {
-        diff -= total;
-      }
-
-      if (diff === 1) {
-        handleNext();
-        return prev;
-      } else if (diff === -1) {
-        handlePrev();
-        return prev;
-      } else {
-        if (resetTimeoutRef.current) clearTimeout(resetTimeoutRef.current);
-        const newSlots = getInitialSlots(total, targetIdx);
-        scheduleQuietReset();
-        return {
-          currentIndex: targetIdx,
-          slots: newSlots,
-          instantItems: new Set(),
-        };
-      }
-    });
-  }, [total, handleNext, handlePrev, scheduleQuietReset]);
+    if (targetIdx === currentIndex) return;
+    let diff = ((targetIdx - currentIndex) % total + total) % total;
+    if (diff > total / 2) {
+      diff -= total;
+    }
+    setDirection(diff >= 0 ? 1 : -1);
+    setCurrentIndex(targetIdx);
+  }, [currentIndex, total]);
 
   // Continuous auto-rotation carousel (pauses when hovered)
   useEffect(() => {
@@ -287,13 +111,13 @@ export const LeadershipCarousel: React.FC = () => {
   };
 
   /**
-   * Compute Staggered Arc Orbital Coordinates:
+   * Compute Deterministic Staggered Arc Orbital Coordinates:
    *  - Active Center: Slot 0 (X = 0, Y = 0, scale 1.0)
    *  - Inner Satellites (Left / Right): Slot ±1 (X = ±240px, Y = +75px, scale 0.58)
    *  - Outer Satellites (Left / Right): Slot ±2 (X = ±430px, Y = +160px, scale 0.48)
    *  - Hidden Pockets (Left / Right): Slot ±3 (X = ±510px, Y = +220px, scale 0.25, opacity 0)
    */
-  const getOrbitStyles = (slot: number, isInstant: boolean) => {
+  const getOrbitStyles = (itemIndex: number) => {
     const isDesktop = windowWidth >= 1024;
     const isTablet = windowWidth >= 640 && windowWidth < 1024;
 
@@ -302,6 +126,17 @@ export const LeadershipCarousel: React.FC = () => {
     const ry1 = isDesktop ? 75 : isTablet ? 55 : 38;
     const rx2 = isDesktop ? 430 : isTablet ? 330 : 215;
     const ry2 = isDesktop ? 160 : isTablet ? 120 : 75;
+
+    let offset = ((itemIndex - currentIndex) % total + total) % total;
+    if (offset > Math.floor(total / 2)) {
+      offset -= total;
+    }
+
+    // Assign wrapping boundary items to the appropriate hidden exit pocket based on rotation direction
+    let slot = offset;
+    if (Math.abs(offset) === Math.floor(total / 2)) {
+      slot = direction === 1 ? -Math.floor(total / 2) : Math.floor(total / 2);
+    }
 
     let x = 0;
     let y = 0;
@@ -312,21 +147,21 @@ export const LeadershipCarousel: React.FC = () => {
     const isActive = slot === 0;
 
     if (slot === 0) {
-      // Active center profile
+      // Active center profile (100% ALWAYS mapped to currentIndex)
       x = 0;
       y = 0;
       scale = 1.0;
       opacity = 1.0;
       zIndex = 30;
     } else if (slot === 1) {
-      // Inner-Right profile (Mid elevation)
+      // Inner-Right profile
       x = rx1;
       y = ry1;
       scale = isDesktop ? 0.58 : isTablet ? 0.52 : 0.42;
       opacity = 0.88;
       zIndex = 20;
     } else if (slot === 2) {
-      // Outer-Right profile (Lower elevation)
+      // Outer-Right profile
       x = rx2;
       y = ry2;
       scale = isDesktop ? 0.48 : isTablet ? 0.40 : 0.32;
@@ -334,14 +169,14 @@ export const LeadershipCarousel: React.FC = () => {
       zIndex = 10;
       if (!isDesktop && !isTablet) pointerEvents = "none";
     } else if (slot === -1) {
-      // Inner-Left profile (Mid elevation)
+      // Inner-Left profile
       x = -rx1;
       y = ry1;
       scale = isDesktop ? 0.58 : isTablet ? 0.52 : 0.42;
       opacity = 0.88;
       zIndex = 20;
     } else if (slot === -2) {
-      // Outer-Left profile (Lower elevation)
+      // Outer-Left profile
       x = -rx2;
       y = ry2;
       scale = isDesktop ? 0.48 : isTablet ? 0.40 : 0.32;
@@ -366,7 +201,10 @@ export const LeadershipCarousel: React.FC = () => {
       pointerEvents = "none";
     }
 
-    const transition = isInstant
+    const prevSlot = prevSlotsRef.current[itemIndex] ?? slot;
+    const isWrapJump = Math.abs(prevSlot - slot) > 2;
+
+    const transition = isWrapJump
       ? "none"
       : "transform 0.75s cubic-bezier(0.34, 1.25, 0.64, 1), opacity 0.65s ease, filter 0.65s ease";
 
@@ -383,8 +221,23 @@ export const LeadershipCarousel: React.FC = () => {
     };
   };
 
+  // Keep previous slot record updated after render
+  useEffect(() => {
+    teamMembersData.forEach((_, idx) => {
+      let offset = ((idx - currentIndex) % total + total) % total;
+      if (offset > Math.floor(total / 2)) {
+        offset -= total;
+      }
+      let slot = offset;
+      if (Math.abs(offset) === Math.floor(total / 2)) {
+        slot = direction === 1 ? -Math.floor(total / 2) : Math.floor(total / 2);
+      }
+      prevSlotsRef.current[idx] = slot;
+    });
+  }, [currentIndex, direction, total]);
+
   return (
-    <section 
+    <section
       className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 relative select-none bg-white overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -480,9 +333,7 @@ export const LeadershipCarousel: React.FC = () => {
           {/* ================= 3D STAGGERED ORBIT PROFILE ITEMS ================= */}
           <div className="relative w-full h-72 sm:h-80 md:h-[330px] flex items-center justify-center">
             {teamMembersData.map((member, idx) => {
-              const slot = orbitState.slots[idx] ?? 0;
-              const isInstant = orbitState.instantItems.has(idx);
-              const { x, y, scale, opacity, zIndex, pointerEvents, isActive, transition } = getOrbitStyles(slot, isInstant);
+              const { x, y, scale, opacity, zIndex, pointerEvents, isActive, transition } = getOrbitStyles(idx);
               const blobStyle = BLOB_STYLES[idx % BLOB_STYLES.length];
 
               return (
@@ -500,11 +351,10 @@ export const LeadershipCarousel: React.FC = () => {
                 >
                   {/* Container with Organic Mask & Soft Glow */}
                   <div
-                    className={`relative w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60 overflow-hidden bg-slate-900 transition-all duration-700 ${
-                      isActive
-                        ? "shadow-2xl ring-4 ring-[#32679a]/20 drop-shadow-[0_20px_35px_rgba(50,103,154,0.3)]"
-                        : "shadow-md hover:scale-105 hover:shadow-xl"
-                    }`}
+                    className={`relative w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60 overflow-hidden bg-slate-900 transition-all duration-700 ${isActive
+                      ? "shadow-2xl ring-4 ring-[#32679a]/20 drop-shadow-[0_20px_35px_rgba(50,103,154,0.3)]"
+                      : "shadow-md hover:scale-105 hover:shadow-xl"
+                      }`}
                     style={{
                       clipPath: `url(#${isActive ? "blob-shape-0" : blobStyle.clipId})`,
                       borderRadius: blobStyle.borderRadius,
@@ -514,11 +364,10 @@ export const LeadershipCarousel: React.FC = () => {
                     <img
                       src={member.image || member.avatarPlaceholder}
                       alt={member.name}
-                      className={`w-full h-full object-cover object-top transition-all duration-500 ${
-                        isActive
-                          ? "grayscale-0 contrast-[1.04] brightness-100 scale-100"
-                          : "grayscale contrast-[1.1] brightness-[0.96] group-hover:grayscale-0 group-hover:scale-105"
-                      }`}
+                      className={`w-full h-full object-cover object-top transition-all duration-500 ${isActive
+                        ? "grayscale-0 contrast-[1.04] brightness-100 scale-100"
+                        : "grayscale contrast-[1.1] brightness-[0.96] group-hover:grayscale-0 group-hover:scale-105"
+                        }`}
                       loading="lazy"
                     />
 
@@ -530,12 +379,12 @@ export const LeadershipCarousel: React.FC = () => {
                             href={member.social.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#0077b5] hover:bg-[#005f93] text-white shadow-lg shadow-black/30 font-semibold text-xs tracking-wide transition-all duration-300 hover:scale-108 cursor-pointer"
+                            className="flex items-center gap-2 px-4 py-4 rounded-full bg-[#0077b5] hover:bg-[#005f93] text-white shadow-lg shadow-black/30 font-semibold text-xs tracking-wide transition-all duration-300 hover:scale-108 cursor-pointer"
                             aria-label={`${member.name} LinkedIn Profile`}
                             onClick={(e) => e.stopPropagation()}
                           >
-                            <LinkedinIcon className="w-4 h-4" />
-                            <span>LinkedIn</span>
+                            <LinkedinIcon className="w-6 h-6" />
+                            {/* <span>LinkedIn</span> */}
                           </a>
                         )}
                       </div>
@@ -554,7 +403,7 @@ export const LeadershipCarousel: React.FC = () => {
           </div>
 
           {/* ================= ACTIVE PROFILE DETAILS (NAME, ROLE, BIO, CTA) ================= */}
-          <div 
+          <div
             key={currentLeader.id}
             className="text-center max-w-2xl mx-auto mt-2 sm:mt-4 px-4 animate-fade-in-up"
           >
@@ -593,11 +442,10 @@ export const LeadershipCarousel: React.FC = () => {
                 key={idx}
                 type="button"
                 onClick={() => handleSelect(idx)}
-                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  idx === orbitState.currentIndex
-                    ? "w-6 bg-[#32679a]"
-                    : "w-2 bg-slate-300 hover:bg-slate-400"
-                }`}
+                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${idx === currentIndex
+                  ? "w-6 bg-[#32679a]"
+                  : "w-2 bg-slate-300 hover:bg-slate-400"
+                  }`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
             ))}
